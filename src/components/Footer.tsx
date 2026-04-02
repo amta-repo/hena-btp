@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Building2 } from "lucide-react";
 
 const Footer = () => (
@@ -6,7 +7,7 @@ const Footer = () => (
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
         {/* Brand */}
         <div className="space-y-4">
-          <div className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent">
               <Building2 className="h-6 w-6 text-accent-foreground" />
             </div>
@@ -14,7 +15,7 @@ const Footer = () => (
               <span className="block text-sm font-bold">HENA BTP</span>
               <span className="block text-[10px] tracking-widest text-primary-foreground/60 uppercase">Groupe HSE</span>
             </div>
-          </div>
+          </Link>
           <p className="text-sm text-primary-foreground/60 leading-relaxed">
             Votre partenaire de confiance en Bâtiment et Travaux Publics à Cotonou, Bénin.
           </p>
@@ -24,11 +25,11 @@ const Footer = () => (
         <div>
           <h4 className="text-sm font-semibold mb-4">Services</h4>
           <ul className="space-y-2 text-sm text-primary-foreground/60">
-            <li>Construction de villas</li>
-            <li>Bâtiments publics</li>
-            <li>Travaux publics</li>
-            <li>Suivi HSE</li>
-            <li>Rénovation</li>
+            <li><Link to="/services" className="hover:text-accent transition-colors">Construction de villas</Link></li>
+            <li><Link to="/services" className="hover:text-accent transition-colors">Bâtiments publics</Link></li>
+            <li><Link to="/services" className="hover:text-accent transition-colors">Travaux publics</Link></li>
+            <li><Link to="/services" className="hover:text-accent transition-colors">Suivi HSE</Link></li>
+            <li><Link to="/services" className="hover:text-accent transition-colors">Rénovation</Link></li>
           </ul>
         </div>
 
@@ -37,14 +38,15 @@ const Footer = () => (
           <h4 className="text-sm font-semibold mb-4">Navigation</h4>
           <ul className="space-y-2 text-sm text-primary-foreground/60">
             {[
-              { label: "Services", href: "#services" },
-              { label: "Réalisations", href: "#realisations" },
-              { label: "À propos", href: "#apropos" },
-              { label: "FAQ", href: "#faq" },
-              { label: "Contact", href: "#contact" },
+              { label: "Accueil", href: "/" },
+              { label: "Services", href: "/services" },
+              { label: "Réalisations", href: "/realisations" },
+              { label: "À propos", href: "/a-propos" },
+              { label: "FAQ", href: "/faq" },
+              { label: "Contact", href: "/contact" },
             ].map((l) => (
               <li key={l.label}>
-                <a href={l.href} className="hover:text-accent transition-colors">{l.label}</a>
+                <Link to={l.href} className="hover:text-accent transition-colors">{l.label}</Link>
               </li>
             ))}
           </ul>
