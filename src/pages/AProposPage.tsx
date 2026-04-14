@@ -1,23 +1,25 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { Building2, Target, Eye, Shield, Users, Award, ArrowRight } from "lucide-react";
+import { Target, Eye, Shield, Award, Users, Heart, Lightbulb, ArrowRight, CheckCircle } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import heroImg from "@/assets/hero-construction.jpg";
 
 const values = [
-  { icon: Shield, title: "Sécurité", desc: "La sécurité de nos équipes et de vos biens est notre priorité absolue sur chaque chantier." },
-  { icon: Award, title: "Qualité", desc: "Nous visons l'excellence dans chaque détail, des fondations aux finitions." },
-  { icon: Users, title: "Collaboration", desc: "Nous travaillons main dans la main avec nos clients pour réaliser leur vision." },
-  { icon: Target, title: "Innovation", desc: "Nous adoptons les techniques modernes pour des constructions durables et performantes." },
+  { icon: Award, title: "Excellence", desc: "Viser la qualité dans chaque détail." },
+  { icon: Shield, title: "Intégrité", desc: "Être honnête, transparent et responsable." },
+  { icon: Heart, title: "Engagement", desc: "Respecter nos délais et nos promesses." },
+  { icon: Lightbulb, title: "Innovation", desc: "Proposer des solutions modernes et adaptées." },
+  { icon: Users, title: "Proximité", desc: "Rester à l'écoute de nos clients à chaque étape." },
 ];
 
-const timeline = [
-  { year: "Fondation", desc: "Création de HENA BTP à Cotonou, Bénin, avec pour mission de bâtir des ouvrages de qualité." },
-  { year: "Croissance", desc: "Expansion des activités dans la construction de villas, bâtiments publics et travaux de génie civil." },
-  { year: "Groupe HSE", desc: "Intégration au Groupe HSE, renforçant notre engagement en Hygiène, Sécurité et Environnement." },
-  { year: "Aujourd'hui", desc: "Plus de 150 projets réalisés, une équipe de professionnels qualifiés et une réputation d'excellence au Bénin." },
+const objectives = [
+  "Offrir des constructions solides, modernes et accessibles",
+  "Devenir une référence incontournable du BTP au Bénin et en Afrique",
+  "Accompagner nos clients de la conception à la réalisation",
+  "Réduire les coûts inutiles sans compromettre la qualité",
+  "Livrer chaque projet dans les délais convenus",
 ];
 
 const AProposPage = () => (
@@ -25,6 +27,7 @@ const AProposPage = () => (
     <Helmet>
       <title>À Propos de HENA BTP | Entreprise BTP Cotonou, Bénin - Groupe HSE</title>
       <meta name="description" content="Découvrez HENA BTP, Groupe HSE : entreprise de BTP à Cotonou, Bénin. Notre histoire, nos valeurs, notre mission et notre engagement pour la qualité." />
+      <link rel="canonical" href="https://henabtp.com/a-propos" />
     </Helmet>
 
     <Navbar />
@@ -36,35 +39,76 @@ const AProposPage = () => (
             À propos
           </span>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary-foreground max-w-3xl mx-auto leading-tight">
-            HENA BTP, Groupe HSE
+            HENA BTP : Bâtir avec vision, construire avec passion
           </h1>
           <p className="mt-4 max-w-xl mx-auto text-primary-foreground/70">
-            Bâtir l'avenir du Bénin, un projet à la fois.
+            Construire aujourd'hui, sécuriser demain.
           </p>
         </div>
       </section>
 
-      {/* About content */}
+      {/* Notre Histoire */}
       <section className="section-padding">
         <div className="container mx-auto">
           <div className="grid gap-12 lg:grid-cols-2 items-center">
             <div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">Notre histoire</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">Notre Histoire</h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Fondée à Cotonou, au Bénin, <strong className="text-foreground">HENA BTP</strong> est née de la volonté de proposer des services de construction de qualité internationale, adaptés aux réalités du marché béninois.
+                  <strong className="text-foreground">HENA BTP</strong> est née d'une ambition simple mais forte : transformer les idées en réalités durables.
                 </p>
                 <p>
-                  Membre du <strong className="text-foreground">Groupe HSE</strong>, nous plaçons l'Hygiène, la Sécurité et l'Environnement au cœur de chaque projet. Cette philosophie nous distingue et garantit des chantiers sûrs, propres et respectueux de l'environnement.
+                  Créée par des passionnés du bâtiment, l'entreprise s'est construite autour d'un constat : trop de projets souffrent de manque de rigueur, de transparence et de qualité.
                 </p>
                 <p>
-                  Notre équipe d'ingénieurs, d'architectes et de techniciens qualifiés accompagne nos clients de la conception à la livraison, en passant par le suivi de chantier et le contrôle qualité.
+                  Depuis ses débuts, HENA BTP s'engage à faire les choses autrement.
+                </p>
+                <p className="font-medium text-foreground">
+                  Chaque chantier est une promesse. Chaque client est un partenaire. Et chaque réalisation est une signature.
                 </p>
               </div>
             </div>
             <div className="rounded-2xl overflow-hidden" style={{ boxShadow: "var(--card-shadow)" }}>
               <img src={heroImg} alt="Équipe HENA BTP sur un chantier de construction à Cotonou" loading="lazy" width={800} height={600} className="w-full object-cover aspect-[4/3]" />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Nos Valeurs */}
+      <section className="bg-secondary section-padding">
+        <div className="container mx-auto">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Nos Valeurs</h2>
+            <p className="mt-3 text-muted-foreground">
+              Chez HENA BTP, nous ne construisons pas seulement des bâtiments — nous bâtissons la confiance.
+            </p>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+            {values.map((v) => (
+              <div key={v.title} className="text-center rounded-xl bg-card p-6 hover-lift" style={{ boxShadow: "var(--card-shadow)" }}>
+                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-accent text-accent-foreground">
+                  <v.icon className="h-6 w-6" />
+                </div>
+                <h3 className="text-base font-semibold text-foreground">{v.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{v.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Nos Objectifs */}
+      <section className="section-padding">
+        <div className="container mx-auto max-w-3xl">
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground text-center mb-10">Nos Objectifs</h2>
+          <div className="space-y-4">
+            {objectives.map((o) => (
+              <div key={o} className="flex items-start gap-3 rounded-xl bg-card p-5" style={{ boxShadow: "var(--card-shadow)" }}>
+                <CheckCircle className="h-5 w-5 text-accent shrink-0 mt-0.5" />
+                <span className="text-foreground">{o}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -80,7 +124,7 @@ const AProposPage = () => (
               <h2 className="text-xl font-bold text-foreground">Notre Mission</h2>
             </div>
             <p className="text-muted-foreground leading-relaxed">
-              Bâtir des ouvrages durables, esthétiques et conformes aux normes internationales, tout en contribuant au développement des infrastructures au Bénin. Nous voulons être le partenaire BTP de référence pour chaque famille et entreprise béninoise.
+              Bâtir des ouvrages durables, esthétiques et conformes aux normes internationales, tout en contribuant au développement des infrastructures au Bénin et en Afrique de l'Ouest.
             </p>
           </div>
           <div className="rounded-xl bg-card p-8" style={{ boxShadow: "var(--card-shadow)" }}>
@@ -90,67 +134,29 @@ const AProposPage = () => (
               </div>
               <h2 className="text-xl font-bold text-foreground">Notre Vision</h2>
             </div>
-            <p className="text-muted-foreground leading-relaxed">
-              Devenir l'entreprise de BTP de référence au Bénin et en Afrique de l'Ouest, reconnue pour la qualité de ses réalisations, le respect des normes HSE et son impact positif sur le développement urbain.
-            </p>
+            <div className="text-muted-foreground leading-relaxed space-y-3">
+              <p>Devenir un acteur majeur du bâtiment en Afrique, reconnu pour :</p>
+              <ul className="space-y-2">
+                <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-accent shrink-0 mt-0.5" /><span>La qualité exceptionnelle de ses réalisations</span></li>
+                <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-accent shrink-0 mt-0.5" /><span>Son professionnalisme irréprochable</span></li>
+                <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-accent shrink-0 mt-0.5" /><span>Sa capacité à innover et s'adapter aux besoins modernes</span></li>
+              </ul>
+              <p className="font-medium text-foreground">Nous voulons bâtir plus que des murs : créer des espaces de vie, d'avenir et de confiance.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Values */}
-      <section className="section-padding">
-        <div className="container mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold text-foreground text-center mb-10">Nos valeurs</h2>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {values.map((v) => (
-              <div key={v.title} className="text-center rounded-xl bg-card p-6 hover-lift" style={{ boxShadow: "var(--card-shadow)" }}>
-                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-accent text-accent-foreground">
-                  <v.icon className="h-6 w-6" />
-                </div>
-                <h3 className="text-base font-semibold text-foreground">{v.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{v.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Timeline */}
-      <section className="bg-primary section-padding">
-        <div className="container mx-auto max-w-2xl">
-          <h2 className="text-2xl sm:text-3xl font-bold text-primary-foreground text-center mb-10">Notre parcours</h2>
-          <div className="space-y-8">
-            {timeline.map((t, i) => (
-              <div key={i} className="flex gap-6">
-                <div className="flex flex-col items-center">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-accent-foreground text-sm font-bold shrink-0">
-                    {i + 1}
-                  </div>
-                  {i < timeline.length - 1 && <div className="w-px flex-1 bg-primary-foreground/20 mt-2" />}
-                </div>
-                <div className="pb-8">
-                  <h3 className="text-lg font-semibold text-primary-foreground">{t.year}</h3>
-                  <p className="mt-1 text-sm text-primary-foreground/70 leading-relaxed">{t.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="section-padding">
+      {/* Signature CTA */}
+      <section className="bg-accent section-padding">
         <div className="container mx-auto text-center">
-          <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-primary mb-6">
-            <Building2 className="h-10 w-10 text-primary-foreground" />
-          </div>
-          <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Travaillons ensemble</h2>
-          <p className="mt-3 text-muted-foreground max-w-lg mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-bold text-accent-foreground">HENA BTP — Construire aujourd'hui, sécuriser demain.</h2>
+          <p className="mt-3 text-accent-foreground/80 max-w-lg mx-auto">
             Confiez votre projet de construction à une équipe passionnée et expérimentée.
           </p>
           <Link
             to="/contact"
-            className="mt-8 inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-8 py-3.5 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
+            className="mt-8 inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-105"
           >
             Nous contacter
             <ArrowRight className="h-4 w-4" />
