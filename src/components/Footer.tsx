@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Building2 } from "lucide-react";
+import logo from "@/assets/logo-henabtp.png";
 
 const Footer = () => (
   <footer className="bg-primary text-primary-foreground">
@@ -8,16 +8,14 @@ const Footer = () => (
         {/* Brand */}
         <div className="space-y-4">
           <Link to="/" className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent">
-              <Building2 className="h-6 w-6 text-accent-foreground" />
-            </div>
+            <img src={logo} alt="HENA BTP Groupe HSE logo" className="h-10 w-10 object-contain" />
             <div className="leading-tight">
               <span className="block text-sm font-bold">HENA BTP</span>
               <span className="block text-[10px] tracking-widest text-primary-foreground/60 uppercase">Groupe HSE</span>
             </div>
           </Link>
           <p className="text-sm text-primary-foreground/60 leading-relaxed">
-            Votre partenaire de confiance en Bâtiment et Travaux Publics à Cotonou, Bénin.
+            Votre partenaire de confiance en Bâtiment et Travaux Publics au Bénin et en Afrique de l'Ouest.
           </p>
         </div>
 
@@ -25,9 +23,9 @@ const Footer = () => (
         <div>
           <h4 className="text-sm font-semibold mb-4">Services</h4>
           <ul className="space-y-2 text-sm text-primary-foreground/60">
-            <li><Link to="/services" className="hover:text-accent transition-colors">Construction de villas</Link></li>
-            <li><Link to="/services" className="hover:text-accent transition-colors">Bâtiments publics</Link></li>
-            <li><Link to="/services" className="hover:text-accent transition-colors">Travaux publics</Link></li>
+            <li><Link to="/services" className="hover:text-accent transition-colors">Construction clé en main</Link></li>
+            <li><Link to="/services" className="hover:text-accent transition-colors">Génie civil et voiries</Link></li>
+            <li><Link to="/services" className="hover:text-accent transition-colors">Étude et suivi de chantiers</Link></li>
             <li><Link to="/services" className="hover:text-accent transition-colors">Suivi HSE</Link></li>
             <li><Link to="/services" className="hover:text-accent transition-colors">Rénovation</Link></li>
           </ul>
@@ -43,6 +41,8 @@ const Footer = () => (
               { label: "Réalisations", href: "/realisations" },
               { label: "À propos", href: "/a-propos" },
               { label: "FAQ", href: "/faq" },
+              { label: "Témoignages", href: "/temoignages" },
+              { label: "Blog", href: "/blog" },
               { label: "Contact", href: "/contact" },
             ].map((l) => (
               <li key={l.label}>
@@ -61,7 +61,7 @@ const Footer = () => (
               <a href="tel:+2290155496155" className="hover:text-accent transition-colors">+229 01 55 49 61 55</a>
             </li>
             <li>
-              <a href="mailto:contact@henabtp.com" className="hover:text-accent transition-colors">contact@henabtp.com</a>
+              <a href="mailto:henafinancebtp@gmail.com" className="hover:text-accent transition-colors">henafinancebtp@gmail.com</a>
             </li>
           </ul>
         </div>

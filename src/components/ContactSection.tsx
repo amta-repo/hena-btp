@@ -83,7 +83,7 @@ const ContactSection = () => {
               {[
                 { icon: MapPin, label: "Adresse", value: "Cotonou, Bénin" },
                 { icon: Phone, label: "Téléphone / WhatsApp", value: "+229 01 55 49 61 55", href: "tel:+2290155496155" },
-                { icon: Mail, label: "Email", value: "contact@henabtp.com", href: "mailto:contact@henabtp.com" },
+                { icon: Mail, label: "Email", value: "henafinancebtp@gmail.com", href: "mailto:henafinancebtp@gmail.com" },
               ].map((c) => (
                 <div key={c.label} className="flex items-start gap-4 rounded-xl bg-card p-4" style={{ boxShadow: "var(--card-shadow)" }}>
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/10 text-accent">

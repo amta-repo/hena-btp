@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Building2 } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo-henabtp.png";
 
 const navLinks = [
   { href: "/services", label: "Services" },
@@ -20,9 +21,7 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between h-16 sm:h-20">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
-            <Building2 className="h-6 w-6 text-primary-foreground" />
-          </div>
+          <img src={logo} alt="HENA BTP Groupe HSE logo" className="h-10 w-10 object-contain" />
           <div className="leading-tight">
             <span className="block text-sm font-bold tracking-wide text-primary">HENA BTP</span>
             <span className="block text-[10px] font-medium tracking-widest text-muted-foreground uppercase">Groupe HSE</span>
