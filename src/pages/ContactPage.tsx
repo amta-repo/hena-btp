@@ -44,7 +44,7 @@ const ContactPage = () => {
             {[
               { icon: Phone, title: "Téléphone", value: "+229 01 55 49 61 55", href: "tel:+2290155496155", desc: "Appelez-nous directement" },
               { icon: MessageCircle, title: "WhatsApp", value: "+229 01 55 49 61 55", href: "https://wa.me/2290155496155", desc: "Réponse rapide garantie" },
-              { icon: Mail, title: "Email", value: "contact@henabtp.com", href: "mailto:contact@henabtp.com", desc: "Envoyez-nous un email" },
+              { icon: Mail, title: "Email", value: "henafinancebtp@gmail.com", href: "mailto:henafinancebtp@gmail.com", desc: "Envoyez-nous un email" },
               { icon: Clock, title: "Horaires", value: "Lun - Sam : 8h - 18h", href: null, desc: "Disponibles 6j/7" },
             ].map((c) => (
               <div key={c.title} className="rounded-xl bg-card p-6 text-center hover-lift" style={{ boxShadow: "var(--card-shadow)" }}>
