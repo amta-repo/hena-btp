@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { Target, Eye, Shield, Award, Users, Heart, Lightbulb, ArrowRight, CheckCircle } from "lucide-react";
+import { Target, Eye, Shield, Award, Users, Heart, Lightbulb, ArrowRight, CheckCircle, MapPin, ShieldCheck, Clock } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import heroImg from "@/assets/hero-construction.jpg";
+import dgImg from "@/assets/dg-henabtp.jpeg";
 
 const values = [
   { icon: Award, title: "Excellence", desc: "Viser la qualité dans chaque détail." },
@@ -22,12 +23,43 @@ const objectives = [
   "Livrer chaque projet dans les délais convenus",
 ];
 
+const whyUsReasons = [
+  { icon: MapPin, title: "Expertise locale à Cotonou", desc: "Connaissance approfondie du terrain, des réglementations béninoises et des spécificités du BTP local." },
+  { icon: ShieldCheck, title: "Engagement HSE fort", desc: "Normes d'Hygiène, Sécurité et Environnement intégrées à chaque étape. Zéro compromis sur la sécurité." },
+  { icon: Clock, title: "Respect des délais et budget", desc: "Engagement contractuel sur des délais précis et un budget transparent." },
+  { icon: Lightbulb, title: "Solutions sur mesure", desc: "Constructions pensées pour les parcelles béninoises, le climat tropical et vos besoins spécifiques." },
+  { icon: Users, title: "Équipe qualifiée", desc: "Ingénieurs, architectes et techniciens formés aux dernières techniques et normes internationales." },
+  { icon: Award, title: "Qualité premium", desc: "Matériaux de première qualité et techniques éprouvées pour des ouvrages durables." },
+  { icon: Target, title: "Suivi rigoureux", desc: "Chef de projet dédié, rapports réguliers et communication transparente." },
+  { icon: Heart, title: "Satisfaction garantie", desc: "Service après-vente réactif et garantie décennale sur tous nos ouvrages." },
+];
+
+const stats = [
+  { num: "10+", label: "Années d'expérience" },
+  { num: "150+", label: "Projets réalisés" },
+  { num: "100%", label: "Clients satisfaits" },
+  { num: "0", label: "Accidents sur chantier" },
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  mainEntity: {
+    "@type": "Organization",
+    name: "HENA BTP, Groupe HSE",
+    description: "Entreprise de BTP à Cotonou, Bénin spécialisée en construction, génie civil et suivi HSE.",
+    url: "https://henabtp.com",
+    address: { "@type": "PostalAddress", addressLocality: "Cotonou", addressCountry: "BJ" },
+  },
+};
+
 const AProposPage = () => (
   <>
     <Helmet>
       <title>À Propos de HENA BTP | Entreprise BTP Cotonou, Bénin - Groupe HSE</title>
       <meta name="description" content="Découvrez HENA BTP, Groupe HSE : entreprise de BTP à Cotonou, Bénin. Notre histoire, nos valeurs, notre mission et notre engagement pour la qualité." />
       <link rel="canonical" href="https://henabtp.com/a-propos" />
+      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
     </Helmet>
 
     <Navbar />
@@ -39,7 +71,7 @@ const AProposPage = () => (
             À propos
           </span>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary-foreground max-w-3xl mx-auto leading-tight">
-            HENA BTP : Bâtir avec vision, construire avec passion
+            Bâtir avec vision, construire avec passion
           </h1>
           <p className="mt-4 max-w-xl mx-auto text-primary-foreground/70">
             Construire aujourd'hui, sécuriser demain.
@@ -75,8 +107,39 @@ const AProposPage = () => (
         </div>
       </section>
 
-      {/* Nos Valeurs */}
+      {/* Mot du Directeur Général */}
       <section className="bg-secondary section-padding">
+        <div className="container mx-auto">
+          <div className="grid gap-10 lg:grid-cols-5 items-center">
+            <div className="lg:col-span-2 flex justify-center">
+              <div className="rounded-2xl overflow-hidden w-64 sm:w-72" style={{ boxShadow: "var(--card-shadow)" }}>
+                <img src={dgImg} alt="Directeur Général de HENA BTP Groupe HSE" loading="lazy" width={400} height={500} className="w-full object-cover aspect-[3/4]" />
+              </div>
+            </div>
+            <div className="lg:col-span-3">
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">Mot du Directeur Général</h2>
+              <div className="space-y-4 text-muted-foreground leading-relaxed">
+                <p>
+                  «&nbsp;Chez HENA BTP, nous croyons que chaque projet de construction est bien plus qu'un assemblage de béton et d'acier. C'est un rêve qui prend forme, un investissement dans l'avenir.
+                </p>
+                <p>
+                  Notre engagement est simple : offrir à chaque client un ouvrage de qualité, livré dans les délais et au juste prix. Nous mettons un point d'honneur à la transparence, à la rigueur et à l'excellence dans tout ce que nous faisons.
+                </p>
+                <p>
+                  En tant que Groupe HSE, la sécurité de nos équipes et la protection de l'environnement sont au cœur de notre démarche. Nous construisons pour aujourd'hui, mais surtout pour demain.
+                </p>
+                <p className="font-medium text-foreground">
+                  Faites-nous confiance. Ensemble, bâtissons l'avenir.&nbsp;»
+                </p>
+              </div>
+              <p className="mt-4 text-sm font-semibold text-accent">— Directeur Général, HENA BTP</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Nos Valeurs */}
+      <section className="section-padding">
         <div className="container mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-10">
             <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Nos Valeurs</h2>
@@ -99,7 +162,7 @@ const AProposPage = () => (
       </section>
 
       {/* Nos Objectifs */}
-      <section className="section-padding">
+      <section className="bg-secondary section-padding">
         <div className="container mx-auto max-w-3xl">
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground text-center mb-10">Nos Objectifs</h2>
           <div className="space-y-4">
@@ -114,7 +177,7 @@ const AProposPage = () => (
       </section>
 
       {/* Mission & Vision */}
-      <section className="bg-secondary section-padding">
+      <section className="section-padding">
         <div className="container mx-auto grid gap-8 sm:grid-cols-2">
           <div className="rounded-xl bg-card p-8" style={{ boxShadow: "var(--card-shadow)" }}>
             <div className="flex items-center gap-3 mb-4">
@@ -143,6 +206,35 @@ const AProposPage = () => (
               </ul>
               <p className="font-medium text-foreground">Nous voulons bâtir plus que des murs : créer des espaces de vie, d'avenir et de confiance.</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pourquoi nous choisir */}
+      <section className="bg-primary section-padding">
+        <div className="container mx-auto">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <span className="text-xs font-semibold tracking-widest uppercase text-accent">Pourquoi HENA BTP ?</span>
+            <h2 className="mt-2 text-2xl sm:text-3xl font-bold text-primary-foreground">La confiance bâtie sur l'excellence</h2>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-10">
+            {stats.map((s) => (
+              <div key={s.label} className="text-center p-6 rounded-xl bg-primary-foreground/10 border border-primary-foreground/10">
+                <p className="text-3xl sm:text-4xl font-bold text-accent">{s.num}</p>
+                <p className="mt-2 text-sm text-primary-foreground/70">{s.label}</p>
+              </div>
+            ))}
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {whyUsReasons.map((r) => (
+              <div key={r.title} className="rounded-xl bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/10 p-6 text-center hover-lift">
+                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-accent text-accent-foreground">
+                  <r.icon className="h-5 w-5" />
+                </div>
+                <h3 className="text-base font-semibold text-primary-foreground">{r.title}</h3>
+                <p className="mt-2 text-sm text-primary-foreground/70 leading-relaxed">{r.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
