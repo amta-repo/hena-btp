@@ -8,7 +8,7 @@ const Footer = () => (
         {/* Brand */}
         <div className="space-y-4">
           <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="HENA BTP Groupe HSE logo" className="h-10 w-10 object-contain" />
+            <img src={logo} alt="HENA BTP Groupe HSE logo" className="h-12 w-12 object-contain" />
             <div className="leading-tight">
               <span className="block text-sm font-bold">HENA BTP</span>
               <span className="block text-[10px] tracking-widest text-primary-foreground/60 uppercase">Groupe HSE</span>
