@@ -4,11 +4,10 @@ import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo-henabtp.png";
 
 const navLinks = [
+  { href: "/", label: "Accueil" },
   { href: "/services", label: "Services" },
   { href: "/realisations", label: "Réalisations" },
-  { href: "/pourquoi-nous", label: "Pourquoi nous" },
   { href: "/a-propos", label: "À propos" },
-  { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -21,7 +20,7 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between h-16 sm:h-20">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="HENA BTP Groupe HSE logo" className="h-10 w-10 object-contain" />
+          <img src={logo} alt="HENA BTP Groupe HSE logo" className="h-12 w-12 object-contain" />
           <div className="leading-tight">
             <span className="block text-sm font-bold tracking-wide text-primary">HENA BTP</span>
             <span className="block text-[10px] font-medium tracking-widest text-muted-foreground uppercase">Groupe HSE</span>

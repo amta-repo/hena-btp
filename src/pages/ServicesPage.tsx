@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { Home, Building, Landmark, Droplets, ShieldCheck, Wrench, ArrowRight, CheckCircle, FileText, MessageCircle, Users, Target, Clock, Lightbulb } from "lucide-react";
+import { Home, Building, Landmark, Wrench, ArrowRight, CheckCircle, FileText, MessageCircle, Users, Target, Clock, Lightbulb } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -63,29 +63,6 @@ const renovationItems = [
   "Mise aux normes techniques",
 ];
 
-const costFactors = [
-  "Nature du sol",
-  "Matériaux choisis",
-  "Accessibilité du site",
-  "Niveau technique requis",
-];
-
-const pricingTiers = [
-  { tier: "Construction simple", range: "100 000 à 140 000 FCFA/m²" },
-  { tier: "Standard moderne", range: "150 000 à 200 000 FCFA/m²" },
-  { tier: "Luxe", range: "200 000 à 250 000 FCFA/m²" },
-  { tier: "Haut standing", range: "250 000 à 350 000 FCFA/m²" },
-];
-
-const costBreakdown = [
-  { item: "Gros œuvre", pct: "40 à 60%" },
-  { item: "Charpente et toiture", pct: "10 à 20%" },
-  { item: "Menuiseries", pct: "5 à 10%" },
-  { item: "Second œuvre technique", pct: "10 à 20%" },
-  { item: "Finition et embellissement", pct: "10 à 25%" },
-  { item: "Étude, plan et suivi", pct: "3 à 8%" },
-];
-
 const engagements = [
   { icon: CheckCircle, title: "Qualité technique", desc: "Respect des normes et des bonnes pratiques" },
   { icon: Target, title: "Transparence financière", desc: "Devis détaillés et coûts maîtrisés" },
@@ -101,12 +78,25 @@ const clients = [
   "ONG et organisations internationales",
 ];
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  provider: {
+    "@type": "Organization",
+    name: "HENA BTP, Groupe HSE",
+    url: "https://henabtp.com",
+  },
+  serviceType: ["Construction", "Génie civil", "Rénovation", "Suivi HSE"],
+  areaServed: { "@type": "Place", name: "Bénin, Afrique de l'Ouest" },
+};
+
 const ServicesPage = () => (
   <>
     <Helmet>
       <title>Nos Services BTP | HENA BTP Cotonou - Construction & Génie Civil Bénin</title>
-      <meta name="description" content="Découvrez les services BTP de HENA BTP à Cotonou : construction clé en main, génie civil, étude et suivi de chantiers, rénovation. Devis gratuit au Bénin." />
+      <meta name="description" content="Services BTP de HENA BTP à Cotonou : construction clé en main, génie civil, étude et suivi de chantiers, rénovation. Devis gratuit au Bénin." />
       <link rel="canonical" href="https://henabtp.com/services" />
+      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
     </Helmet>
 
     <Navbar />
@@ -118,10 +108,10 @@ const ServicesPage = () => (
             Nos Services
           </span>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary-foreground max-w-3xl mx-auto leading-tight">
-            Des solutions BTP complètes pour vos projets
+            Solutions BTP complètes au Bénin
           </h1>
           <p className="mt-4 max-w-xl mx-auto text-primary-foreground/70">
-            Construction clé en main, génie civil, étude et suivi de chantiers — HENA BTP couvre tous vos besoins au Bénin et en Afrique de l'Ouest.
+            Construction, génie civil et suivi de chantiers — tous vos besoins BTP couverts.
           </p>
         </div>
       </section>
@@ -199,74 +189,18 @@ const ServicesPage = () => (
       {/* Rénovation */}
       <section className="section-padding">
         <div className="container mx-auto max-w-4xl">
-          <div className="grid gap-10 lg:grid-cols-2 items-start">
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 text-accent">
-                  <Wrench className="h-6 w-6" />
-                </div>
-                <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Rénovation et réhabilitation</h2>
-              </div>
-              <p className="text-muted-foreground mb-6">Nous intervenons sur tous types de projets de rénovation :</p>
-              <ul className="space-y-3">
-                {renovationItems.map((r) => (
-                  <li key={r} className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-accent shrink-0 mt-0.5" />
-                    <span className="text-sm text-foreground">{r}</span>
-                  </li>
-                ))}
-              </ul>
+          <div className="flex items-center gap-3 mb-6">
+            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 text-accent">
+              <Wrench className="h-6 w-6" />
             </div>
-            <div>
-              <h3 className="text-lg font-semibold text-foreground mb-4">Les coûts varient selon :</h3>
-              <ul className="space-y-3">
-                {costFactors.map((f) => (
-                  <li key={f} className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-accent shrink-0 mt-0.5" />
-                    <span className="text-sm text-foreground">{f}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Rénovation et réhabilitation</h2>
           </div>
-        </div>
-      </section>
-
-      {/* Pricing */}
-      <section className="bg-primary section-padding">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-2xl sm:text-3xl font-bold text-primary-foreground text-center mb-4">Construction de bâtiment — Maison individuelle</h2>
-          <p className="text-center text-primary-foreground/60 mb-10">Prix indicatifs au m² selon le niveau de standing</p>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {pricingTiers.map((p) => (
-              <div key={p.tier} className="rounded-xl bg-primary-foreground/10 border border-primary-foreground/10 p-6 text-center backdrop-blur-sm hover-lift">
-                <h3 className="text-sm font-semibold text-primary-foreground mb-2">{p.tier}</h3>
-                <p className="text-lg font-bold text-accent">{p.range}</p>
-              </div>
-            ))}
-          </div>
-
-          <h3 className="text-xl font-bold text-primary-foreground text-center mt-14 mb-6">Répartition indicative des coûts</h3>
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {costBreakdown.map((c) => (
-              <div key={c.item} className="flex items-center justify-between rounded-lg bg-primary-foreground/10 border border-primary-foreground/10 px-5 py-3">
-                <span className="text-sm text-primary-foreground">{c.item}</span>
-                <span className="text-sm font-bold text-accent">{c.pct}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Pourquoi HENA BTP */}
-      <section className="section-padding">
-        <div className="container mx-auto text-center max-w-2xl">
-          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-8">Pourquoi choisir HENA BTP ?</h2>
-          <div className="grid gap-4 sm:grid-cols-2 text-left">
-            {["Expertise technique solide", "Solutions économiques et durables", "Accompagnement complet", "Garantie sur tous nos ouvrages", "Qualité premium sur chaque projet"].map((r) => (
+          <p className="text-muted-foreground mb-6">Nous intervenons sur tous types de projets de rénovation :</p>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {renovationItems.map((r) => (
               <div key={r} className="flex items-start gap-3 rounded-xl bg-card p-4" style={{ boxShadow: "var(--card-shadow)" }}>
                 <CheckCircle className="h-5 w-5 text-accent shrink-0 mt-0.5" />
-                <span className="text-sm font-medium text-foreground">{r}</span>
+                <span className="text-sm text-foreground">{r}</span>
               </div>
             ))}
           </div>

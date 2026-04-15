@@ -1,14 +1,34 @@
 # HENA BTP
 
-HENA BTP is a construction and civil engineering company operating in Benin and West Africa.
+> HENA BTP, Groupe HSE — Entreprise de Bâtiment et Travaux Publics basée à Cotonou, Bénin.
+
+## About
+
+HENA BTP is a construction and civil engineering company operating in Benin and West Africa. Part of Groupe HSE, the company integrates Health, Safety, and Environment (HSE) standards into every project. Founded with the mission to deliver durable, modern, and cost-effective construction solutions.
+
+## Website
+
+- URL: https://henabtp.com
+- Language: French
+- Primary audience: Individuals, businesses, and institutions in Benin and West Africa seeking construction services.
 
 ## Core Services
-- Turnkey construction
-- Civil engineering and roadworks
-- Project studies and site supervision
-- Building renovation and rehabilitation
+
+- **Turnkey construction**: Individual houses, modern villas, administrative and school buildings
+- **Civil engineering and roadworks**: Roads, bridges, drainage, earthwork
+- **Project studies and site supervision**: Feasibility studies, architectural design, real-time site monitoring
+- **Building renovation and rehabilitation**: Modernization, complete rehabilitation, extensions
+- **HSE monitoring**: Safety audits, worker training, weekly HSE reports
+
+## Pricing (Indicative, per m² in FCFA)
+
+- Simple construction: 100,000 – 140,000
+- Modern standard: 150,000 – 200,000
+- Luxury: 200,000 – 250,000
+- High-end: 250,000 – 350,000
 
 ## Target Clients
+
 - Individuals
 - Real estate developers
 - Private companies
@@ -16,16 +36,34 @@ HENA BTP is a construction and civil engineering company operating in Benin and 
 - NGOs and international organizations
 
 ## Key Values
-- Technical quality
-- Financial transparency
-- Deadline commitment
-- Innovation adapted to Africa
 
-## Positioning
-HENA BTP delivers reliable, modern, and cost-effective construction solutions with a strong focus on quality, durability, and client satisfaction.
+- Excellence: Quality in every detail
+- Integrity: Honesty, transparency, accountability
+- Commitment: Meeting deadlines and promises
+- Innovation: Modern solutions adapted to Africa
+- Proximity: Listening to clients at every step
+
+## Coverage
+
+- Primary: Cotonou, Benin
+- Extended: All cities in Benin (Abomey-Calavi, Porto-Novo, Parakou, Bohicon, Natitingou)
+- Regional: West Africa
 
 ## Contact
-Email: henafinancebtp@gmail.com
-Phone: +229 01 55 49 61 55
-Location: Cotonou, Benin
-Website: https://henabtp.com
+
+- Email: henafinancebtp@gmail.com
+- Phone: +229 01 55 49 61 55
+- WhatsApp: +229 01 55 49 61 55
+- Location: Cotonou, Benin
+- Google Maps: https://www.google.com/maps/place/HENA+BTP,+Groupe+HSE/@6.4073475,2.3279387,17z
+
+## Pages
+
+- Home: https://henabtp.com/
+- About: https://henabtp.com/a-propos
+- Services: https://henabtp.com/services
+- Projects: https://henabtp.com/realisations
+- FAQ: https://henabtp.com/faq
+- Contact: https://henabtp.com/contact
+- Testimonials: https://henabtp.com/temoignages
+- Blog: https://henabtp.com/blog

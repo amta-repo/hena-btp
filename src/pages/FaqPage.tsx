@@ -15,16 +15,24 @@ const faqCategories = [
         a: "Le coût de construction varie selon la taille, les matériaux et les finitions. En moyenne, comptez entre 150 000 et 350 000 FCFA/m² pour une maison moderne à Cotonou. Une villa de 3 chambres (environ 120 m²) peut coûter entre 18 et 42 millions FCFA. Contactez-nous pour un devis personnalisé gratuit.",
       },
       {
+        q: "Quels sont les prix indicatifs au m² selon le standing ?",
+        a: "Construction simple : 100 000 à 140 000 FCFA/m². Standard moderne : 150 000 à 200 000 FCFA/m². Luxe : 200 000 à 250 000 FCFA/m². Haut standing : 250 000 à 350 000 FCFA/m². Ces prix sont indicatifs et varient selon la nature du sol, les matériaux, l'accessibilité et le niveau technique requis.",
+      },
+      {
+        q: "Comment se répartissent les coûts de construction ?",
+        a: "Voici la répartition indicative : Gros œuvre (40 à 60%), Charpente et toiture (10 à 20%), Menuiseries (5 à 10%), Second œuvre technique (10 à 20%), Finition et embellissement (10 à 25%), Étude, plan et suivi (3 à 8%).",
+      },
+      {
         q: "Quels sont les délais de construction d'une villa à Cotonou ?",
-        a: "Les délais dépendent de la complexité du projet. Une villa standard de 3 chambres peut être livrée en 6 à 10 mois. Un bâtiment R+2 nécessite généralement 12 à 18 mois. Nous nous engageons contractuellement sur les délais avec des pénalités en cas de retard.",
+        a: "Les délais dépendent de la complexité du projet. Une villa standard de 3 chambres peut être livrée en 6 à 10 mois. Un bâtiment R+2 nécessite généralement 12 à 18 mois. Nous nous engageons contractuellement sur les délais.",
       },
       {
         q: "Proposez-vous des facilités de paiement ?",
-        a: "Oui, nous proposons un échéancier de paiement adapté à l'avancement des travaux. En général, un acompte de 30% est demandé au démarrage, puis les versements sont échelonnés selon les étapes clés du chantier.",
+        a: "Oui, nous proposons un échéancier de paiement adapté à l'avancement des travaux. Un acompte de 30% est demandé au démarrage, puis les versements sont échelonnés selon les étapes clés du chantier.",
       },
       {
         q: "Le prix inclut-il les finitions ?",
-        a: "Oui, nos devis sont complets et incluent toutes les finitions : carrelage, peinture, menuiserie, électricité, plomberie, sanitaires. Nous proposons différents niveaux de finitions (standard, premium, luxe) selon votre budget.",
+        a: "Oui, nos devis sont complets et incluent toutes les finitions : carrelage, peinture, menuiserie, électricité, plomberie, sanitaires. Nous proposons différents niveaux de finitions selon votre budget.",
       },
     ],
   },
@@ -33,15 +41,15 @@ const faqCategories = [
     faqs: [
       {
         q: "Quelles sont les normes HSE en BTP au Bénin ?",
-        a: "Les normes HSE (Hygiène, Sécurité, Environnement) incluent le port d'EPI (casques, gants, chaussures de sécurité), la signalisation de chantier, la gestion des déchets, la prévention des risques d'accident et la protection de l'environnement. HENA BTP, Groupe HSE, applique ces normes rigoureusement sur chaque chantier.",
+        a: "Les normes HSE incluent le port d'EPI, la signalisation de chantier, la gestion des déchets, la prévention des risques d'accident et la protection de l'environnement. HENA BTP applique ces normes rigoureusement.",
       },
       {
         q: "Vos chantiers sont-ils assurés ?",
-        a: "Oui, tous nos chantiers sont couverts par une assurance tous risques chantier (TRC) et une assurance responsabilité civile professionnelle. Nous offrons également une garantie décennale sur tous nos ouvrages.",
+        a: "Oui, tous nos chantiers sont couverts par une assurance tous risques chantier (TRC) et une assurance responsabilité civile professionnelle. Nous offrons également une garantie décennale.",
       },
       {
         q: "Comment gérez-vous la sécurité sur les chantiers ?",
-        a: "Chaque chantier dispose d'un responsable HSE dédié. Nous réalisons un audit de sécurité avant le démarrage, formons les ouvriers, fournissons les EPI, et effectuons des inspections régulières. Un rapport HSE est produit chaque semaine.",
+        a: "Chaque chantier dispose d'un responsable HSE dédié. Nous réalisons un audit de sécurité, formons les ouvriers, fournissons les EPI, et effectuons des inspections régulières.",
       },
     ],
   },
@@ -50,33 +58,47 @@ const faqCategories = [
     faqs: [
       {
         q: "Comment obtenir un devis gratuit ?",
-        a: "Contactez-nous via le formulaire sur notre site, par téléphone au +229 01 55 49 61 55, ou directement sur WhatsApp. Décrivez votre projet et nous vous répondons sous 24h avec un devis détaillé et gratuit.",
+        a: "Contactez-nous via le formulaire sur notre site, par téléphone au +229 01 55 49 61 55, ou directement sur WhatsApp. Nous répondons sous 24h avec un devis détaillé et gratuit.",
       },
       {
         q: "HENA BTP intervient-il en dehors de Cotonou ?",
-        a: "Oui, nous intervenons dans tout le Bénin : Cotonou, Abomey-Calavi, Porto-Novo, Parakou, Bohicon, Natitingou et toutes les autres villes et communes du pays.",
+        a: "Oui, nous intervenons dans tout le Bénin et en Afrique de l'Ouest : Cotonou, Abomey-Calavi, Porto-Novo, Parakou, Bohicon et toutes les autres villes.",
       },
       {
         q: "Quels types de bâtiments construisez-vous ?",
-        a: "Nous construisons des maisons individuelles, villas de luxe, immeubles de bureaux, bâtiments scolaires, centres de santé, entrepôts industriels, et réalisons des travaux de génie civil (routes, ponts, assainissement).",
+        a: "Maisons individuelles, villas de luxe, immeubles de bureaux, bâtiments scolaires, centres de santé, entrepôts, et travaux de génie civil (routes, ponts, assainissement).",
       },
       {
         q: "Quelle est la durée de la garantie sur vos constructions ?",
-        a: "Nous offrons une garantie de parfait achèvement d'un an, une garantie biennale de 2 ans sur les équipements, et une garantie décennale de 10 ans sur la structure et le gros œuvre.",
+        a: "Garantie de parfait achèvement d'un an, garantie biennale de 2 ans sur les équipements, et garantie décennale de 10 ans sur la structure et le gros œuvre.",
       },
       {
         q: "Puis-je suivre l'avancement de mon chantier ?",
-        a: "Absolument ! Nous envoyons des rapports photo et vidéo hebdomadaires. Vous pouvez également visiter le chantier à tout moment accompagné de notre chef de projet. Un planning détaillé est partagé au démarrage.",
+        a: "Absolument ! Rapports photo et vidéo hebdomadaires. Vous pouvez visiter le chantier à tout moment accompagné de notre chef de projet.",
       },
     ],
   },
 ];
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqCategories.flatMap((cat) =>
+    cat.faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    }))
+  ),
+};
+
 const FaqPage = () => (
   <>
     <Helmet>
-      <title>FAQ Construction Bénin | HENA BTP Cotonou - Questions Fréquentes BTP</title>
-      <meta name="description" content="Réponses à vos questions sur la construction au Bénin : coûts, délais, normes HSE, garanties. FAQ complète par HENA BTP, expert BTP à Cotonou." />
+      <title>FAQ Construction Bénin | HENA BTP Cotonou - Prix, Délais, Normes HSE</title>
+      <meta name="description" content="Réponses à vos questions sur la construction au Bénin : coûts au m², délais, normes HSE, garanties. FAQ complète par HENA BTP, expert BTP à Cotonou." />
+      <link rel="canonical" href="https://henabtp.com/faq" />
+      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
     </Helmet>
 
     <Navbar />
@@ -129,15 +151,14 @@ const FaqPage = () => (
         <div className="container mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Vous avez d'autres questions ?</h2>
           <p className="mt-3 text-muted-foreground max-w-lg mx-auto">
-            Notre équipe est disponible pour répondre à toutes vos questions sur votre projet de construction.
+            Notre équipe est disponible pour répondre à toutes vos questions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
             <Link
               to="/contact"
               className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-8 py-3.5 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
             >
-              Nous contacter
-              <ArrowRight className="h-4 w-4" />
+              Nous contacter <ArrowRight className="h-4 w-4" />
             </Link>
             <a
               href="https://wa.me/2290155496155?text=Bonjour%2C%20j%27ai%20une%20question%20sur%20vos%20services%20BTP."
