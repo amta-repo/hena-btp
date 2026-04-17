@@ -4,6 +4,7 @@ import { Phone, Mail, MapPin, Send, Clock, MessageCircle } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import contactHeader from "@/assets/contact-header.jpg";
 
 const ContactPage = () => {
   const [form, setForm] = useState({ name: "", email: "", phone: "", service: "", message: "" });
@@ -24,8 +25,12 @@ const ContactPage = () => {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="bg-primary pt-28 pb-16 sm:pt-32 sm:pb-20">
-          <div className="container mx-auto text-center">
+        <section className="relative overflow-hidden pt-28 pb-16 sm:pt-32 sm:pb-20">
+          <div className="absolute inset-0">
+            <img src={contactHeader} alt="Contact HENA BTP" className="h-full w-full object-cover" />
+            <div className="absolute inset-0 bg-primary/75" />
+          </div>
+          <div className="container relative z-10 mx-auto text-center">
             <span className="inline-block rounded-full border border-accent/40 bg-accent/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-accent-foreground mb-4">
               Contact
             </span>

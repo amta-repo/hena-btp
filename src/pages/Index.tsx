@@ -340,7 +340,7 @@ const Index = () => {
         </section>
 
         {/* CTA */}
-        <section className="bg-accent section-padding">
+        <section className="bg-accent/5 section-padding">
           <div className="container mx-auto text-center">
             <h2 className="text-2xl sm:text-3xl font-bold text-accent-foreground">Prêt à construire votre projet ?</h2>
             <p className="mt-3 text-accent-foreground/80 max-w-lg mx-auto">
