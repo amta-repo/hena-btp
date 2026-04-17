@@ -1,11 +1,20 @@
 import { MessageCircle, FileText } from "lucide-react";
-import heroImg from "@/assets/hero-construction.jpg";
+import heroVideo from "@/assets/hero-video.mp4";
 
 const HeroSection = () => (
   <section className="relative min-h-screen flex items-center overflow-hidden">
-    {/* Background image */}
+    {/* Background video */}
     <div className="absolute inset-0">
-      <img src={heroImg} alt="Chantier de construction moderne HENA BTP à Cotonou, Bénin" width={1920} height={1080} className="h-full w-full object-cover" />
+      <video
+        src={heroVideo}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        className="h-full w-full object-cover"
+        aria-hidden="true"
+      />
       <div className="absolute inset-0 bg-primary/75" />
     </div>
 
