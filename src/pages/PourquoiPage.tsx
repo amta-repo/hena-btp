@@ -34,18 +34,19 @@ const PourquoiPage = () => (
     <Navbar />
     <main>
       {/* Hero */}
-      <section className="relative overflow-hidden pt-28 pb-16 sm:pt-32 sm:pb-20">
+      <section className="relative overflow-hidden min-h-[60vh] pt-28 pb-16 sm:pt-32 sm:pb-20">
         <div className="absolute inset-0">
           <video
-            src={whyHeroVideo}
             autoPlay
             muted
             loop
             playsInline
             preload="auto"
-            className="h-full w-full object-cover"
+            className="absolute inset-0 min-h-full min-w-full object-cover"
             aria-hidden="true"
-          />
+          >
+            <source src={whyHeroVideo} type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-primary/75" />
         </div>
         <div className="container relative z-10 mx-auto text-center">

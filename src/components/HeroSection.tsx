@@ -6,15 +6,16 @@ const HeroSection = () => (
     {/* Background video */}
     <div className="absolute inset-0">
       <video
-        src={heroVideo}
         autoPlay
         muted
         loop
         playsInline
         preload="auto"
-        className="h-full w-full object-cover"
+        className="absolute inset-0 min-h-full min-w-full object-cover"
         aria-hidden="true"
-      />
+      >
+        <source src={heroVideo} type="video/mp4" />
+      </video>
       <div className="absolute inset-0 bg-primary/75" />
     </div>
 
