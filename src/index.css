@@ -63,12 +63,23 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-family: 'Inter', sans-serif;
+    position: relative;
+    min-height: 100%;
+    background-color: rgb(var(--background));
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
     background-image: url('./assets/site-background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    background-color: rgb(var(--background));
+    filter: blur(5px);
+    z-index: -1;
+    pointer-events: none;
   }
 }
 
