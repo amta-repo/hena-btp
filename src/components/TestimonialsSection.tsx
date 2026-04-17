@@ -16,7 +16,7 @@ const testimonials = [
 const doubled = [...testimonials, ...testimonials];
 
 const TestimonialsSection = () => (
-  <section className="section-padding overflow-hidden bg-secondary" id="temoignages">
+  <section className="section-padding overflow-hidden bg-transparent" id="temoignages">
     <div className="container mx-auto mb-10 text-center">
       <span className="text-xs font-semibold tracking-widest uppercase text-accent">Témoignages</span>
       <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-foreground">Ce que disent nos clients</h2>

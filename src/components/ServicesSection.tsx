@@ -10,7 +10,7 @@ const services = [
 ];
 
 const ServicesSection = () => (
-  <section id="services" className="section-padding bg-secondary">
+  <section id="services" className="section-padding bg-transparent">
     <div className="container mx-auto">
       <div className="text-center max-w-2xl mx-auto mb-12">
         <span className="text-xs font-semibold tracking-widest uppercase text-accent">Nos Services</span>
