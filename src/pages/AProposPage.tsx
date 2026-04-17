@@ -4,7 +4,7 @@ import { Target, Eye, Shield, Award, Users, Heart, Lightbulb, ArrowRight, CheckC
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import heroImg from "@/assets/hero-construction.jpg";
+import heroImg from "@/assets/project-office.jpg";
 import dgImg from "@/assets/dg-henabtp.jpeg";
 
 const values = [

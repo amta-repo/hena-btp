@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import heroImg from "@/assets/hero-construction.jpg";
+import heroImg from "@/assets/project-office.jpg";
 import villaImg from "@/assets/project-villa.jpg";
 import officeImg from "@/assets/project-office.jpg";
 import roadImg from "@/assets/project-road.jpg";
