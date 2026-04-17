@@ -4,7 +4,7 @@ import { Target, Eye, Shield, Award, Users, Heart, Lightbulb, ArrowRight, CheckC
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import heroImg from "@/assets/project-office.jpg";
+import storyImg from "@/assets/project-office.jpg";
 import dgImg from "@/assets/dg-henabtp.jpeg";
 
 const values = [
@@ -101,7 +101,7 @@ const AProposPage = () => (
               </div>
             </div>
             <div className="rounded-2xl overflow-hidden" style={{ boxShadow: "var(--card-shadow)" }}>
-              <img src={heroImg} alt="Équipe HENA BTP sur un chantier de construction à Cotonou" loading="lazy" width={800} height={600} className="w-full object-cover aspect-[4/3]" />
+              <img src={storyImg} alt="Équipe HENA BTP sur un chantier de construction à Cotonou" loading="lazy" width={800} height={600} className="w-full object-cover aspect-[4/3]" />
             </div>
           </div>
         </div>

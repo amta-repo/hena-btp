@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import heroImg from "@/assets/project-office.jpg";
+import heroVideo from "@/assets/hero-video.mp4";
 import villaImg from "@/assets/project-villa.jpg";
 import officeImg from "@/assets/project-office.jpg";
 import roadImg from "@/assets/project-road.jpg";
@@ -137,7 +137,17 @@ const Index = () => {
         {/* Hero */}
         <section className="relative min-h-screen flex items-center overflow-hidden">
           <div className="absolute inset-0">
-            <img src={heroImg} alt="Chantier de construction moderne HENA BTP à Cotonou, Bénin" width={1920} height={1080} className="h-full w-full object-cover" />
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              className="absolute inset-0 min-h-full min-w-full object-cover"
+              aria-hidden="true"
+            >
+              <source src={heroVideo} type="video/mp4" />
+            </video>
             <div className="absolute inset-0 bg-primary/75" />
           </div>
           <div className="container relative z-10 mx-auto py-32 sm:py-40">
