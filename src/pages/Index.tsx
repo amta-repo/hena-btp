@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { MessageCircle, FileText, ArrowRight, Home, Building, Landmark, Droplets, ShieldCheck, Wrench, MapPin, Clock, Lightbulb, X, CheckCircle, Users, Award, Target, Heart } from "lucide-react";
@@ -115,8 +115,22 @@ const whyUsReasons = [
   { icon: Heart, title: "Satisfaction garantie", desc: "Service après-vente réactif et garantie décennale." },
 ];
 
+const heroTexts = [
+  "Votre partenaire BTP de confiance au Bénin",
+  "Construction moderne, qualité premium, respect des normes HSE",
+  "De la conception à la livraison, nous réalisons vos projets",
+];
+
 const Index = () => {
+  const [currentText, setCurrentText] = useState(0);
   const [openService, setOpenService] = useState<number | null>(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentText((prev) => (prev + 1) % heroTexts.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
@@ -154,13 +168,13 @@ const Index = () => {
             </video>
             <div className="absolute inset-0 bg-primary/75" />
           </div>
-          <div className="container relative z-10 mx-auto py-32 sm:py-40">
+          <div className="container relative z-10 mx-auto py-40 sm:py-48 lg:py-56">
             <div className="max-w-3xl space-y-6">
               <span className="inline-block rounded-full border border-accent/40 bg-accent/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-accent-foreground">
                 🏗️ BTP — Bénin &amp; Afrique de l'Ouest
               </span>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight text-primary-foreground">
-                <span className="text-gradient">Votre partenaire BTP</span> de confiance au Bénin
+                <span className="text-gradient">{heroTexts[currentText]}</span>
               </h1>
               <p className="max-w-xl text-base sm:text-lg text-primary-foreground/80 leading-relaxed">
                 Construction moderne, qualité premium, respect des normes HSE — De la conception à la livraison.

@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Star } from "lucide-react";
 
 const testimonials = [
@@ -13,37 +14,77 @@ const testimonials = [
   { text: "Une équipe engagée qui tient ses promesses.", name: "Nadège L.", role: "Promoteur immobilier" },
 ];
 
-const doubled = [...testimonials, ...testimonials];
+const TestimonialsSection = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
-const TestimonialsSection = () => (
-  <section className="section-padding overflow-hidden bg-transparent" id="temoignages">
-    <div className="container mx-auto mb-10 text-center">
-      <span className="text-xs font-semibold tracking-widest uppercase text-accent">Témoignages</span>
-      <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-foreground">Ce que disent nos clients</h2>
-    </div>
-    <div className="relative group">
-      <div className="flex gap-6 animate-scroll-left hover:[animation-play-state:paused]">
-        {doubled.map((t, i) => (
-          <div
-            key={i}
-            className="flex-shrink-0 w-[320px] sm:w-[380px] rounded-xl bg-card p-6"
-            style={{ boxShadow: "var(--card-shadow)" }}
-          >
-            <div className="flex gap-1 mb-3">
-              {[...Array(5)].map((_, j) => (
-                <Star key={j} className="h-4 w-4 fill-accent text-accent" />
-              ))}
-            </div>
-            <p className="text-sm text-muted-foreground leading-relaxed italic mb-4">"{t.text}"</p>
-            <div>
-              <p className="text-sm font-semibold text-foreground">{t.name}</p>
-              <p className="text-xs text-muted-foreground">{t.role}</p>
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile) {
+      const interval = setInterval(() => {
+        setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+      }, 2000);
+      return () => clearInterval(interval);
+    }
+  }, [isMobile]);
+
+  return (
+    <section className="section-padding overflow-hidden bg-transparent" id="temoignages">
+      <div className="container mx-auto mb-10 text-center">
+        <span className="text-xs font-semibold tracking-widest uppercase text-accent">Témoignages</span>
+        <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-foreground">Ce que disent nos clients</h2>
+      </div>
+      {isMobile ? (
+        <div className="container mx-auto px-4">
+          <div className="w-full max-w-md mx-auto">
+            <div className="rounded-xl bg-card p-6" style={{ boxShadow: "var(--card-shadow)" }}>
+              <div className="flex gap-1 mb-3 justify-center">
+                {[...Array(5)].map((_, j) => (
+                  <Star key={j} className="h-4 w-4 fill-accent text-accent" />
+                ))}
+              </div>
+              <p className="text-sm text-muted-foreground leading-relaxed italic mb-4 text-center">"{testimonials[currentIndex].text}"</p>
+              <div className="text-center">
+                <p className="text-sm font-semibold text-foreground">{testimonials[currentIndex].name}</p>
+                <p className="text-xs text-muted-foreground">{testimonials[currentIndex].role}</p>
+              </div>
             </div>
           </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
+        </div>
+      ) : (
+        <div className="relative group">
+          <div className="flex gap-6 animate-scroll-left hover:[animation-play-state:paused]">
+            {[...testimonials, ...testimonials].map((t, i) => (
+              <div
+                key={i}
+                className="flex-shrink-0 w-[320px] sm:w-[380px] rounded-xl bg-card p-6"
+                style={{ boxShadow: "var(--card-shadow)" }}
+              >
+                <div className="flex gap-1 mb-3">
+                  {[...Array(5)].map((_, j) => (
+                    <Star key={j} className="h-4 w-4 fill-accent text-accent" />
+                  ))}
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed italic mb-4">"{t.text}"</p>
+                <div>
+                  <p className="text-sm font-semibold text-foreground">{t.name}</p>
+                  <p className="text-xs text-muted-foreground">{t.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </section>
+  );
+};
 
 export default TestimonialsSection;

@@ -66,8 +66,12 @@ const AProposPage = () => (
     <Navbar />
     <main>
       {/* Hero */}
-      <section className="bg-primary pt-28 pb-16 sm:pt-32 sm:pb-20">
-        <div className="container mx-auto text-center">
+      <section className="relative overflow-hidden pt-28 pb-16 sm:pt-32 sm:pb-20">
+        <div className="absolute inset-0">
+          <img src={storyImg} alt="HENA BTP équipe et chantier" className="h-full w-full object-cover" />
+          <div className="absolute inset-0 bg-primary/75" />
+        </div>
+        <div className="container relative z-10 mx-auto text-center">
           <span className="inline-block rounded-full border border-accent/40 bg-accent/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-accent-foreground mb-4">
             À propos
           </span>
@@ -86,12 +90,15 @@ const AProposPage = () => (
           <div className="grid gap-12 lg:grid-cols-2 items-center">
             <div>
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">Notre Histoire</h2>
-              <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <div className="space-y-4 text-foreground leading-relaxed">
                 <p>
                   <strong className="text-foreground">HENA BTP</strong> est née d'une ambition simple mais forte : transformer les idées en réalités durables.
                 </p>
                 <p>
                   Créée par des passionnés du bâtiment, l'entreprise s'est construite autour d'un constat : trop de projets souffrent de manque de rigueur, de transparence et de qualité.
+                </p>
+                <p>
+                  Dirigée par <strong>Ariane Zossou</strong>, notre Directrice Générale, HENA BTP incarne l'excellence et l'innovation dans le secteur du BTP au Bénin.
                 </p>
                 <p>
                   Depuis ses débuts, HENA BTP s'engage à faire les choses autrement.
