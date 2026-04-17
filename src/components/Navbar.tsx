@@ -58,7 +58,7 @@ const Navbar = () => {
                     {l.label}
                   </Link>
                   {dropdownOpen && (
-                    <ul className="absolute top-full left-0 mt-2 w-64 bg-white shadow-lg rounded-lg py-2 z-50">
+                    <ul className="absolute top-full left-0 mt-2 w-64 bg-white/50 shadow-lg rounded-none py-2 z-50">
                       {l.dropdown.map((sub) => (
                         <li key={sub.href}>
                           <Link
