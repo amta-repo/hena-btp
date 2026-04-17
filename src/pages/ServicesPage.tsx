@@ -7,6 +7,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import villaImg from "@/assets/project-villa.jpg";
 import officeImg from "@/assets/project-office.jpg";
 import roadImg from "@/assets/project-road.jpg";
+import serviceHeader from "@/assets/service-header.jpg";
 
 const services = [
   {
@@ -102,8 +103,12 @@ const ServicesPage = () => (
     <Navbar />
     <main>
       {/* Hero */}
-      <section className="bg-primary pt-28 pb-16 sm:pt-32 sm:pb-20">
-        <div className="container mx-auto text-center">
+      <section className="relative overflow-hidden pt-28 pb-16 sm:pt-32 sm:pb-20">
+        <div className="absolute inset-0">
+          <img src={serviceHeader} alt="Services HENA BTP" className="h-full w-full object-cover" />
+          <div className="absolute inset-0 bg-primary/75" />
+        </div>
+        <div className="container relative z-10 mx-auto text-center">
           <span className="inline-block rounded-full border border-accent/40 bg-accent/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-accent-foreground mb-4">
             Nos Services
           </span>

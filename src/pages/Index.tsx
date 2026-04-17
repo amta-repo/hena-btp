@@ -174,7 +174,7 @@ const Index = () => {
                 🏗️ BTP — Bénin &amp; Afrique de l'Ouest
               </span>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight text-primary-foreground">
-                <span className="text-gradient">{heroTexts[currentText]}</span>
+                <span className="text-white">{heroTexts[currentText]}</span>
               </h1>
               <p className="max-w-xl text-base sm:text-lg text-primary-foreground/80 leading-relaxed">
                 Construction moderne, qualité premium, respect des normes HSE — De la conception à la livraison.
