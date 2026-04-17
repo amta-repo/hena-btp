@@ -168,7 +168,7 @@ const Index = () => {
             </video>
             <div className="absolute inset-0 bg-primary/75" />
           </div>
-          <div className="container relative z-10 mx-auto py-40 sm:py-48 lg:py-56">
+          <div className="container relative z-10 mx-auto py-56 sm:py-48 lg:py-56">
             <div className="max-w-3xl space-y-6">
               <span className="inline-block rounded-full border border-accent/40 bg-accent/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-accent-foreground">
                 🏗️ BTP — Bénin &amp; Afrique de l'Ouest
@@ -182,10 +182,10 @@ const Index = () => {
               <blockquote className="border-l-4 border-accent pl-4 italic text-primary-foreground/70 text-sm sm:text-base">
                 "La seule façon de faire du bon travail, c'est d'aimer ce que vous faites."
               </blockquote>
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <div className="flex flex-col sm:flex-row gap-4 pt-4 max-w-2xl">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105 shadow-lg"
+                  className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105 shadow-lg"
                 >
                   <FileText className="h-4 w-4" />
                   Demander un devis gratuit
@@ -194,7 +194,7 @@ const Index = () => {
                   href="https://wa.me/2290155496155?text=Bonjour%2C%20je%20viens%20de%20visiter%20votre%20site%20web%20et%20je%20souhaite%20discuter%20de%20mon%20projet%20de%20construction."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-lg border border-primary-foreground/30 bg-primary-foreground/10 px-6 py-3.5 text-sm font-semibold text-primary-foreground backdrop-blur-sm transition-all hover:bg-primary-foreground/20"
+                  className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-lg border border-primary-foreground/30 bg-primary-foreground/10 px-6 py-3.5 text-sm font-semibold text-primary-foreground backdrop-blur-sm transition-all hover:bg-primary-foreground/20"
                 >
                   <MessageCircle className="h-4 w-4" />
                   Nous contacter sur WhatsApp
