@@ -135,23 +135,9 @@ const Index = () => {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="relative min-h-screen flex items-center overflow-hidden">
-          <div className="absolute inset-0">
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
-              className="absolute inset-0 min-h-full min-w-full object-cover"
-              aria-hidden="true"
-            >
-              <source src={heroVideo} type="video/mp4" />
-            </video>
-            <div className="absolute inset-0 bg-primary/75" />
-          </div>
+        <section className="relative min-h-screen flex items-center overflow-hidden bg-primary">
           <div className="container relative z-10 mx-auto py-32 sm:py-40">
-            <div className="max-w-3xl space-y-6 animate-fade-in-up">
+            <div className="max-w-3xl space-y-6">
               <span className="inline-block rounded-full border border-accent/40 bg-accent/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-accent-foreground">
                 🏗️ BTP — Bénin &amp; Afrique de l'Ouest
               </span>
@@ -300,9 +286,12 @@ const Index = () => {
               muted
               loop
               playsInline
-              preload="auto"
+              preload="metadata"
               className="absolute inset-0 min-h-full min-w-full object-cover"
               aria-hidden="true"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+              }}
             >
               <source src={whyHeroVideo} type="video/mp4" />
             </video>

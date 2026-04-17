@@ -219,9 +219,12 @@ const AProposPage = () => (
             muted
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
             className="absolute inset-0 min-h-full min-w-full object-cover"
             aria-hidden="true"
+            onError={(e) => {
+              e.currentTarget.style.display = 'none';
+            }}
           >
             <source src={whyHeroVideo} type="video/mp4" />
           </video>
