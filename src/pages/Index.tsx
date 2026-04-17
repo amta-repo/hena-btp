@@ -8,6 +8,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import whyHeroVideo from "@/assets/why-henabtp.mp4";
+import heroVideo from "@/assets/hero-video.mp4";
 import villaImg from "@/assets/project-villa.jpg";
 import officeImg from "@/assets/project-office.jpg";
 import roadImg from "@/assets/project-road.jpg";
@@ -135,7 +136,24 @@ const Index = () => {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="relative min-h-screen flex items-center overflow-hidden bg-primary">
+        <section className="relative min-h-screen flex items-center overflow-hidden">
+          <div className="absolute inset-0">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              className="absolute inset-0 min-h-full min-w-full object-cover"
+              aria-hidden="true"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+              }}
+            >
+              <source src={heroVideo} type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 bg-primary/75" />
+          </div>
           <div className="container relative z-10 mx-auto py-32 sm:py-40">
             <div className="max-w-3xl space-y-6">
               <span className="inline-block rounded-full border border-accent/40 bg-accent/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-accent-foreground">
