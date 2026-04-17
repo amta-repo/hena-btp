@@ -10,8 +10,8 @@ const Footer = () => (
           <Link to="/" className="flex items-center gap-3">
             <img src={logo} alt="HENA BTP Groupe HSE logo" className="h-12 w-12 object-contain" />
             <div className="leading-tight">
-              <span className="block text-sm font-bold">HENA BTP</span>
-              <span className="block text-[10px] tracking-widest text-primary-foreground/60 uppercase">Groupe HSE</span>
+              <span className="block text-sm font-bold tracking-wide text-primary-foreground">HENA BTP</span>
+              <span className="block text-[10px] font-medium tracking-widest uppercase text-primary-foreground/60">Groupe HSE</span>
             </div>
           </Link>
           <p className="text-sm text-primary-foreground/60 leading-relaxed">
