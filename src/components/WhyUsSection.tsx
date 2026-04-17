@@ -1,4 +1,5 @@
 import { MapPin, ShieldCheck, Clock, Lightbulb } from "lucide-react";
+import whyHeroVideo from "@/assets/why-henabtp.mp4";
 
 const reasons = [
   { icon: MapPin, title: "Expertise locale à Cotonou", desc: "Une connaissance approfondie du terrain, des réglementations et des spécificités du BTP au Bénin." },
@@ -8,8 +9,22 @@ const reasons = [
 ];
 
 const WhyUsSection = () => (
-  <section id="pourquoi" className="section-padding bg-primary">
-    <div className="container mx-auto">
+  <section id="pourquoi" className="relative overflow-hidden min-h-[55vh] section-padding">
+    <div className="absolute inset-0">
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        className="absolute inset-0 min-h-full min-w-full object-cover"
+        aria-hidden="true"
+      >
+        <source src={whyHeroVideo} type="video/mp4" />
+      </video>
+      <div className="absolute inset-0 bg-primary/75" />
+    </div>
+    <div className="container relative z-10">
       <div className="text-center max-w-2xl mx-auto mb-12">
         <span className="text-xs font-semibold tracking-widest uppercase text-accent">Pourquoi HENA BTP ?</span>
         <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-primary-foreground">La confiance bâtie sur l'excellence</h2>
