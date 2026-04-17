@@ -4,6 +4,7 @@ import { MapPin, ShieldCheck, Clock, Lightbulb, Users, Award, Target, Heart, Arr
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import whyHeroVideo from "@/assets/why-henabtp.mp4";
 
 const reasons = [
   { icon: MapPin, title: "Expertise locale à Cotonou", desc: "Une connaissance approfondie du terrain, des réglementations béninoises et des spécificités du BTP local. Nous savons adapter chaque projet au contexte de Cotonou et du Bénin." },
@@ -33,8 +34,21 @@ const PourquoiPage = () => (
     <Navbar />
     <main>
       {/* Hero */}
-      <section className="bg-primary pt-28 pb-16 sm:pt-32 sm:pb-20">
-        <div className="container mx-auto text-center">
+      <section className="relative overflow-hidden pt-28 pb-16 sm:pt-32 sm:pb-20">
+        <div className="absolute inset-0">
+          <video
+            src={whyHeroVideo}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            className="h-full w-full object-cover"
+            aria-hidden="true"
+          />
+          <div className="absolute inset-0 bg-primary/75" />
+        </div>
+        <div className="container relative z-10 mx-auto text-center">
           <span className="inline-block rounded-full border border-accent/40 bg-accent/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-accent-foreground mb-4">
             Pourquoi nous choisir
           </span>
