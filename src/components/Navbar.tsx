@@ -16,14 +16,14 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-40 bg-background/95 backdrop-blur-md border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-40 bg-transparent">
       <div className="container mx-auto flex items-center justify-between h-16 sm:h-20">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3">
           <img src={logo} alt="HENA BTP Groupe HSE logo" className="h-12 w-12 object-contain" />
           <div className="leading-tight">
-            <span className="block text-sm font-bold tracking-wide text-primary">HENA BTP</span>
-            <span className="block text-[10px] font-medium tracking-widest text-muted-foreground uppercase">Groupe HSE</span>
+            <span className="block text-sm font-bold tracking-wide text-gradient">HENA BTP</span>
+            <span className="block text-[10px] font-medium tracking-widest text-white uppercase">Groupe HSE</span>
           </div>
         </Link>
 
@@ -34,7 +34,7 @@ const Navbar = () => {
               <Link
                 to={l.href}
                 className={`text-sm font-medium transition-colors ${
-                  location.pathname === l.href ? "text-accent" : "text-foreground/80 hover:text-accent"
+                  location.pathname === l.href ? "text-white" : "text-white hover:text-yellow-300"
                 }`}
               >
                 {l.label}
@@ -52,14 +52,14 @@ const Navbar = () => {
         </Link>
 
         {/* Mobile toggle */}
-        <button onClick={() => setOpen(!open)} className="lg:hidden p-2 text-foreground" aria-label="Menu">
+        <button onClick={() => setOpen(!open)} className="lg:hidden p-2 text-white" aria-label="Menu">
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
 
       {/* Mobile menu */}
       {open && (
-        <div className="lg:hidden border-t border-border bg-background animate-fade-in">
+        <div className="lg:hidden border-t border-white/20 bg-transparent animate-fade-in">
           <ul className="flex flex-col p-4 gap-1">
             {navLinks.map((l) => (
               <li key={l.href}>
@@ -67,7 +67,7 @@ const Navbar = () => {
                   to={l.href}
                   onClick={() => setOpen(false)}
                   className={`block rounded-lg px-4 py-3 text-sm font-medium transition-colors ${
-                    location.pathname === l.href ? "bg-accent/10 text-accent" : "text-foreground hover:bg-secondary"
+                    location.pathname === l.href ? "bg-white/10 text-white" : "text-white hover:bg-white/10"
                   }`}
                 >
                   {l.label}
