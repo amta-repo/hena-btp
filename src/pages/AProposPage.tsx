@@ -4,6 +4,7 @@ import { Target, Eye, Shield, Award, Users, Heart, Lightbulb, ArrowRight, CheckC
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import whyHeroVideo from "@/assets/why-henabtp.mp4";
 import storyImg from "@/assets/project-office.jpg";
 import dgImg from "@/assets/dg-henabtp.jpeg";
 
@@ -211,8 +212,22 @@ const AProposPage = () => (
       </section>
 
       {/* Pourquoi nous choisir */}
-      <section className="bg-primary section-padding">
-        <div className="container mx-auto">
+      <section className="relative overflow-hidden min-h-[60vh] section-padding">
+        <div className="absolute inset-0">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            className="absolute inset-0 min-h-full min-w-full object-cover"
+            aria-hidden="true"
+          >
+            <source src={whyHeroVideo} type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-primary/85" />
+        </div>
+        <div className="container relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-10">
             <span className="text-xs font-semibold tracking-widest uppercase text-accent">Pourquoi HENA BTP ?</span>
             <h2 className="mt-2 text-2xl sm:text-3xl font-bold text-primary-foreground">La confiance bâtie sur l'excellence</h2>
