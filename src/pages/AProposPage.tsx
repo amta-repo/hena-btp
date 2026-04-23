@@ -126,7 +126,7 @@ const AProposPage = () => {
                 {storyExpanded ? "Afficher moins" : "Lire la suite"}
               </button>
             </div>
-            <div className="rounded-2xl overflow-hidden" style={{ boxShadow: "var(--card-shadow)" }}>
+            <div className="rounded-0 overflow-hidden" style={{ boxShadow: "var(--card-shadow)" }}>
               <img src={storyImg} alt="Équipe HENA BTP sur un chantier de construction à Cotonou" loading="lazy" width={800} height={600} className="w-full object-cover aspect-[4/3]" />
             </div>
           </div>
@@ -138,7 +138,7 @@ const AProposPage = () => {
         <div className="container mx-auto">
           <div className="grid gap-10 lg:grid-cols-5 items-center">
             <div className="lg:col-span-2 flex justify-center">
-              <div className="rounded-2xl overflow-hidden w-64 sm:w-72" style={{ boxShadow: "var(--card-shadow)" }}>
+              <div className="rounded-0 overflow-hidden w-64 sm:w-72" style={{ boxShadow: "var(--card-shadow)" }}>
                 <img src={dgImg} alt="Directrice Générale de HENA BTP Groupe HSE" loading="lazy" width={400} height={500} className="w-full object-cover aspect-[3/4]" />
               </div>
             </div>
