@@ -372,7 +372,7 @@ const Index = () => {
                 <p className="text-white/90 text-base sm:text-lg mb-8 leading-relaxed">
                   Contactez HENA BTP dès aujourd'hui pour un devis gratuit et personnalisé.
                 </p>
-                <Link to="/contact" className="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-8 py-3.5 text-sm font-semibold text-orange-600 transition-transform hover:scale-105 shadow-lg">
+                <Link to="/contact" className="inline-flex items-center justify-center gap-2 rounded-0 bg-white px-8 py-3.5 text-sm font-semibold text-orange-600 transition-transform hover:scale-105 shadow-lg">
                   Demander un devis gratuit <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>

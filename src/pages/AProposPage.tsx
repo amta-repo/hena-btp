@@ -121,7 +121,7 @@ const AProposPage = () => {
               <button
                 type="button"
                 onClick={() => setStoryExpanded((value) => !value)}
-                className="mt-6 inline-flex w-full justify-center rounded-full bg-accent px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-accent/25 transition-colors hover:bg-orange-600 sm:w-auto"
+                className="mt-6 inline-flex w-full justify-center rounded-0 bg-accent px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-accent/25 transition-colors hover:bg-orange-600 sm:w-auto"
               >
                 {storyExpanded ? "Afficher moins" : "Lire la suite"}
               </button>
@@ -165,7 +165,7 @@ const AProposPage = () => {
               <button
                 type="button"
                 onClick={() => setDirectorExpanded((value) => !value)}
-                className="mt-6 inline-flex w-full justify-center rounded-full bg-accent px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-accent/25 transition-colors hover:bg-orange-600 sm:w-auto"
+                className="mt-6 inline-flex w-full justify-center rounded-0 bg-accent px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-accent/25 transition-colors hover:bg-orange-600 sm:w-auto"
               >
                 {directorExpanded ? "Afficher moins" : "Lire la suite"}
               </button>
