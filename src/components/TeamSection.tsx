@@ -111,26 +111,33 @@ const TeamSection = ({ variant = "home" }: TeamSectionProps) => {
           <p className="mt-3 text-sm uppercase tracking-[0.32em] text-muted-foreground">bogus</p>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-2">
-          {executives.map((member, index) => renderTeamCard(member, index))}
-        </div>
-
-        {variant === "home" && !isMobile ? (
-          <div className="mt-8 overflow-hidden">
-            <div
-              className="flex gap-6 transition-transform duration-700 ease-in-out"
-              style={{
-                width: `${(others.length + 2) * (slideWidth + slideGap)}px`,
-                transform: `translateX(-${currentSlide * (slideWidth + slideGap)}px)`,
-              }}
-            >
-              {[...others, ...others.slice(0, 2)].map((member, index) => renderTeamCard(member, index))}
-            </div>
+        {variant === "about" ? (
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {teamMembers.map((member, index) => renderTeamCard(member, index))}
           </div>
         ) : (
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {others.map((member, index) => renderTeamCard(member, index))}
-          </div>
+          <>
+            <div className="grid gap-6 lg:grid-cols-2">
+              {executives.map((member, index) => renderTeamCard(member, index))}
+            </div>
+            {variant === "home" && !isMobile ? (
+              <div className="mt-8 overflow-hidden">
+                <div
+                  className="flex gap-6 transition-transform duration-700 ease-in-out"
+                  style={{
+                    width: `${(others.length + 2) * (slideWidth + slideGap)}px`,
+                    transform: `translateX(-${currentSlide * (slideWidth + slideGap)}px)`,
+                  }}
+                >
+                  {[...others, ...others.slice(0, 2)].map((member, index) => renderTeamCard(member, index))}
+                </div>
+              </div>
+            ) : (
+              <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {others.map((member, index) => renderTeamCard(member, index))}
+              </div>
+            )}
+          </>
         )}
       </div>
     </section>

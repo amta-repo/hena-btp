@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Target, Eye, Shield, Award, Users, Heart, Lightbulb, ArrowRight, CheckCircle, MapPin, ShieldCheck, Clock } from "lucide-react";
@@ -6,7 +7,8 @@ import Footer from "@/components/Footer";
 import TeamSection from "@/components/TeamSection";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import whyHeroVideo from "@/assets/why-henabtp.mp4";
-import storyImg from "@/assets/project-office.jpg";
+import heroImg from "@/assets/project-office.jpg";
+import storyImg from "@/assets/Notre-Histoire-about.jpg";
 import dgImg from "@/assets/dg-henabtp.jpeg";
 
 const values = [
@@ -55,9 +57,13 @@ const jsonLd = {
   },
 };
 
-const AProposPage = () => (
-  <>
-    <Helmet>
+const AProposPage = () => {
+  const [storyExpanded, setStoryExpanded] = useState(false);
+  const [directorExpanded, setDirectorExpanded] = useState(false);
+
+  return (
+    <>
+      <Helmet>
       <title>À Propos de HENA BTP | Entreprise BTP Cotonou, Bénin - Groupe HSE</title>
       <meta name="description" content="Découvrez HENA BTP, Groupe HSE : entreprise de BTP à Cotonou, Bénin. Notre histoire, nos valeurs, notre mission et notre engagement pour la qualité." />
       <link rel="canonical" href="https://henabtp.com/a-propos" />
@@ -69,7 +75,7 @@ const AProposPage = () => (
       {/* Hero */}
       <section className="relative overflow-hidden pt-28 pb-16 sm:pt-32 sm:pb-20">
         <div className="absolute inset-0">
-          <img src={storyImg} alt="HENA BTP équipe et chantier" className="h-full w-full object-cover" />
+          <img src={heroImg} alt="HENA BTP équipe et chantier" className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-primary/75" />
         </div>
         <div className="container relative z-10 mx-auto text-center">
@@ -98,16 +104,27 @@ const AProposPage = () => (
                 <p>
                   Créée par des passionnés du bâtiment, l'entreprise s'est construite autour d'un constat : trop de projets souffrent de manque de rigueur, de transparence et de qualité.
                 </p>
-                <p>
-                  Dirigée par <strong>Ariane Zossou</strong>, notre Directrice Générale, HENA BTP incarne l'excellence et l'innovation dans le secteur du BTP au Bénin.
-                </p>
-                <p>
-                  Depuis ses débuts, HENA BTP s'engage à faire les choses autrement.
-                </p>
-                <p className="font-medium text-foreground">
-                  Chaque chantier est une promesse. Chaque client est un partenaire. Et chaque réalisation est une signature.
-                </p>
+                {storyExpanded && (
+                  <>
+                    <p>
+                      Dirigée par <strong>Ariane Zossou</strong>, notre Directrice Générale, HENA BTP incarne l'excellence et l'innovation dans le secteur du BTP au Bénin.
+                    </p>
+                    <p>
+                      Depuis ses débuts, HENA BTP s'engage à faire les choses autrement.
+                    </p>
+                    <p className="font-medium text-foreground">
+                      Chaque chantier est une promesse. Chaque client est un partenaire. Et chaque réalisation est une signature.
+                    </p>
+                  </>
+                )}
               </div>
+              <button
+                type="button"
+                onClick={() => setStoryExpanded((value) => !value)}
+                className="mt-6 inline-flex w-full justify-center rounded-full bg-accent px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-accent/25 transition-colors hover:bg-orange-600 sm:w-auto"
+              >
+                {storyExpanded ? "Afficher moins" : "Lire la suite"}
+              </button>
             </div>
             <div className="rounded-2xl overflow-hidden" style={{ boxShadow: "var(--card-shadow)" }}>
               <img src={storyImg} alt="Équipe HENA BTP sur un chantier de construction à Cotonou" loading="lazy" width={800} height={600} className="w-full object-cover aspect-[4/3]" />
@@ -122,11 +139,11 @@ const AProposPage = () => (
           <div className="grid gap-10 lg:grid-cols-5 items-center">
             <div className="lg:col-span-2 flex justify-center">
               <div className="rounded-2xl overflow-hidden w-64 sm:w-72" style={{ boxShadow: "var(--card-shadow)" }}>
-                <img src={dgImg} alt="Directeur Général de HENA BTP Groupe HSE" loading="lazy" width={400} height={500} className="w-full object-cover aspect-[3/4]" />
+                <img src={dgImg} alt="Directrice Générale de HENA BTP Groupe HSE" loading="lazy" width={400} height={500} className="w-full object-cover aspect-[3/4]" />
               </div>
             </div>
             <div className="lg:col-span-3">
-              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">Mot du Directeur Général</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">Mot de la Directrice Générale</h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
                   «&nbsp;Chez HENA BTP, nous croyons que chaque projet de construction est bien plus qu'un assemblage de béton et d'acier. C'est un rêve qui prend forme, un investissement dans l'avenir.
@@ -134,14 +151,25 @@ const AProposPage = () => (
                 <p>
                   Notre engagement est simple : offrir à chaque client un ouvrage de qualité, livré dans les délais et au juste prix. Nous mettons un point d'honneur à la transparence, à la rigueur et à l'excellence dans tout ce que nous faisons.
                 </p>
-                <p>
-                  En tant que Groupe HSE, la sécurité de nos équipes et la protection de l'environnement sont au cœur de notre démarche. Nous construisons pour aujourd'hui, mais surtout pour demain.
-                </p>
-                <p className="font-medium text-foreground">
-                  Faites-nous confiance. Ensemble, bâtissons l'avenir.&nbsp;»
-                </p>
+                {directorExpanded && (
+                  <>
+                    <p>
+                      En tant que Groupe HSE, la sécurité de nos équipes et la protection de l'environnement sont au cœur de notre démarche. Nous construisons pour aujourd'hui, mais surtout pour demain.
+                    </p>
+                    <p className="font-medium text-foreground">
+                      Faites-nous confiance. Ensemble, bâtissons l'avenir.&nbsp;»
+                    </p>
+                  </>
+                )}
               </div>
-              <p className="mt-4 text-sm font-semibold text-accent">— Directeur Général, HENA BTP</p>
+              <button
+                type="button"
+                onClick={() => setDirectorExpanded((value) => !value)}
+                className="mt-6 inline-flex w-full justify-center rounded-full bg-accent px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-accent/25 transition-colors hover:bg-orange-600 sm:w-auto"
+              >
+                {directorExpanded ? "Afficher moins" : "Lire la suite"}
+              </button>
+              <p className="mt-4 text-sm font-semibold text-accent">— Directrice Générale, HENA BTP</p>
             </div>
           </div>
         </div>
