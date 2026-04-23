@@ -179,7 +179,7 @@ const Index = () => {
                 <span className="text-white">{heroTexts[currentText]}</span>
               </h1>
               <p className="max-w-xl text-base sm:text-lg text-primary-foreground/80 leading-relaxed">
-                Construction moderne, qualité premium, respect des normes HSE — De la conception à la livraison.
+                Construction moderne, qualité premium, respect des normes HSE - De la conception à la livraison.
               </p>
               <blockquote className="border-l-4 border-accent pl-4 italic text-primary-foreground/70 text-sm sm:text-base">
                 "La seule façon de faire du bon travail, c'est d'aimer ce que vous faites."
@@ -367,7 +367,7 @@ const Index = () => {
           <div className="container relative z-10 mx-auto">
             <div className="grid gap-8 lg:grid-cols-2 items-center max-w-5xl">
               {/* Orange box on the left */}
-              <div className="bg-gradient-to-br from-orange-400 to-yellow-500 rounded-2xl p-8 sm:p-12">
+              <div className="bg-gradient-to-br from-orange-400 to-yellow-500 rounded-0xl p-8 sm:p-12">
                 <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Prêt à construire votre projet ?</h2>
                 <p className="text-white/90 text-base sm:text-lg mb-8 leading-relaxed">
                   Contactez HENA BTP dès aujourd'hui pour un devis gratuit et personnalisé.
