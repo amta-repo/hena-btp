@@ -367,7 +367,7 @@ const Index = () => {
           <div className="container relative z-10 mx-auto">
             <div className="grid gap-8 lg:grid-cols-2 items-center max-w-5xl">
               {/* Orange box on the left */}
-              <div className="bg-gradient-to-br from-orange-400 to-yellow-500 rounded-0xl p-8 sm:p-5">
+              <div className="bg-gradient-to-br from-orange-400 to-yellow-500 rounded-0xl p-12 sm:p-30 shadow-lg text-center">
                 <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Prêt à construire votre projet ?</h2>
                 <p className="text-white/90 text-base sm:text-lg mb-8 leading-relaxed">
                   Contactez HENA BTP dès aujourd'hui pour un devis gratuit et personnalisé.
