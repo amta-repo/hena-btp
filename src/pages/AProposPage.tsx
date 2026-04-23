@@ -316,5 +316,6 @@ const AProposPage = () => {
     <WhatsAppButton />
   </>
 );
+};
 
 export default AProposPage;

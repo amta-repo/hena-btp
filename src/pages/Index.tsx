@@ -10,6 +10,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import TeamSection from "@/components/TeamSection";
 import whyHeroVideo from "@/assets/why-henabtp.mp4";
 import heroVideo from "@/assets/hero-video.mp4";
+import ctaBgImg from "@/assets/CTA-background.jpg";
 import villaImg from "@/assets/project-villa.jpg";
 import officeImg from "@/assets/project-office.jpg";
 import roadImg from "@/assets/project-road.jpg";
@@ -358,19 +359,77 @@ const Index = () => {
         </section>
 
         {/* CTA */}
-        <section className="bg-accent/5 section-padding">
-          <div className="container mx-auto text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold text-accent-foreground">Prêt à construire votre projet ?</h2>
-            <p className="mt-3 text-accent-foreground/80 max-w-lg mx-auto">
-              Contactez HENA BTP dès aujourd'hui pour un devis gratuit et personnalisé.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-              <Link to="/contact" className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-105">
-                Demander un devis gratuit <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link to="/a-propos" className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-accent-foreground/30 px-8 py-3.5 text-sm font-semibold text-accent-foreground transition-colors hover:bg-accent-foreground/10">
-                En savoir plus sur nous
-              </Link>
+        <section className="relative overflow-hidden py-32 sm:py-48">
+          <div className="absolute inset-0">
+            <img src={ctaBgImg} alt="Arrière-plan CTA" className="h-full w-full object-cover" />
+            <div className="absolute inset-0 bg-primary/60" />
+          </div>
+          <div className="container relative z-10 mx-auto">
+            <div className="grid gap-8 lg:grid-cols-2 items-center max-w-5xl">
+              {/* Orange box on the left */}
+              <div className="bg-gradient-to-br from-orange-400 to-yellow-500 rounded-2xl p-8 sm:p-12">
+                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Prêt à construire votre projet ?</h2>
+                <p className="text-white/90 text-base sm:text-lg mb-8 leading-relaxed">
+                  Contactez HENA BTP dès aujourd'hui pour un devis gratuit et personnalisé.
+                </p>
+                <Link to="/contact" className="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-8 py-3.5 text-sm font-semibold text-orange-600 transition-transform hover:scale-105 shadow-lg">
+                  Demander un devis gratuit <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+              {/* Empty space on the right for visual balance */}
+              <div></div>
+            </div>
+          </div>
+        </section>
+
+        {/* Partners */}
+        <section className="section-padding bg-secondary">
+          <div className="container mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Nos Partenaires & Clients</h2>
+              <p className="mt-3 text-muted-foreground">Travaillant avec les meilleures entreprises et organisations</p>
+            </div>
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5 items-center justify-items-center">
+              {/* Partner 1 */}
+              <svg viewBox="0 0 200 120" className="w-full max-w-[150px] h-auto" xmlns="http://www.w3.org/2000/svg">
+                <rect width="200" height="120" fill="#f3f4f6" rx="8"/>
+                <circle cx="60" cy="40" r="20" fill="#ff8c2e"/>
+                <circle cx="80" cy="50" r="28" fill="none" stroke="#ff8c2e" strokeWidth="3"/>
+                <rect x="120" y="30" width="50" height="50" fill="#ff8c2e" rx="4" opacity="0.7"/>
+                <text x="100" y="100" fontSize="14" fontWeight="bold" fill="#1f2937" textAnchor="middle">Partner One</text>
+              </svg>
+              {/* Partner 2 */}
+              <svg viewBox="0 0 200 120" className="w-full max-w-[150px] h-auto" xmlns="http://www.w3.org/2000/svg">
+                <rect width="200" height="120" fill="#f3f4f6" rx="8"/>
+                <path d="M 60 30 L 80 70 L 40 70 Z" fill="#ff8c2e"/>
+                <path d="M 100 35 L 130 75 L 70 75 Z" fill="#ff8c2e" opacity="0.6"/>
+                <circle cx="150" cy="50" r="18" fill="#ff8c2e" opacity="0.7"/>
+                <text x="100" y="100" fontSize="14" fontWeight="bold" fill="#1f2937" textAnchor="middle">Partner Two</text>
+              </svg>
+              {/* Partner 3 */}
+              <svg viewBox="0 0 200 120" className="w-full max-w-[150px] h-auto" xmlns="http://www.w3.org/2000/svg">
+                <rect width="200" height="120" fill="#f3f4f6" rx="8"/>
+                <rect x="40" y="30" width="35" height="35" fill="#ff8c2e" rx="3"/>
+                <rect x="85" y="35" width="30" height="30" fill="#ff8c2e" opacity="0.7" rx="3"/>
+                <rect x="125" y="25" width="40" height="40" fill="#ff8c2e" opacity="0.5" rx="3"/>
+                <text x="100" y="100" fontSize="14" fontWeight="bold" fill="#1f2937" textAnchor="middle">Partner Three</text>
+              </svg>
+              {/* Partner 4 */}
+              <svg viewBox="0 0 200 120" className="w-full max-w-[150px] h-auto" xmlns="http://www.w3.org/2000/svg">
+                <rect width="200" height="120" fill="#f3f4f6" rx="8"/>
+                <circle cx="70" cy="45" r="22" fill="#ff8c2e"/>
+                <circle cx="130" cy="40" r="18" fill="#ff8c2e" opacity="0.7"/>
+                <path d="M 100 70 L 110 50 L 90 50 Z" fill="#ff8c2e" opacity="0.6"/>
+                <text x="100" y="100" fontSize="14" fontWeight="bold" fill="#1f2937" textAnchor="middle">Partner Four</text>
+              </svg>
+              {/* Partner 5 */}
+              <svg viewBox="0 0 200 120" className="w-full max-w-[150px] h-auto" xmlns="http://www.w3.org/2000/svg">
+                <rect width="200" height="120" fill="#f3f4f6" rx="8"/>
+                <polygon points="100,30 130,60 100,90 70,60" fill="#ff8c2e"/>
+                <circle cx="120" cy="50" r="12" fill="#ff8c2e" opacity="0.6"/>
+                <rect x="50" y="50" width="20" height="20" fill="#ff8c2e" opacity="0.5" rx="2"/>
+                <text x="100" y="100" fontSize="14" fontWeight="bold" fill="#1f2937" textAnchor="middle">Partner Five</text>
+              </svg>
             </div>
           </div>
         </section>

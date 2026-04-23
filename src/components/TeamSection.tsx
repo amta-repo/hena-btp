@@ -117,24 +117,27 @@ const TeamSection = ({ variant = "home" }: TeamSectionProps) => {
           </div>
         ) : (
           <>
-            <div className="grid gap-6 lg:grid-cols-2">
-              {executives.map((member, index) => renderTeamCard(member, index))}
-            </div>
-            {variant === "home" && !isMobile ? (
-              <div className="mt-8 overflow-hidden">
-                <div
-                  className="flex gap-6 transition-transform duration-700 ease-in-out"
-                  style={{
-                    width: `${(others.length + 2) * (slideWidth + slideGap)}px`,
-                    transform: `translateX(-${currentSlide * (slideWidth + slideGap)}px)`,
-                  }}
-                >
-                  {[...others, ...others.slice(0, 2)].map((member, index) => renderTeamCard(member, index))}
+            {variant === "home" ? (
+              !isMobile ? (
+                <div className="mt-8 overflow-hidden">
+                  <div
+                    className="flex gap-6 transition-transform duration-700 ease-in-out"
+                    style={{
+                      width: `${(teamMembers.length + 2) * (slideWidth + slideGap)}px`,
+                      transform: `translateX(-${currentSlide * (slideWidth + slideGap)}px)`,
+                    }}
+                  >
+                    {[...teamMembers, ...teamMembers.slice(0, 2)].map((member, index) => renderTeamCard(member, index))}
+                  </div>
                 </div>
-              </div>
+              ) : (
+                <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                  {teamMembers.map((member, index) => renderTeamCard(member, index))}
+                </div>
+              )
             ) : (
-              <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                {others.map((member, index) => renderTeamCard(member, index))}
+              <div className="grid gap-6 lg:grid-cols-2">
+                {executives.map((member, index) => renderTeamCard(member, index))}
               </div>
             )}
           </>
