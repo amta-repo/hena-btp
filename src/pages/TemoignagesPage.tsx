@@ -37,17 +37,17 @@ const TemoignagesPage = () => (
         </div>
       </section>
 
-      <section className="section-padding">
+      <section className="section-padding bg-[rgba(128,128,128,0.6)]">
         <div className="container mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((t, i) => (
-            <div key={i} className="rounded-xl bg-card p-6 hover-lift" style={{ boxShadow: "var(--card-shadow)" }}>
+            <div key={i} className="rounded-none bg-card p-6 hover-lift" style={{ boxShadow: "var(--card-shadow)", minHeight: "340px" }}>
               <div className="flex gap-1 mb-3">
                 {[...Array(5)].map((_, j) => (
                   <Star key={j} className="h-4 w-4 fill-accent text-accent" />
                 ))}
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed italic mb-4">"{t.text}"</p>
-              <p className="text-sm font-semibold text-foreground">{t.name}</p>
+              <p className="text-sm font-semibold" style={{ color: "#0d2142" }}>{t.name}</p>
               <p className="text-xs text-muted-foreground">{t.role}</p>
             </div>
           ))}

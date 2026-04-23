@@ -37,7 +37,7 @@ const TestimonialsSection = () => {
   }, [isMobile]);
 
   return (
-    <section className="section-padding overflow-hidden bg-transparent" id="temoignages">
+    <section className="section-padding overflow-hidden" id="temoignages" style={{ backgroundColor: "rgba(128, 128, 128, 0.6)" }}>
       <div className="container mx-auto mb-10 text-center">
         <span className="text-xs font-semibold tracking-widest uppercase text-accent">Témoignages</span>
         <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-foreground">Ce que disent nos clients</h2>
@@ -45,7 +45,7 @@ const TestimonialsSection = () => {
       {isMobile ? (
         <div className="container mx-auto px-4">
           <div className="w-full max-w-md mx-auto">
-            <div className="rounded-xl bg-card p-6" style={{ boxShadow: "var(--card-shadow)" }}>
+            <div className="bg-card p-6" style={{ boxShadow: "var(--card-shadow)", borderRadius: "0px", minHeight: "340px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
               <div className="flex gap-1 mb-3 justify-center">
                 {[...Array(5)].map((_, j) => (
                   <Star key={j} className="h-4 w-4 fill-accent text-accent" />
@@ -53,7 +53,7 @@ const TestimonialsSection = () => {
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed italic mb-4 text-center">"{testimonials[currentIndex].text}"</p>
               <div className="text-center">
-                <p className="text-sm font-semibold text-foreground">{testimonials[currentIndex].name}</p>
+                <p className="text-sm font-semibold" style={{ color: "#0d2142" }}>{testimonials[currentIndex].name}</p>
                 <p className="text-xs text-muted-foreground">{testimonials[currentIndex].role}</p>
               </div>
             </div>
@@ -65,8 +65,8 @@ const TestimonialsSection = () => {
             {[...testimonials, ...testimonials].map((t, i) => (
               <div
                 key={i}
-                className="flex-shrink-0 w-[320px] sm:w-[380px] rounded-xl bg-card p-6"
-                style={{ boxShadow: "var(--card-shadow)" }}
+                className="flex-shrink-0 w-[320px] sm:w-[380px] bg-card p-6"
+                style={{ boxShadow: "var(--card-shadow)", borderRadius: "0px", minHeight: "340px", display: "flex", flexDirection: "column", justifyContent: "center" }}
               >
                 <div className="flex gap-1 mb-3">
                   {[...Array(5)].map((_, j) => (
@@ -75,7 +75,7 @@ const TestimonialsSection = () => {
                 </div>
                 <p className="text-sm text-muted-foreground leading-relaxed italic mb-4">"{t.text}"</p>
                 <div>
-                  <p className="text-sm font-semibold text-foreground">{t.name}</p>
+                  <p className="text-sm font-semibold" style={{ color: "#0d2142" }}>{t.name}</p>
                   <p className="text-xs text-muted-foreground">{t.role}</p>
                 </div>
               </div>

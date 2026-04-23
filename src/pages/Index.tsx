@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import TeamSection from "@/components/TeamSection";
 import whyHeroVideo from "@/assets/why-henabtp.mp4";
 import heroVideo from "@/assets/hero-video.mp4";
 import villaImg from "@/assets/project-villa.jpg";
@@ -225,14 +226,14 @@ const Index = () => {
             </div>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {services.map((s, i) => (
-                <div key={s.title} className="group rounded-xl bg-card p-6 sm:p-8 hover-lift cursor-pointer" style={{ boxShadow: "var(--card-shadow)" }} onClick={() => setOpenService(i)}>
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+                <div key={s.title} className="group rounded-none bg-card p-6 sm:p-8 hover-lift cursor-pointer w-full max-w-[95vw] mx-auto" style={{ boxShadow: "var(--card-shadow)", minHeight: "520px" }} onClick={() => setOpenService(i)}>
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-none bg-accent/10 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
                     <s.icon className="h-6 w-6" />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground">{s.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-                  <button className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent hover:underline">
-                    En savoir plus <ArrowRight className="h-3 w-3" />
+                  <button className="mt-4 flex h-10 w-10 items-center justify-center rounded-none border border-slate-300 bg-slate-200 text-[#0d2142] text-lg font-bold transition-colors hover:bg-orange-500 hover:text-white" type="button" aria-label="Plus">
+                    +
                   </button>
                 </div>
               ))}
@@ -309,6 +310,9 @@ const Index = () => {
 
         {/* Testimonials */}
         <TestimonialsSection />
+
+        {/* Team */}
+        <TeamSection variant="home" />
 
         {/* Why us */}
         <section className="relative overflow-hidden min-h-[55vh] section-padding">

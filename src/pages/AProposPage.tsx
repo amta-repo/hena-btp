@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Target, Eye, Shield, Award, Users, Heart, Lightbulb, ArrowRight, CheckCircle, MapPin, ShieldCheck, Clock } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import TeamSection from "@/components/TeamSection";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import whyHeroVideo from "@/assets/why-henabtp.mp4";
 import storyImg from "@/assets/project-office.jpg";
@@ -263,6 +264,8 @@ const AProposPage = () => (
           </div>
         </div>
       </section>
+
+      <TeamSection variant="about" />
 
       {/* Signature CTA */}
       <section className="bg-accent section-padding">

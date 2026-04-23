@@ -24,14 +24,25 @@ const ServicesSection = () => (
         {services.map((s, i) => (
           <div
             key={s.title}
-            className="group rounded-xl bg-card p-6 sm:p-8 hover-lift"
-            style={{ animationDelay: `${i * 100}ms`, boxShadow: "var(--card-shadow)" }}
+            className="group rounded-none bg-card p-6 sm:p-8 hover-lift relative w-full max-w-[95vw] mx-auto"
+            style={{ animationDelay: `${i * 100}ms`, boxShadow: "var(--card-shadow)", minHeight: "520px" }}
           >
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+            <div className="mb-4 flex h-12 w-12 items-center justify-center group-hover:text-accent-foreground transition-colors" style={{ backgroundColor: "hsl(24 100% 50% / 0.1)", color: "hsl(24 100% 50%)" }}>
               <s.icon className="h-6 w-6" />
             </div>
             <h3 className="text-lg font-semibold text-foreground">{s.title}</h3>
             <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+            
+            {/* Plus Button */}
+            <div className="absolute bottom-6 right-6">
+              <button
+                className="flex items-center justify-center w-10 h-10 rounded-none border border-slate-300 bg-slate-200 text-[#0d2142] text-xl font-bold transition-colors duration-300 hover:bg-orange-500 hover:text-white"
+                type="button"
+                aria-label="Plus"
+              >
+                +
+              </button>
+            </div>
           </div>
         ))}
       </div>
