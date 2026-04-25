@@ -87,7 +87,7 @@ const Navbar = () => {
         {/* CTA desktop */}
         <Link
           to="/contact"
-          className="hidden lg:inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
+          className="hidden lg:inline-flex items-center gap-2 rounded-none bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
         >
           Demander un devis
         </Link>
@@ -132,7 +132,7 @@ const Navbar = () => {
               <Link
                 to="/contact"
                 onClick={() => setOpen(false)}
-                className="block rounded-lg bg-accent px-4 py-3 text-center text-sm font-semibold text-accent-foreground"
+                className="block rounded-none bg-accent px-4 py-3 text-center text-sm font-semibold text-accent-foreground"
               >
                 Demander un devis
               </Link>

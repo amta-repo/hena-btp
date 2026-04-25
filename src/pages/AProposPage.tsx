@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { Target, Eye, Shield, Award, Users, Heart, Lightbulb, ArrowRight, CheckCircle, MapPin, ShieldCheck, Clock } from "lucide-react";
+import { Target, Eye, Shield, Award, Users, Heart, Lightbulb, ArrowRight, CheckCircle, MapPin, ShieldCheck, Clock, Plus } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TeamSection from "@/components/TeamSection";
@@ -10,6 +10,7 @@ import whyHeroVideo from "@/assets/why-henabtp.mp4";
 import heroImg from "@/assets/project-office.jpg";
 import storyImg from "@/assets/Notre-Histoire-about.jpg";
 import dgImg from "@/assets/dg-henabtp.jpeg";
+import nosObjectifsImg from "@/assets/nos-objectifs.jpg";
 
 const values = [
   { icon: Award, title: "Excellence", desc: "Viser la qualité dans chaque détail." },
@@ -20,11 +21,26 @@ const values = [
 ];
 
 const objectives = [
-  "Offrir des constructions solides, modernes et accessibles",
-  "Devenir une référence incontournable du BTP au Bénin et en Afrique",
-  "Accompagner nos clients de la conception à la réalisation",
-  "Réduire les coûts inutiles sans compromettre la qualité",
-  "Livrer chaque projet dans les délais convenus",
+  { 
+    title: "Offrir des constructions solides, modernes et accessibles", 
+    desc: "Nous nous engageons à concevoir et construire des bâtiments durables, intégrant les dernières technologies et normes architecturales, tout en restant accessibles financièrement à nos clients." 
+  },
+  { 
+    title: "Devenir une référence incontournable du BTP au Bénin et en Afrique", 
+    desc: "Par notre excellence opérationnelle, notre innovation constante et notre engagement envers la qualité, nous aspirons à être le leader reconnu du secteur dans la région." 
+  },
+  { 
+    title: "Accompagner nos clients de la conception à la réalisation", 
+    desc: "Un suivi intégral et personnalisé est notre marque de fabrique. Du diagnostic initial à la livraison finale, nous restons aux côtés de chaque client." 
+  },
+  { 
+    title: "Réduire les coûts inutiles sans compromettre la qualité", 
+    desc: "Par l'optimisation des processus, l'efficacité des équipes et une gestion rigoureuse des ressources, nous offrons le meilleur rapport qualité-prix du marché." 
+  },
+  { 
+    title: "Livrer chaque projet dans les délais convenus", 
+    desc: "La ponctualité et la fiabilité sont essentielles dans le BTP. Nous respectons scrupuleusement les calendriers prévus pour assurer la satisfaction de nos clients." 
+  },
 ];
 
 const whyUsReasons = [
@@ -60,6 +76,7 @@ const jsonLd = {
 const AProposPage = () => {
   const [storyExpanded, setStoryExpanded] = useState(false);
   const [directorExpanded, setDirectorExpanded] = useState(false);
+  const [expandedObjective, setExpandedObjective] = useState<number | null>(null);
 
   return (
     <>
@@ -94,8 +111,8 @@ const AProposPage = () => {
       {/* Notre Histoire */}
       <section className="section-padding">
         <div className="container mx-auto">
-          <div className="grid gap-12 lg:grid-cols-2 items-center">
-            <div>
+          <div className="grid gap-0 lg:grid-cols-2 items-stretch">
+            <div className="bg-white p-8 sm:p-12 flex flex-col justify-center">
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">Notre Histoire</h2>
               <div className="space-y-4 text-foreground leading-relaxed">
                 <p>
@@ -127,7 +144,7 @@ const AProposPage = () => {
               </button>
             </div>
             <div className="rounded-0 overflow-hidden" style={{ boxShadow: "var(--card-shadow)" }}>
-              <img src={storyImg} alt="Équipe HENA BTP sur un chantier de construction à Cotonou" loading="lazy" width={800} height={600} className="w-full object-cover aspect-[4/3]" />
+              <img src={storyImg} alt="Équipe HENA BTP sur un chantier de construction à Cotonou" loading="lazy" width={800} height={600} className="w-full object-cover h-full" />
             </div>
           </div>
         </div>
@@ -136,13 +153,13 @@ const AProposPage = () => {
       {/* Mot du Directeur Général */}
       <section className="bg-secondary section-padding">
         <div className="container mx-auto">
-          <div className="grid gap-10 lg:grid-cols-5 items-center">
+          <div className="grid gap-0 lg:grid-cols-5 items-stretch">
             <div className="lg:col-span-2 flex justify-center">
-              <div className="rounded-0 overflow-hidden w-64 sm:w-72" style={{ boxShadow: "var(--card-shadow)" }}>
-                <img src={dgImg} alt="Directrice Générale de HENA BTP Groupe HSE" loading="lazy" width={400} height={500} className="w-full object-cover aspect-[3/4]" />
+              <div className="rounded-0 overflow-hidden w-full sm:w-full" style={{ boxShadow: "var(--card-shadow)" }}>
+                <img src={dgImg} alt="Directrice Générale de HENA BTP Groupe HSE" loading="lazy" width={400} height={600} className="w-full object-cover h-full" />
               </div>
             </div>
-            <div className="lg:col-span-3">
+            <div className="lg:col-span-3 flex flex-col justify-center p-8 sm:p-12">
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">Mot de la Directrice Générale</h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
@@ -200,15 +217,33 @@ const AProposPage = () => {
 
       {/* Nos Objectifs */}
       <section className="bg-secondary section-padding">
-        <div className="container mx-auto max-w-3xl">
-          <h2 className="text-2xl sm:text-3xl font-bold text-foreground text-center mb-10">Nos Objectifs</h2>
-          <div className="space-y-4">
-            {objectives.map((o) => (
-              <div key={o} className="flex items-start gap-3 rounded-xl bg-card p-5" style={{ boxShadow: "var(--card-shadow)" }}>
-                <CheckCircle className="h-5 w-5 text-accent shrink-0 mt-0.5" />
-                <span className="text-foreground">{o}</span>
+        <div className="container mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground text-center mb-12">Nos Objectifs</h2>
+          <div className="grid gap-12 lg:grid-cols-2 items-center">
+            <div className="flex justify-center">
+              <div className="rounded-xl overflow-hidden" style={{ boxShadow: "var(--card-shadow)" }}>
+                <img src={nosObjectifsImg} alt="Nos Objectifs - HENA BTP" loading="lazy" width={800} height={600} className="w-full object-cover aspect-[4/3]" />
               </div>
-            ))}
+            </div>
+            <div className="space-y-3">
+              {objectives.map((obj, idx) => (
+                <div key={idx} className="rounded-lg bg-card p-4 sm:p-5" style={{ boxShadow: "var(--card-shadow)" }}>
+                  <button
+                    type="button"
+                    onClick={() => setExpandedObjective(expandedObjective === idx ? null : idx)}
+                    className="w-full flex items-center justify-between gap-3 text-left"
+                  >
+                    <span className="text-sm sm:text-base font-semibold text-foreground pr-2">{obj.title}</span>
+                    <span className={`flex-shrink-0 text-accent transition-transform duration-300 ${expandedObjective === idx ? 'rotate-45' : ''}`}>
+                      <Plus className="h-5 w-5 sm:h-6 sm:w-6" />
+                    </span>
+                  </button>
+                  {expandedObjective === idx && (
+                    <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{obj.desc}</p>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -304,7 +339,7 @@ const AProposPage = () => {
           </p>
           <Link
             to="/contact"
-            className="mt-8 inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-105"
+            className="mt-8 inline-flex items-center justify-center gap-2 rounded-none bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-105"
           >
             Nous contacter
             <ArrowRight className="h-4 w-4" />

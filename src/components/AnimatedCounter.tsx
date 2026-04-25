@@ -8,9 +8,10 @@ interface AnimatedCounterProps {
   label: string;
   isText?: boolean;
   text?: string;
+  bgColor?: "orange" | "gray";
 }
 
-const AnimatedCounter = ({ end, suffix = "", prefix = "", duration = 2000, label, isText, text }: AnimatedCounterProps) => {
+const AnimatedCounter = ({ end, suffix = "", prefix = "", duration = 2000, label, isText, text, bgColor }: AnimatedCounterProps) => {
   const [count, setCount] = useState(0);
   const [started, setStarted] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -41,12 +42,20 @@ const AnimatedCounter = ({ end, suffix = "", prefix = "", duration = 2000, label
     requestAnimationFrame(animate);
   }, [started, end, duration, isText]);
 
+  const bgColorClass = bgColor === "orange" ? "bg-accent/10" : bgColor === "gray" ? "bg-gray-200" : "";
+  
   return (
-    <div ref={ref} className="px-4 py-4 sm:py-5 text-center">
-      <p className="text-xl sm:text-2xl font-bold text-accent">
+    <div 
+      ref={ref} 
+      className={`px-4 py-6 sm:py-8 text-center ${bgColorClass}`}
+      style={{
+        backgroundImage: bgColor ? "repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,0.05) 10px, rgba(0,0,0,0.05) 20px)" : "none"
+      }}
+    >
+      <p className="text-3xl sm:text-5xl font-extrabold" style={{ color: bgColor === "orange" ? "hsl(24 100% 50%)" : "rgb(107, 114, 128)" }}>
         {isText ? text : `${prefix}${count}${suffix}`}
       </p>
-      <p className="text-xs sm:text-sm text-muted-foreground">{label}</p>
+      <p className="text-xs sm:text-sm font-semibold text-muted-foreground mt-2">{label}</p>
     </div>
   );
 };

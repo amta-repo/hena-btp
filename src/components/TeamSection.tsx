@@ -41,6 +41,12 @@ const teamMembers = [
     photo: new URL("../assets/Secrétaire de Direction - Alida KPONON.jpeg", import.meta.url).href,
     accent: "orange",
   },
+  {
+    name: "KOKODOME JEHODIC",
+    role: "Chef Achat",
+    photo: new URL("../assets/KOKODOME JEHODIC - Chef Achat.jpeg", import.meta.url).href,
+    accent: "navy",
+  },
 ];
 
 const overlayStyles = {
@@ -67,16 +73,16 @@ const TeamSection = ({ variant = "home" }: TeamSectionProps) => {
   }, []);
 
   useEffect(() => {
-    if (variant !== "home" || isMobile) {
+    if (variant === "home" || isMobile) {
       return;
     }
 
     const interval = window.setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % others.length);
+      setCurrentSlide((prev) => (prev + 1) % teamMembers.length);
     }, 2000);
 
     return () => window.clearInterval(interval);
-  }, [isMobile, variant, others.length]);
+  }, [isMobile, variant]);
 
   const renderTeamCard = (member: (typeof teamMembers)[0], index: number) => (
     <div
@@ -106,15 +112,29 @@ const TeamSection = ({ variant = "home" }: TeamSectionProps) => {
     <section className="section-padding bg-slate-100/50">
       <div className="container mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <p className="text-xs font-semibold tracking-widest uppercase text-accent">OUR TEAM</p>
+          <p className="text-xs font-semibold tracking-widest uppercase text-accent">Notre ÉQUIPE</p>
           <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-foreground">PROFESSIONALS</h2>
-          <p className="mt-3 text-sm uppercase tracking-[0.32em] text-muted-foreground">bogus</p>
+          {/* <p className="mt-3 text-sm uppercase tracking-[0.32em] text-muted-foreground">bogus</p> */}
         </div>
 
         {variant === "about" ? (
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {teamMembers.map((member, index) => renderTeamCard(member, index))}
-          </div>
+          !isMobile ? (
+            <div className="mt-8 overflow-hidden">
+              <div
+                className="flex gap-6 transition-transform duration-700 ease-in-out"
+                style={{
+                  width: `${(teamMembers.length + 2) * (slideWidth + slideGap)}px`,
+                  transform: `translateX(-${currentSlide * (slideWidth + slideGap)}px)`,
+                }}
+              >
+                {[...teamMembers, ...teamMembers.slice(0, 2)].map((member, index) => renderTeamCard(member, index))}
+              </div>
+            </div>
+          ) : (
+            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {teamMembers.map((member, index) => renderTeamCard(member, index))}
+            </div>
+          )
         ) : (
           <>
             {variant === "home" ? (

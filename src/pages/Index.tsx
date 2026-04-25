@@ -14,6 +14,12 @@ import ctaBgImg from "@/assets/CTA-background.jpg";
 import villaImg from "@/assets/project-villa.jpg";
 import officeImg from "@/assets/project-office.jpg";
 import roadImg from "@/assets/project-road.jpg";
+import constructionImg from "@/assets/Construction clé en main.jpg";
+import etudeImg from "@/assets/Étude et suivi de chantiers.jpg";
+import genieImg from "@/assets/génie-civil.jpg";
+import amenagementImg from "@/assets/Aménagement & Assainissement.jpg";
+import hseImg from "@/assets/Suivi HSE sur Chantiers.jpg";
+import renovationImg from "@/assets/Rénovation & Extension.jpg";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -33,6 +39,7 @@ const services = [
     icon: Home,
     title: "Construction clé en main",
     desc: "Maisons individuelles et villas contemporaines.",
+    image: constructionImg,
     details: [
       "Plans architecturaux sur mesure",
       "Fondations solides adaptées au sol béninois",
@@ -45,6 +52,7 @@ const services = [
     icon: Building,
     title: "Étude et suivi de chantiers",
     desc: "Accompagnement de la conception à la livraison.",
+    image: etudeImg,
     details: [
       "Études de faisabilité technique et financière",
       "Conception architecturale fonctionnelle",
@@ -57,6 +65,7 @@ const services = [
     icon: Landmark,
     title: "Génie civil et voiries",
     desc: "Routes, ponts et infrastructures de génie civil.",
+    image: genieImg,
     details: [
       "Construction et réhabilitation de routes",
       "Ouvrages d'art : ponts, dalots, caniveaux",
@@ -69,6 +78,7 @@ const services = [
     icon: Droplets,
     title: "Aménagement & Assainissement",
     desc: "Viabilisation de parcelles et réseaux d'assainissement.",
+    image: amenagementImg,
     details: [
       "Aménagement de parcelles",
       "Réseaux d'assainissement",
@@ -80,6 +90,7 @@ const services = [
     icon: ShieldCheck,
     title: "Suivi HSE sur Chantiers",
     desc: "Hygiène, Sécurité et Environnement intégrés.",
+    image: hseImg,
     details: [
       "Audit de sécurité avant démarrage",
       "Formation des ouvriers",
@@ -91,6 +102,7 @@ const services = [
     icon: Wrench,
     title: "Rénovation & Extension",
     desc: "Modernisation et agrandissement de bâtiments.",
+    image: renovationImg,
     details: [
       "Modernisation de bâtiments",
       "Réhabilitation complète",
@@ -187,7 +199,7 @@ const Index = () => {
               <div className="flex flex-col sm:flex-row gap-4 pt-4 max-w-2xl">
                 <Link
                   to="/contact"
-                  className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105 shadow-lg"
+                  className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-none bg-accent px-6 py-3.5 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105 shadow-lg"
                 >
                   <FileText className="h-4 w-4" />
                   Demander un devis gratuit
@@ -196,7 +208,7 @@ const Index = () => {
                   href="https://wa.me/2290155496155?text=Bonjour%2C%20je%20viens%20de%20visiter%20votre%20site%20web%20et%20je%20souhaite%20discuter%20de%20mon%20projet%20de%20construction."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-lg border border-primary-foreground/30 bg-primary-foreground/10 px-6 py-3.5 text-sm font-semibold text-primary-foreground backdrop-blur-sm transition-all hover:bg-primary-foreground/20"
+                  className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-none border border-primary-foreground/30 bg-primary-foreground/10 px-6 py-3.5 text-sm font-semibold text-primary-foreground backdrop-blur-sm transition-all hover:bg-primary-foreground/20"
                 >
                   <MessageCircle className="h-4 w-4" />
                   Nous contacter sur WhatsApp
@@ -207,16 +219,16 @@ const Index = () => {
           {/* Stats bar */}
           <div className="absolute bottom-0 left-0 right-0 bg-background/95 backdrop-blur-md border-t border-border">
             <div className="container mx-auto grid grid-cols-2 sm:grid-cols-4 divide-x divide-border">
-              <AnimatedCounter end={10} suffix="+" label="Années d'expérience" duration={2000} />
-              <AnimatedCounter end={150} suffix="+" label="Projets réalisés" duration={2500} />
-              <AnimatedCounter end={100} suffix="%" label="Clients satisfaits" duration={2000} />
-              <AnimatedCounter end={0} label="Normes respectées" isText text="HSE" />
+              <AnimatedCounter end={10} suffix="+" label="Années d'expérience" duration={2000} bgColor="orange" />
+              <AnimatedCounter end={150} suffix="+" label="Projets réalisés" duration={2500} bgColor="gray" />
+              <AnimatedCounter end={100} suffix="%" label="Clients satisfaits" duration={2000} bgColor="orange" />
+              <AnimatedCounter end={0} label="Normes respectées" isText text="HSE" bgColor="gray" />
             </div>
           </div>
         </section>
 
         {/* Services preview with modals */}
-        <section className="section-padding bg-transparent">
+        <section className="section-padding overflow-hidden" style={{ backgroundColor: "rgba(128, 128, 128, 0.6)" }}>
           <div className="container mx-auto">
             <div className="text-center max-w-2xl mx-auto mb-12">
               <span className="text-xs font-semibold tracking-widest uppercase text-accent">Nos Services</span>
@@ -227,20 +239,27 @@ const Index = () => {
             </div>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {services.map((s, i) => (
-                <div key={s.title} className="group rounded-none bg-card p-6 sm:p-8 hover-lift cursor-pointer w-full max-w-[95vw] mx-auto" style={{ boxShadow: "var(--card-shadow)", minHeight: "520px" }} onClick={() => setOpenService(i)}>
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-none bg-accent/10 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
-                    <s.icon className="h-6 w-6" />
+                <div key={s.title} className="group rounded-none bg-card hover-lift cursor-pointer w-[calc(100vw-2rem)] sm:w-full mx-auto overflow-hidden" style={{ boxShadow: "var(--card-shadow)", minHeight: "520px", display: "flex", flexDirection: "column" }} onClick={() => setOpenService(i)}>
+                  <div className="w-full h-3/4 overflow-hidden">
+                    <img src={s.image} alt={s.title} loading="lazy" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground">{s.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-                  <button className="mt-4 flex h-10 w-10 items-center justify-center rounded-none border border-slate-300 bg-slate-200 text-[#0d2142] text-lg font-bold transition-colors hover:bg-orange-500 hover:text-white" type="button" aria-label="Plus">
-                    +
-                  </button>
+                  <div className="flex-1 p-6 sm:p-8 flex flex-col justify-between">
+                    <div>
+                      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-none bg-accent/10 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+                        <s.icon className="h-6 w-6" />
+                      </div>
+                      <h3 className="text-lg font-semibold text-foreground">{s.title}</h3>
+                      <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+                    </div>
+                    <button className="mt-4 flex h-10 w-10 items-center justify-center rounded-none border border-slate-300 bg-slate-200 text-[#0d2142] text-lg font-bold transition-colors hover:bg-orange-500 hover:text-white" type="button" aria-label="Plus">
+                      +
+                    </button>
+                  </div>
                 </div>
               ))}
             </div>
             <div className="text-center mt-10">
-              <Link to="/services" className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105">
+              <Link to="/services" className="inline-flex items-center gap-2 rounded-none bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105">
                 Voir tous nos services <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
@@ -250,39 +269,44 @@ const Index = () => {
         {/* Service Detail Modal */}
         {openService !== null && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-primary/60 backdrop-blur-sm p-4" onClick={() => setOpenService(null)}>
-            <div className="relative w-full max-w-lg rounded-2xl bg-card p-6 sm:p-8 animate-scale-in" style={{ boxShadow: "var(--card-shadow)" }} onClick={(e) => e.stopPropagation()}>
-              <button onClick={() => setOpenService(null)} className="absolute top-4 right-4 text-muted-foreground hover:text-foreground">
+            <div className="relative w-full max-w-lg rounded-2xl bg-card overflow-hidden animate-scale-in" style={{ boxShadow: "var(--card-shadow)" }} onClick={(e) => e.stopPropagation()}>
+              <button onClick={() => setOpenService(null)} className="absolute top-4 right-4 text-muted-foreground hover:text-foreground z-10 bg-background/80 rounded-full p-1">
                 <X className="h-5 w-5" />
               </button>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent text-accent-foreground">
-                  {(() => { const Icon = services[openService].icon; return <Icon className="h-6 w-6" />; })()}
-                </div>
-                <h3 className="text-xl font-bold text-foreground">{services[openService].title}</h3>
+              <div className="aspect-video overflow-hidden">
+                <img src={services[openService].image} alt={services[openService].title} className="w-full h-full object-cover" />
               </div>
-              <p className="text-muted-foreground mb-4">{services[openService].desc}</p>
-              <ul className="space-y-3 mb-6">
-                {services[openService].details.map((d) => (
-                  <li key={d} className="flex items-start gap-3">
-                    <CheckCircle className="h-4 w-4 text-accent shrink-0 mt-0.5" />
-                    <span className="text-sm text-foreground">{d}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Link to="/contact" onClick={() => setOpenService(null)} className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105">
-                  <FileText className="h-4 w-4" /> Demander un devis
-                </Link>
-                <Link to="/services" onClick={() => setOpenService(null)} className="inline-flex items-center justify-center gap-2 rounded-lg border border-border px-5 py-2.5 text-sm font-semibold text-foreground hover:bg-secondary transition-colors">
-                  Tous les services <ArrowRight className="h-4 w-4" />
-                </Link>
+              <div className="p-6 sm:p-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent text-accent-foreground">
+                    {(() => { const Icon = services[openService].icon; return <Icon className="h-6 w-6" />; })()}
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground">{services[openService].title}</h3>
+                </div>
+                <p className="text-muted-foreground mb-4">{services[openService].desc}</p>
+                <ul className="space-y-3 mb-6">
+                  {services[openService].details.map((d) => (
+                    <li key={d} className="flex items-start gap-3">
+                      <CheckCircle className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                      <span className="text-sm text-foreground">{d}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <Link to="/contact" onClick={() => setOpenService(null)} className="inline-flex items-center justify-center gap-2 rounded-none bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105">
+                    <FileText className="h-4 w-4" /> Demander un devis
+                  </Link>
+                  <Link to="/services" onClick={() => setOpenService(null)} className="inline-flex items-center justify-center gap-2 rounded-none border border-border px-5 py-2.5 text-sm font-semibold text-foreground hover:bg-secondary transition-colors">
+                    Tous les services <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
         )}
 
         {/* Featured projects */}
-        <section className="section-padding">
+        <section className="section-padding bg-slate-100/50">
           <div className="container mx-auto">
             <div className="text-center max-w-2xl mx-auto mb-10">
               <span className="text-xs font-semibold tracking-widest uppercase text-accent">Nos Réalisations</span>
@@ -302,7 +326,7 @@ const Index = () => {
               ))}
             </div>
             <div className="text-center mt-10">
-              <Link to="/realisations" className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105">
+              <Link to="/realisations" className="inline-flex items-center gap-2 rounded-none bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105">
                 Voir toutes nos réalisations <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
@@ -372,7 +396,7 @@ const Index = () => {
                 <p className="text-white/90 text-base sm:text-lg mb-8 leading-relaxed">
                   Contactez HENA BTP dès aujourd'hui pour un devis gratuit et personnalisé.
                 </p>
-                <Link to="/contact" className="inline-flex items-center justify-center gap-2 rounded-0 bg-white px-8 py-3.5 text-sm font-semibold text-orange-600 transition-transform hover:scale-105 shadow-lg">
+                <Link to="/contact" className="inline-flex items-center justify-center gap-2 rounded-none bg-white px-8 py-3.5 text-sm font-semibold text-orange-600 transition-transform hover:scale-105 shadow-lg">
                   Demander un devis gratuit <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
