@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Home, Building, Landmark, Wrench, ArrowRight, CheckCircle, FileText, MessageCircle, Users, Target, Clock, Lightbulb } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -79,6 +80,12 @@ const clients = [
   "ONG et organisations internationales",
 ];
 
+const serviceIds = [
+  "construction",
+  "genie-civil",
+  "etude",
+];
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -91,8 +98,20 @@ const jsonLd = {
   areaServed: { "@type": "Place", name: "Bénin, Afrique de l'Ouest" },
 };
 
-const ServicesPage = () => (
-  <>
+const ServicesPage = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (!location.hash) return;
+    const id = location.hash.replace("#", "");
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [location.hash]);
+
+  return (
+    <>
     <Helmet>
       <title>Nos Services BTP | HENA BTP Cotonou - Construction & Génie Civil Bénin</title>
       <meta name="description" content="Services BTP de HENA BTP à Cotonou : construction clé en main, génie civil, étude et suivi de chantiers, rénovation. Devis gratuit au Bénin." />
@@ -157,7 +176,7 @@ const ServicesPage = () => (
       <section className="bg-secondary section-padding">
         <div className="container mx-auto space-y-20">
           {services.map((s, i) => (
-            <div key={s.title} className={`grid gap-10 lg:grid-cols-2 items-center`}>
+            <div key={s.title} id={serviceIds[i]} className={`grid gap-10 lg:grid-cols-2 items-center scroll-mt-24`}>
               <div className={i % 2 === 1 ? "lg:order-2" : ""}>
                 <div className="flex items-center gap-3 mb-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 text-accent">
@@ -228,6 +247,7 @@ const ServicesPage = () => (
     <Footer />
     <WhatsAppButton />
   </>
-);
+  );
+};
 
 export default ServicesPage;

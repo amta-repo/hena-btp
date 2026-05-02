@@ -43,45 +43,55 @@ const Navbar = () => {
 
         {/* Desktop links */}
         <ul className="hidden lg:flex items-center gap-8">
-          {navLinks.map((l) => (
-            <li key={l.href} className="relative">
-              {l.dropdown ? (
-                <div
-                  className="relative"
-                  onMouseEnter={() => setDropdownOpen(true)}
-                  onMouseLeave={() => setDropdownOpen(false)}
-                >
+          {navLinks.map((l) => {
+            const isActive = l.href === '/services'
+              ? location.pathname.startsWith('/services')
+              : location.pathname === l.href;
+
+            return (
+              <li key={l.href} className="relative">
+                {l.dropdown ? (
+                  <div
+                    className="relative"
+                    onMouseEnter={() => setDropdownOpen(true)}
+                    onMouseLeave={() => setDropdownOpen(false)}
+                  >
+                    <Link
+                      to={l.href}
+                      className={`text-sm font-medium rounded-full px-3 py-2 transition-colors ${isActive ? 'bg-white/20 text-foreground' : scrolled ? 'text-foreground hover:text-accent' : 'text-white hover:text-yellow-300'}`}
+                    >
+                      {l.label}
+                    </Link>
+                    {dropdownOpen && (
+                      <ul className="absolute top-full left-0 mt-2 w-64 bg-white/95 shadow-lg rounded-none py-2 z-50">
+                        {l.dropdown.map((sub) => {
+                          const subId = sub.href.split('#')[1] || '';
+                          const isSubActive = location.pathname === '/services' && location.hash === `#${subId}`;
+                          return (
+                            <li key={sub.href}>
+                              <Link
+                                to={sub.href}
+                                className={`block px-4 py-2 text-sm transition-colors ${isSubActive ? 'bg-accent/10 text-accent' : 'text-foreground hover:bg-accent/10 hover:text-accent'}`}
+                              >
+                                {sub.label}
+                              </Link>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    )}
+                  </div>
+                ) : (
                   <Link
                     to={l.href}
-                    className={`text-sm font-medium transition-colors ${scrolled ? 'text-foreground hover:text-accent' : 'text-white hover:text-yellow-300'}`}
+                    className={`text-sm font-medium rounded-full px-3 py-2 transition-colors ${isActive ? 'bg-white/20 text-foreground' : scrolled ? 'text-foreground hover:text-accent' : 'text-white hover:text-yellow-300'}`}
                   >
                     {l.label}
                   </Link>
-                  {dropdownOpen && (
-                    <ul className="absolute top-full left-0 mt-2 w-64 bg-white/50 shadow-lg rounded-none py-2 z-50">
-                      {l.dropdown.map((sub) => (
-                        <li key={sub.href}>
-                          <Link
-                            to={sub.href}
-                            className="block px-4 py-2 text-sm text-foreground hover:bg-accent/10 hover:text-accent"
-                          >
-                            {sub.label}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              ) : (
-                <Link
-                  to={l.href}
-                  className={`text-sm font-medium transition-colors ${scrolled ? 'text-foreground hover:text-accent' : 'text-white hover:text-yellow-300'}`}
-                >
-                  {l.label}
-                </Link>
-              )}
-            </li>
-          ))}
+                )}
+              </li>
+            );
+          })}
         </ul>
 
         {/* CTA desktop */}
@@ -102,32 +112,42 @@ const Navbar = () => {
       {open && (
         <div className="lg:hidden border-t border-white/20 bg-white/80 backdrop-blur-md animate-fade-in">
           <ul className="flex flex-col p-4 gap-1">
-            {navLinks.map((l) => (
-              <li key={l.href}>
-                <Link
-                  to={l.href}
-                  onClick={() => setOpen(false)}
-                  className="block rounded-lg px-4 py-3 text-sm font-medium transition-colors text-foreground hover:bg-accent/10"
-                >
-                  {l.label}
-                </Link>
-                {l.dropdown && (
-                  <ul className="ml-4 mt-1 space-y-1">
-                    {l.dropdown.map((sub) => (
-                      <li key={sub.href}>
-                        <Link
-                          to={sub.href}
-                          onClick={() => setOpen(false)}
-                          className="block px-4 py-2 text-sm text-muted-foreground hover:text-accent"
-                        >
-                          {sub.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))}
+            {navLinks.map((l) => {
+              const isActive = l.href === '/services'
+                ? location.pathname.startsWith('/services')
+                : location.pathname === l.href;
+
+              return (
+                <li key={l.href}>
+                  <Link
+                    to={l.href}
+                    onClick={() => setOpen(false)}
+                    className={`block rounded-lg px-4 py-3 text-sm font-medium transition-colors ${isActive ? 'bg-accent/10 text-accent' : 'text-foreground hover:bg-accent/10'}`}
+                  >
+                    {l.label}
+                  </Link>
+                  {l.dropdown && (
+                    <ul className="ml-4 mt-1 space-y-1">
+                      {l.dropdown.map((sub) => {
+                        const subId = sub.href.split('#')[1] || '';
+                        const isSubActive = location.pathname === '/services' && location.hash === `#${subId}`;
+                        return (
+                          <li key={sub.href}>
+                            <Link
+                              to={sub.href}
+                              onClick={() => setOpen(false)}
+                              className={`block px-4 py-2 text-sm transition-colors ${isSubActive ? 'text-accent' : 'text-muted-foreground hover:text-accent'}`}
+                            >
+                              {sub.label}
+                            </Link>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  )}
+                </li>
+              );
+            })}
             <li className="mt-2">
               <Link
                 to="/contact"
