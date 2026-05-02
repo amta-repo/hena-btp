@@ -14,7 +14,7 @@ import ctaBgImg from "@/assets/CTA-background.jpg";
 import villaImg from "@/assets/project-villa.jpg";
 import officeImg from "@/assets/project-office.jpg";
 import roadImg from "@/assets/project-road.jpg";
-import constructionImg from "@/assets/Construction clé en main.jpg";
+import constructionImg from "@/assets/Construction clé en main (2).jpg";
 import etudeImg from "@/assets/Étude et suivi de chantiers.jpg";
 import genieImg from "@/assets/génie-civil.jpg";
 import amenagementImg from "@/assets/Aménagement & Assainissement.jpg";
@@ -163,8 +163,6 @@ const Index = () => {
 
       <Navbar />
       <main>
-        {/* Hero */}
-        {/* Hero */}
         {/* Hero */}
         <section className="relative flex items-center overflow-hidden pt-32 pb-24 sm:pt-48 sm:pb-32 lg:pt-64 lg:pb-40">
           <div className="absolute inset-0">
