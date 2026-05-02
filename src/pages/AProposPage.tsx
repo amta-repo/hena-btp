@@ -13,7 +13,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 
 import whyHeroVideo from "@/assets/why-henabtp.mp4";
 import heroImg from "@/assets/project-office.jpg";
-import storyImg from "@/assets/Notre-Histoire-about.jpg";
+import storyImg from "@/assets/Notre-Histoire-about (2).jpg";
 import dgImg from "@/assets/dg-henabtp.jpeg";
 import nosObjectifsImg from "@/assets/nos-objectifs.jpg";
 

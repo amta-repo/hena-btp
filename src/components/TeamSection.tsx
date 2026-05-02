@@ -69,7 +69,7 @@ const TeamSection = ({ variant = "home" }: TeamSectionProps) => {
   const renderTeamCard = (member: (typeof teamMembers)[0], index: number) => (
     <div
       key={`${member.name}-${index}`}
-      className="group relative overflow-hidden rounded-none bg-slate-100 shadow-lg shadow-slate-200/50 min-h-[520px] w-full sm:max-w-none shrink-0 lg:w-[280px]"
+      className="group relative overflow-hidden rounded-[2px] bg-slate-100 shadow-lg shadow-slate-200/50 min-h-[520px] w-full sm:max-w-none shrink-0 lg:w-[280px]"
     >
       <img
         src={member.photo}

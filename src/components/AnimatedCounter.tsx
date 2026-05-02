@@ -5,7 +5,7 @@ interface AnimatedCounterProps {
   suffix?: string;
   prefix?: string;
   duration?: number;
-  label: string;
+  label?: string;
   isText?: boolean;
   text?: string;
   bgColor?: "orange" | "gray";
@@ -55,7 +55,7 @@ const AnimatedCounter = ({ end, suffix = "", prefix = "", duration = 2000, label
       <p className="text-3xl sm:text-5xl font-extrabold" style={{ color: bgColor === "orange" ? "hsl(24 100% 50%)" : "rgb(107, 114, 128)" }}>
         {isText ? text : `${prefix}${count}${suffix}`}
       </p>
-      <p className="text-xs sm:text-sm font-semibold text-muted-foreground mt-2">{label}</p>
+      {label && <p className="text-xs sm:text-sm font-semibold text-muted-foreground mt-2">{label}</p>}
     </div>
   );
 };

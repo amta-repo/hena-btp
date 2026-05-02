@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { MessageCircle, FileText, ArrowRight, Home, Building, Landmark, Droplets, ShieldCheck, Wrench, MapPin, Clock, Lightbulb, X, CheckCircle, Users, Award, Target, Heart } from "lucide-react";
+import { MessageCircle, FileText, ArrowRight, Home, Building, Landmark, Droplets, ShieldCheck, Wrench, MapPin, Clock, Lightbulb, X, CheckCircle, Users, Award, Target, Heart, Zap, Handshake, TrendingUp } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -166,7 +166,7 @@ const Index = () => {
         {/* Hero */}
         {/* Hero */}
         {/* Hero */}
-        <section className="relative flex items-center overflow-hidden pt-24 pb-20 sm:pt-32 sm:pb-24 lg:pt-40 lg:pb-32">
+        <section className="relative flex items-center overflow-hidden pt-32 pb-24 sm:pt-48 sm:pb-32 lg:pt-64 lg:pb-40">
           <div className="absolute inset-0">
             <video
               autoPlay
@@ -217,6 +217,28 @@ const Index = () => {
                   WhatsApp
                 </a>
 
+              </div>
+
+              {/* Trust Badges */}
+              <div className="grid gap-4 grid-cols-1 sm:grid-cols-3 pt-8 max-w-2xl">
+                {/* Badge 1 */}
+                <div className="flex flex-col items-center text-center p-4 rounded-[3px] border border-white/20 bg-white/10 backdrop-blur-sm">
+                  <Zap className="h-6 w-6 text-accent mb-2" />
+                  <p className="text-xs font-semibold text-white">Réactivité Garantie</p>
+                  <p className="text-[10px] text-white/70 mt-1">Réponse rapide à vos demandes</p>
+                </div>
+                {/* Badge 2 */}
+                <div className="flex flex-col items-center text-center p-4 rounded-[3px] border border-white/20 bg-white/10 backdrop-blur-sm">
+                  <Handshake className="h-6 w-6 text-accent mb-2" />
+                  <p className="text-xs font-semibold text-white">Partenariat de Confiance</p>
+                  <p className="text-[10px] text-white/70 mt-1">Relations durables garanties</p>
+                </div>
+                {/* Badge 3 */}
+                <div className="flex flex-col items-center text-center p-4 rounded-[3px] border border-white/20 bg-white/10 backdrop-blur-sm">
+                  <TrendingUp className="h-6 w-6 text-accent mb-2" />
+                  <p className="text-xs font-semibold text-white">Croissance Prouvée</p>
+                  <p className="text-[10px] text-white/70 mt-1">Succès en progression constante</p>
+                </div>
               </div>
             </div>
           </div>
@@ -487,12 +509,12 @@ const Index = () => {
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Nos Partenaires & Clients</h2>
               <p className="mt-3 text-muted-foreground">Travaillant avec les meilleures entreprises et organisations</p>
             </div>
-            <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 items-center justify-items-center">
-              <div className="text-center">
-                <h3 className="text-4xl font-bold uppercase text-accent">GRS GLORY</h3>
+            <div className="grid gap-0 grid-cols-1 sm:grid-cols-2 items-center justify-items-center">
+              <div className="text-center py-8 sm:py-12 px-6 sm:px-8 border-b sm:border-b-0 sm:border-r border-accent/30 w-full flex items-center justify-center">
+                <h3 className="text-5xl sm:text-6xl font-black uppercase tracking-tighter text-accent" style={{ WebkitTextStroke: "2px hsl(24 100% 50%)", color: "transparent", fontFamily: "'Georgia', serif, system-ui" }}>GRS GLORY</h3>
               </div>
-              <div className="text-center">
-                <h3 className="text-4xl font-bold uppercase text-accent">TOP ELECTRIC ⚡</h3>
+              <div className="text-center py-8 sm:py-12 px-6 sm:px-8 w-full flex items-center justify-center">
+                <h3 className="text-5xl sm:text-6xl font-extrabold uppercase tracking-wider text-accent" style={{ WebkitTextStroke: "1.5px hsl(24 100% 50%)", color: "transparent", fontFamily: "'Courier New', monospace" }}>TOP ELECTRIC ⚡</h3>
               </div>
             </div>
           </div>
