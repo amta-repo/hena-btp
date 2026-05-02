@@ -24,7 +24,7 @@ const ServicesSection = () => (
         {services.map((s, i) => (
           <div
             key={s.title}
-            className="group rounded-none bg-card p-6 sm:p-8 hover-lift relative w-full max-w-[95vw] mx-auto"
+            className="group rounded-none bg-card p-6 sm:p-8 hover-lift relative w-full"
             style={{ animationDelay: `${i * 100}ms`, boxShadow: "var(--card-shadow)", minHeight: "520px" }}
           >
             <div className="mb-4 flex h-12 w-12 items-center justify-center group-hover:text-accent-foreground transition-colors" style={{ backgroundColor: "hsl(24 100% 50% / 0.1)", color: "hsl(24 100% 50%)" }}>

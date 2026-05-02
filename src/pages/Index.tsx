@@ -9,7 +9,7 @@ import AnimatedCounter from "@/components/AnimatedCounter";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import TeamSection from "@/components/TeamSection";
 import whyHeroVideo from "@/assets/why-henabtp.mp4";
-import heroVideo from "@/assets/hero-video.mp4";
+import heroVideo from "@/assets/why-henabtp.mp4";
 import ctaBgImg from "@/assets/CTA-background.jpg";
 import villaImg from "@/assets/project-villa.jpg";
 import officeImg from "@/assets/project-office.jpg";
@@ -164,66 +164,132 @@ const Index = () => {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="relative min-h-screen flex items-center overflow-hidden">
+        {/* Hero */}
+        {/* Hero */}
+        <section className="relative flex items-center overflow-hidden pt-24 pb-20 sm:pt-32 sm:pb-24 lg:pt-40 lg:pb-32">
           <div className="absolute inset-0">
             <video
               autoPlay
               muted
               loop
               playsInline
-              preload="metadata"
               className="absolute inset-0 min-h-full min-w-full object-cover"
-              aria-hidden="true"
-              onError={(e) => {
-                e.currentTarget.style.display = 'none';
-              }}
             >
               <source src={heroVideo} type="video/mp4" />
             </video>
             <div className="absolute inset-0 bg-primary/75" />
           </div>
-          <div className="container relative z-10 mx-auto py-56 sm:py-48 lg:py-56">
-            <div className="max-w-3xl space-y-6">
-              <span className="inline-block rounded-full border border-accent/40 bg-accent/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-accent-foreground">
-                🏗️ BTP — Bénin &amp; Afrique de l'Ouest
+
+          <div className="container relative z-10 mx-auto">
+            <div className="max-w-3xl space-y-5">
+
+              <span className="inline-block rounded-full border border-accent/40 bg-accent/10 px-4 py-1 text-xs font-semibold text-accent-foreground">
+                🏗️ BTP — Bénin & Afrique de l'Ouest
               </span>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight text-primary-foreground">
-                <span className="text-white">{heroTexts[currentText]}</span>
+
+              <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-white">
+                {heroTexts[currentText]}
               </h1>
-              <p className="max-w-xl text-base sm:text-lg text-primary-foreground/80 leading-relaxed">
-                Construction moderne, qualité premium, respect des normes HSE - De la conception à la livraison.
+
+              <p className="max-w-xl text-sm sm:text-base text-white/80">
+                Construction moderne, qualité premium, respect des normes HSE.
               </p>
-              <blockquote className="border-l-4 border-accent pl-4 italic text-primary-foreground/70 text-sm sm:text-base">
-                "La seule façon de faire du bon travail, c'est d'aimer ce que vous faites."
-              </blockquote>
-              <div className="flex flex-col sm:flex-row gap-4 pt-4 max-w-2xl">
+
+              <div className="flex flex-col sm:flex-row gap-3 pt-2">
+
+                {/* CTA 1 */}
                 <Link
                   to="/contact"
-                  className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-none bg-accent px-6 py-3.5 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105 shadow-lg"
+                  className="flex items-center justify-center gap-2 bg-accent px-5 py-2.5 text-sm font-semibold text-white shadow-md hover:scale-105 transition"
                 >
                   <FileText className="h-4 w-4" />
-                  Demander un devis gratuit
+                  Demander un devis
                 </Link>
+
+                {/* CTA 2 */}
                 <a
-                  href="https://wa.me/2290155496155?text=Bonjour%2C%20je%20viens%20de%20visiter%20votre%20site%20web%20et%20je%20souhaite%20discuter%20de%20mon%20projet%20de%20construction."
+                  href="https://wa.me/2290155496155"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-none border border-primary-foreground/30 bg-primary-foreground/10 px-6 py-3.5 text-sm font-semibold text-primary-foreground backdrop-blur-sm transition-all hover:bg-primary-foreground/20"
+                  className="flex items-center justify-center gap-2 border border-white/30 bg-white/10 px-5 py-2.5 text-sm font-semibold text-white backdrop-blur-sm hover:bg-white/20 transition"
                 >
                   <MessageCircle className="h-4 w-4" />
-                  Nous contacter sur WhatsApp
+                  WhatsApp
                 </a>
+
               </div>
             </div>
           </div>
-          {/* Stats bar */}
-          <div className="absolute bottom-0 left-0 right-0 bg-background/95 backdrop-blur-md border-t border-border">
-            <div className="container mx-auto grid grid-cols-2 sm:grid-cols-4 divide-x divide-border">
-              <AnimatedCounter end={10} suffix="+" label="Années d'expérience" duration={2000} bgColor="orange" />
-              <AnimatedCounter end={150} suffix="+" label="Projets réalisés" duration={2500} bgColor="gray" />
-              <AnimatedCounter end={100} suffix="%" label="Clients satisfaits" duration={2000} bgColor="orange" />
-              <AnimatedCounter end={0} label="Normes respectées" isText text="HSE" bgColor="gray" />
+        </section>
+
+        {/* Stats Section (PREMIUM UPGRADE) */}
+        <section className="bg-background py-12 border-t">
+          <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+            {/* Stat 1 */}
+            <div className="group p-6 text-center rounded-xl border border-orange-500 bg-white/40 backdrop-blur-md shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-gradient-to-br hover:from-orange-300 hover:to-orange-500 hover:text-white">
+              <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent transition-all duration-300 group-hover:bg-white group-hover:text-orange-500">
+                <Clock className="h-5 w-5" />
+              </div>
+              <p className="text-2xl font-bold text-foreground group-hover:text-white transition-colors">
+                <AnimatedCounter end={10} suffix="+" />
+              </p>
+              <p className="text-sm text-muted-foreground mt-1 group-hover:text-orange-100 transition-colors">
+                Années d'expérience
+              </p>
+              <p className="text-xs text-muted-foreground mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                10+ ans d'expertise reconnue dans le BTP
+              </p>
             </div>
+
+            {/* Stat 2 */}
+            <div className="group p-6 text-center rounded-xl border border-blue-500 bg-white/40 backdrop-blur-md shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-gradient-to-br hover:from-blue-600 hover:to-blue-900 hover:text-white">
+              <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent transition-all duration-300 group-hover:bg-white group-hover:text-blue-900">
+                <Building className="h-5 w-5" />
+              </div>
+              <p className="text-2xl font-bold text-foreground group-hover:text-white transition-colors">
+                <AnimatedCounter end={150} suffix="+" />
+              </p>
+              <p className="text-sm text-muted-foreground mt-1 group-hover:text-blue-100 transition-colors">
+                Projets réalisés
+              </p>
+              <p className="text-xs text-muted-foreground mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                150+ projets livrés avec succès
+              </p>
+            </div>
+
+            {/* Stat 3 */}
+            <div className="group p-6 text-center rounded-xl border border-green-500 bg-white/40 backdrop-blur-md shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-gradient-to-br hover:from-green-400 hover:to-green-600 hover:text-white">
+              <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent transition-all duration-300 group-hover:bg-white group-hover:text-green-500">
+                <Users className="h-5 w-5" />
+              </div>
+              <p className="text-2xl font-bold text-foreground group-hover:text-white transition-colors">
+                <AnimatedCounter end={100} suffix="%" />
+              </p>
+              <p className="text-sm text-muted-foreground mt-1 group-hover:text-green-100 transition-colors">
+                Clients satisfaits
+              </p>
+              <p className="text-xs text-muted-foreground mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                100% de satisfaction client garantie
+              </p>
+            </div>
+
+            {/* Stat 4 */}
+            <div className="group p-6 text-center rounded-xl border border-yellow-500 bg-white/40 backdrop-blur-md shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-gradient-to-br hover:from-yellow-300 hover:to-yellow-500 hover:text-white">
+              <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent transition-all duration-300 group-hover:bg-white group-hover:text-yellow-500">
+                <ShieldCheck className="h-5 w-5" />
+              </div>
+              <p className="text-2xl font-bold text-foreground group-hover:text-white transition-colors">
+                <AnimatedCounter end={0} />
+              </p>
+              <p className="text-sm text-muted-foreground mt-1 group-hover:text-yellow-100 transition-colors">
+                Normes respectées
+              </p>
+              <p className="text-xs text-muted-foreground mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                Normes HSE respectées à 100%
+              </p>
+            </div>
+
           </div>
         </section>
 
@@ -237,9 +303,16 @@ const Index = () => {
                 De la construction neuve à la rénovation, HENA BTP couvre tous vos besoins.
               </p>
             </div>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {/* <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"> */}
+            <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
               {services.map((s, i) => (
-                <div key={s.title} className="group rounded-none bg-card hover-lift cursor-pointer w-[calc(100vw-2rem)] sm:w-full mx-auto overflow-hidden" style={{ boxShadow: "var(--card-shadow)", minHeight: "520px", display: "flex", flexDirection: "column" }} onClick={() => setOpenService(i)}>
+                // <div key={s.title} className="group rounded-none bg-card hover-lift cursor-pointer w-full overflow-hidden" style={{ boxShadow: "var(--card-shadow)", minHeight: "520px", display: "flex", flexDirection: "column" }} onClick={() => setOpenService(i)}>
+                <div
+                  key={s.title}
+                  className="group w-full rounded-none bg-card hover-lift cursor-pointer overflow-hidden flex flex-col"
+                  style={{ boxShadow: "var(--card-shadow)", minHeight: "520px" }}
+                  onClick={() => setOpenService(i)}
+                >
                   <div className="w-full h-3/4 overflow-hidden">
                     <img src={s.image} alt={s.title} loading="lazy" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                   </div>
@@ -312,7 +385,8 @@ const Index = () => {
               <span className="text-xs font-semibold tracking-widest uppercase text-accent">Nos Réalisations</span>
               <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-foreground">Des projets qui parlent d'eux-mêmes</h2>
             </div>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {/* <div className="grid gap-6 grid-cols-2 lg:grid-cols-3"> */}
+            <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
               {featuredProjects.map((p, i) => (
                 <div key={i} className="group overflow-hidden rounded-xl hover-lift" style={{ boxShadow: "var(--card-shadow)" }}>
                   <div className="aspect-[4/3] overflow-hidden">
@@ -413,47 +487,13 @@ const Index = () => {
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Nos Partenaires & Clients</h2>
               <p className="mt-3 text-muted-foreground">Travaillant avec les meilleures entreprises et organisations</p>
             </div>
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5 items-center justify-items-center">
-              {/* Partner 1 */}
-              <svg viewBox="0 0 200 120" className="w-full max-w-[150px] h-auto" xmlns="http://www.w3.org/2000/svg">
-                <rect width="200" height="120" fill="#f3f4f6" rx="8"/>
-                <circle cx="60" cy="40" r="20" fill="#ff8c2e"/>
-                <circle cx="80" cy="50" r="28" fill="none" stroke="#ff8c2e" strokeWidth="3"/>
-                <rect x="120" y="30" width="50" height="50" fill="#ff8c2e" rx="4" opacity="0.7"/>
-                <text x="100" y="100" fontSize="14" fontWeight="bold" fill="#1f2937" textAnchor="middle">Partner One</text>
-              </svg>
-              {/* Partner 2 */}
-              <svg viewBox="0 0 200 120" className="w-full max-w-[150px] h-auto" xmlns="http://www.w3.org/2000/svg">
-                <rect width="200" height="120" fill="#f3f4f6" rx="8"/>
-                <path d="M 60 30 L 80 70 L 40 70 Z" fill="#ff8c2e"/>
-                <path d="M 100 35 L 130 75 L 70 75 Z" fill="#ff8c2e" opacity="0.6"/>
-                <circle cx="150" cy="50" r="18" fill="#ff8c2e" opacity="0.7"/>
-                <text x="100" y="100" fontSize="14" fontWeight="bold" fill="#1f2937" textAnchor="middle">Partner Two</text>
-              </svg>
-              {/* Partner 3 */}
-              <svg viewBox="0 0 200 120" className="w-full max-w-[150px] h-auto" xmlns="http://www.w3.org/2000/svg">
-                <rect width="200" height="120" fill="#f3f4f6" rx="8"/>
-                <rect x="40" y="30" width="35" height="35" fill="#ff8c2e" rx="3"/>
-                <rect x="85" y="35" width="30" height="30" fill="#ff8c2e" opacity="0.7" rx="3"/>
-                <rect x="125" y="25" width="40" height="40" fill="#ff8c2e" opacity="0.5" rx="3"/>
-                <text x="100" y="100" fontSize="14" fontWeight="bold" fill="#1f2937" textAnchor="middle">Partner Three</text>
-              </svg>
-              {/* Partner 4 */}
-              <svg viewBox="0 0 200 120" className="w-full max-w-[150px] h-auto" xmlns="http://www.w3.org/2000/svg">
-                <rect width="200" height="120" fill="#f3f4f6" rx="8"/>
-                <circle cx="70" cy="45" r="22" fill="#ff8c2e"/>
-                <circle cx="130" cy="40" r="18" fill="#ff8c2e" opacity="0.7"/>
-                <path d="M 100 70 L 110 50 L 90 50 Z" fill="#ff8c2e" opacity="0.6"/>
-                <text x="100" y="100" fontSize="14" fontWeight="bold" fill="#1f2937" textAnchor="middle">Partner Four</text>
-              </svg>
-              {/* Partner 5 */}
-              <svg viewBox="0 0 200 120" className="w-full max-w-[150px] h-auto" xmlns="http://www.w3.org/2000/svg">
-                <rect width="200" height="120" fill="#f3f4f6" rx="8"/>
-                <polygon points="100,30 130,60 100,90 70,60" fill="#ff8c2e"/>
-                <circle cx="120" cy="50" r="12" fill="#ff8c2e" opacity="0.6"/>
-                <rect x="50" y="50" width="20" height="20" fill="#ff8c2e" opacity="0.5" rx="2"/>
-                <text x="100" y="100" fontSize="14" fontWeight="bold" fill="#1f2937" textAnchor="middle">Partner Five</text>
-              </svg>
+            <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 items-center justify-items-center">
+              <div className="text-center">
+                <h3 className="text-4xl font-bold uppercase text-accent">GRS GLORY</h3>
+              </div>
+              <div className="text-center">
+                <h3 className="text-4xl font-bold uppercase text-accent">TOP ELECTRIC ⚡</h3>
+              </div>
             </div>
           </div>
         </section>

@@ -140,7 +140,7 @@ const ServicesPage = () => (
       </section>
 
       {/* Clients */}
-      <section className="section-padding">
+      <section className="section-padding bg-sky-100">
         <div className="container mx-auto max-w-3xl text-center">
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">HENA BTP intervient auprès de</h2>
           <div className="flex flex-wrap justify-center gap-3">
@@ -192,7 +192,7 @@ const ServicesPage = () => (
       </section>
 
       {/* Rénovation */}
-      <section className="section-padding">
+      <section className="section-padding bg-sky-100">
         <div className="container mx-auto max-w-4xl">
           <div className="flex items-center gap-3 mb-6">
             <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 text-accent">
