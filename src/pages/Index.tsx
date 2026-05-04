@@ -294,42 +294,6 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Stats Section (PREMIUM UPGRADE) */}
-        <section className="bg-background py-12 border-t">
-          <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-
-            {/* Stat 1 */}
-            <div className="group p-6 text-center rounded-xl border border-orange-500 bg-white/40 backdrop-blur-md shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-gradient-to-br hover:from-orange-300 hover:to-orange-500 hover:text-white">
-              <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent transition-all duration-300 group-hover:bg-white group-hover:text-orange-500">
-                <Clock className="h-5 w-5" />
-              </div>
-              <p className="text-2xl font-bold text-foreground group-hover:text-white transition-colors">
-                <AnimatedCounter end={10} suffix="+" />
-              </p>
-              <p className="text-sm text-muted-foreground mt-1 group-hover:text-orange-100 transition-colors">
-                Années d'expérience
-              </p>
-              <p className="text-xs text-muted-foreground mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                10+ ans d'expertise reconnue dans le BTP
-              </p>
-            </div>
-
-            {/* Stat 2 */}
-            <div className="group p-6 text-center rounded-xl border border-blue-500 bg-white/40 backdrop-blur-md shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-gradient-to-br hover:from-blue-600 hover:to-blue-900 hover:text-white">
-              <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent transition-all duration-300 group-hover:bg-white group-hover:text-blue-900">
-                <Building className="h-5 w-5" />
-              </div>
-              <p className="text-2xl font-bold text-foreground group-hover:text-white transition-colors">
-                <AnimatedCounter end={150} suffix="+" />
-              </p>
-              <p className="text-sm text-muted-foreground mt-1 group-hover:text-blue-100 transition-colors">
-                Projets réalisés
-              </p>
-              <p className="text-xs text-muted-foreground mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                150+ projets livrés avec succès
-              </p>
-            </div>
-
         {/* Stats Section */}
         <section ref={statsRef} className="relative overflow-hidden border-y border-border bg-primary py-20">
           <div
