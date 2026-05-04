@@ -242,9 +242,14 @@ const Index = () => {
               muted
               loop
               playsInline
+              preload="metadata"
+              aria-label="Vidéo HENA BTP – Construction et Travaux Publics au Bénin"
+              title="HENA BTP - BTP Cotonou Bénin"
               className="absolute inset-0 min-h-full min-w-full object-cover"
             >
               <source src={heroVideo} type="video/mp4" />
+              <track kind="descriptions" srcLang="fr" label="Description" />
+              Votre navigateur ne supporte pas la lecture vidéo. HENA BTP, entreprise de Bâtiment et Travaux Publics à Cotonou, Bénin.
             </video>
             <div className="absolute inset-0 bg-primary/75" />
           </div>
