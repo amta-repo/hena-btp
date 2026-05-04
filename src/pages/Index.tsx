@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { MessageCircle, FileText, ArrowRight, Home, Building, Landmark, Droplets, ShieldCheck, Wrench, MapPin, Clock, Lightbulb, X, CheckCircle, Users, Award, Target, Heart, Zap, Handshake, TrendingUp } from "lucide-react";
+import { MessageCircle, FileText, ArrowRight, Home, Building, Landmark, Droplets, ShieldCheck, Wrench, MapPin, Clock, Lightbulb, X, CheckCircle, Users, Award, Target, Heart, Zap, Handshake, TrendingUp, HardHat, Hammer, Ruler, Compass, Construction } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -32,6 +32,24 @@ const jsonLd = {
   address: { "@type": "PostalAddress", addressLocality: "Cotonou", addressCountry: "BJ" },
   geo: { "@type": "GeoCoordinates", latitude: 6.4073475, longitude: 2.3279387 },
   areaServed: ["Bénin", "Afrique de l'Ouest"],
+};
+
+const videoJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: "HENA BTP – Construction & Travaux Publics au Bénin",
+  description: "Découvrez HENA BTP, Groupe HSE : entreprise de Bâtiment et Travaux Publics à Cotonou, Bénin. Construction de villas, bâtiments, génie civil et suivi HSE.",
+  thumbnailUrl: ["https://henabtp.com/og-image.jpg"],
+  uploadDate: "2024-01-01T00:00:00+00:00",
+  contentUrl: "https://henabtp.com/why-henabtp.mp4",
+  embedUrl: "https://henabtp.com/",
+  publisher: {
+    "@type": "Organization",
+    name: "HENA BTP, Groupe HSE",
+    logo: { "@type": "ImageObject", url: "https://henabtp.com/logo.png" },
+  },
+  inLanguage: "fr",
+  regionsAllowed: "BJ,CI,SN,TG,FR",
 };
 
 const services = [
@@ -135,15 +153,67 @@ const heroTexts = [
   "De la conception à la livraison, nous réalisons vos projets",
 ];
 
+function useCountUp(target: number, run: boolean, duration = 1800) {
+  const [n, setN] = useState(0);
+  useEffect(() => {
+    if (!run) return;
+    let start: number | null = null;
+    let raf = 0;
+    const step = (t: number) => {
+      if (start === null) start = t;
+      const p = Math.min((t - start) / duration, 1);
+      setN(Math.round(target * (1 - Math.pow(1 - p, 3))));
+      if (p < 1) raf = requestAnimationFrame(step);
+    };
+    raf = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(raf);
+  }, [run, target, duration]);
+  return n;
+}
+
+const Stat = ({ value, suffix, label, run }: { value: number; suffix: string; label: string; run: boolean }) => {
+  const n = useCountUp(value, run);
+  return (
+    <div className="group text-center">
+      <div className="font-sans text-5xl font-black text-gradient md:text-6xl lg:text-7xl">
+        {n}{suffix}
+      </div>
+      <div className="mt-3 h-px w-12 bg-accent/40 mx-auto transition-all duration-500 group-hover:w-20 group-hover:bg-accent" />
+      <div className="mt-3 text-xs font-semibold uppercase tracking-[0.32em] text-muted-foreground">
+        {label}
+      </div>
+    </div>
+  );
+};
+
+const statsData = [
+  { value: 10, suffix: "+", label: "Années d'expérience" },
+  { value: 150, suffix: "+", label: "Projets réalisés" },
+  { value: 100, suffix: "%", label: "Clients satisfaits" },
+  { value: 100, suffix: "%", label: "Normes HSE" },
+];
+
 const Index = () => {
   const [currentText, setCurrentText] = useState(0);
   const [openService, setOpenService] = useState<number | null>(null);
+  const statsRef = useRef<HTMLDivElement>(null);
+  const [statsRun, setStatsRun] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentText((prev) => (prev + 1) % heroTexts.length);
     }, 4000);
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    if (!statsRef.current) return;
+    const obs = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.isIntersecting && setStatsRun(true)),
+      { threshold: 0.3 }
+    );
+    obs.observe(statsRef.current);
+    return () => obs.disconnect();
   }, []);
 
   return (
@@ -159,6 +229,7 @@ const Index = () => {
         <meta property="og:url" content="https://henabtp.com" />
         <meta property="og:locale" content="fr_BJ" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+        <script type="application/ld+json">{JSON.stringify(videoJsonLd)}</script>
       </Helmet>
 
       <Navbar />
@@ -171,9 +242,14 @@ const Index = () => {
               muted
               loop
               playsInline
+              preload="metadata"
+              aria-label="Vidéo HENA BTP – Construction et Travaux Publics au Bénin"
+              title="HENA BTP - BTP Cotonou Bénin"
               className="absolute inset-0 min-h-full min-w-full object-cover"
             >
               <source src={heroVideo} type="video/mp4" />
+              <track kind="descriptions" srcLang="fr" label="Description" />
+              Votre navigateur ne supporte pas la lecture vidéo. HENA BTP, entreprise de Bâtiment et Travaux Publics à Cotonou, Bénin.
             </video>
             <div className="absolute inset-0 bg-primary/75" />
           </div>
@@ -242,79 +318,25 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Stats Section (PREMIUM UPGRADE) */}
-        <section className="bg-background py-12 border-t">
-          <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-
-            {/* Stat 1 */}
-            <div className="group p-6 text-center rounded-xl border border-orange-500 bg-white/40 backdrop-blur-md shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-gradient-to-br hover:from-orange-300 hover:to-orange-500 hover:text-white">
-              <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent transition-all duration-300 group-hover:bg-white group-hover:text-orange-500">
-                <Clock className="h-5 w-5" />
-              </div>
-              <p className="text-2xl font-bold text-foreground group-hover:text-white transition-colors">
-                <AnimatedCounter end={10} suffix="+" />
-              </p>
-              <p className="text-sm text-muted-foreground mt-1 group-hover:text-orange-100 transition-colors">
-                Années d'expérience
-              </p>
-              <p className="text-xs text-muted-foreground mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                10+ ans d'expertise reconnue dans le BTP
-              </p>
-            </div>
-
-            {/* Stat 2 */}
-            <div className="group p-6 text-center rounded-xl border border-blue-500 bg-white/40 backdrop-blur-md shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-gradient-to-br hover:from-blue-600 hover:to-blue-900 hover:text-white">
-              <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent transition-all duration-300 group-hover:bg-white group-hover:text-blue-900">
-                <Building className="h-5 w-5" />
-              </div>
-              <p className="text-2xl font-bold text-foreground group-hover:text-white transition-colors">
-                <AnimatedCounter end={150} suffix="+" />
-              </p>
-              <p className="text-sm text-muted-foreground mt-1 group-hover:text-blue-100 transition-colors">
-                Projets réalisés
-              </p>
-              <p className="text-xs text-muted-foreground mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                150+ projets livrés avec succès
-              </p>
-            </div>
-
-            {/* Stat 3 */}
-            <div className="group p-6 text-center rounded-xl border border-green-500 bg-white/40 backdrop-blur-md shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-gradient-to-br hover:from-green-400 hover:to-green-600 hover:text-white">
-              <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent transition-all duration-300 group-hover:bg-white group-hover:text-green-500">
-                <Users className="h-5 w-5" />
-              </div>
-              <p className="text-2xl font-bold text-foreground group-hover:text-white transition-colors">
-                <AnimatedCounter end={100} suffix="%" />
-              </p>
-              <p className="text-sm text-muted-foreground mt-1 group-hover:text-green-100 transition-colors">
-                Clients satisfaits
-              </p>
-              <p className="text-xs text-muted-foreground mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                100% de satisfaction client garantie
-              </p>
-            </div>
-
-            {/* Stat 4 */}
-            <div className="group p-6 text-center rounded-xl border border-yellow-500 bg-white/40 backdrop-blur-md shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-gradient-to-br hover:from-yellow-300 hover:to-yellow-500 hover:text-white">
-              <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent transition-all duration-300 group-hover:bg-white group-hover:text-yellow-500">
-                <ShieldCheck className="h-5 w-5" />
-              </div>
-              <p className="text-2xl font-bold text-foreground group-hover:text-white transition-colors">
-                <AnimatedCounter end={0} />
-              </p>
-              <p className="text-sm text-muted-foreground mt-1 group-hover:text-yellow-100 transition-colors">
-                Normes respectées
-              </p>
-              <p className="text-xs text-muted-foreground mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                Normes HSE respectées à 100%
-              </p>
-            </div>
-
+        {/* Stats Section */}
+        <section ref={statsRef} className="relative overflow-hidden border-y border-border bg-primary py-20">
+          <div
+            className="absolute inset-0 opacity-[0.08]"
+            style={{
+              backgroundImage:
+                "linear-gradient(hsl(var(--accent)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--accent)) 1px, transparent 1px)",
+              backgroundSize: "60px 60px",
+            }}
+          />
+          <div className="container mx-auto relative grid grid-cols-2 gap-y-12 md:grid-cols-4">
+            {statsData.map((s) => (
+              <Stat key={s.label} {...s} run={statsRun} />
+            ))}
           </div>
         </section>
 
         {/* Services preview with modals */}
-        <section className="section-padding overflow-hidden" style={{ backgroundColor: "rgba(128, 128, 128, 0.6)" }}>
+        <section className="section-padding overflow-hidden bg-secondary/40">
           <div className="container mx-auto">
             <div className="text-center max-w-2xl mx-auto mb-12">
               <span className="text-xs font-semibold tracking-widest uppercase text-accent">Nos Services</span>
@@ -323,31 +345,48 @@ const Index = () => {
                 De la construction neuve à la rénovation, HENA BTP couvre tous vos besoins.
               </p>
             </div>
-            {/* <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"> */}
             <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
               {services.map((s, i) => (
-                // <div key={s.title} className="group rounded-none bg-card hover-lift cursor-pointer w-full overflow-hidden" style={{ boxShadow: "var(--card-shadow)", minHeight: "520px", display: "flex", flexDirection: "column" }} onClick={() => setOpenService(i)}>
                 <div
                   key={s.title}
-                  className="group w-full rounded-none bg-card hover-lift cursor-pointer overflow-hidden flex flex-col"
-                  style={{ boxShadow: "var(--card-shadow)", minHeight: "520px" }}
+                  className="group relative w-full overflow-hidden rounded-xl bg-card border border-border cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-accent/50"
+                  style={{ minHeight: "340px" }}
                   onClick={() => setOpenService(i)}
                 >
-                  <div className="w-full h-3/4 overflow-hidden">
-                    <img src={s.image} alt={s.title} loading="lazy" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                  </div>
-                  <div className="flex-1 p-6 sm:p-8 flex flex-col justify-between">
-                    <div>
-                      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-none bg-accent/10 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
-                        <s.icon className="h-6 w-6" />
-                      </div>
-                      <h3 className="text-lg font-semibold text-foreground">{s.title}</h3>
-                      <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+                  {/* Decorative graphics */}
+                  <div
+                    className="absolute inset-0 opacity-[0.04] transition-opacity duration-500 group-hover:opacity-[0.08]"
+                    style={{
+                      backgroundImage:
+                        "linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)",
+                      backgroundSize: "30px 30px",
+                    }}
+                  />
+                  <div className="absolute -top-16 -right-16 h-48 w-48 rounded-full bg-accent/10 blur-2xl transition-all duration-500 group-hover:bg-accent/30 group-hover:scale-125" />
+                  <div className="absolute -bottom-20 -left-20 h-56 w-56 rounded-full bg-primary/5 blur-2xl transition-all duration-500 group-hover:bg-primary/15" />
+
+                  <div className="relative p-8 flex flex-col h-full">
+                    <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-accent to-accent/70 text-accent-foreground shadow-lg transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
+                      <s.icon className="h-8 w-8" />
                     </div>
-                    <button className="mt-4 flex h-10 w-10 items-center justify-center rounded-none border border-slate-300 bg-slate-200 text-[#0d2142] text-lg font-bold transition-colors hover:bg-orange-500 hover:text-white" type="button" aria-label="Plus">
-                      +
+                    <h3 className="text-xl font-bold text-foreground transition-colors group-hover:text-accent">
+                      {s.title}
+                    </h3>
+                    <p className="mt-3 text-sm text-muted-foreground leading-relaxed flex-1">
+                      {s.desc}
+                    </p>
+
+                    <button
+                      type="button"
+                      className="mt-6 inline-flex items-center gap-2 self-start text-sm font-semibold text-accent transition-all duration-300 group-hover:gap-3"
+                    >
+                      En savoir plus
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </button>
                   </div>
+
+                  {/* Bottom accent line */}
+                  <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-accent to-accent/50 transition-all duration-500 group-hover:w-full" />
                 </div>
               ))}
             </div>
@@ -362,20 +401,35 @@ const Index = () => {
         {/* Service Detail Modal */}
         {openService !== null && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-primary/60 backdrop-blur-sm p-4" onClick={() => setOpenService(null)}>
-            <div className="relative w-full max-w-lg rounded-2xl bg-card overflow-hidden animate-scale-in" style={{ boxShadow: "var(--card-shadow)" }} onClick={(e) => e.stopPropagation()}>
+            <div
+              className="relative w-full max-w-lg rounded-2xl bg-card overflow-hidden animate-scale-in"
+              style={{ boxShadow: "var(--card-shadow)" }}
+              onClick={(e) => e.stopPropagation()}
+            >
               <button onClick={() => setOpenService(null)} className="absolute top-4 right-4 text-muted-foreground hover:text-foreground z-10 bg-background/80 rounded-full p-1">
                 <X className="h-5 w-5" />
               </button>
-              <div className="aspect-video overflow-hidden">
-                <img src={services[openService].image} alt={services[openService].title} className="w-full h-full object-cover" />
-              </div>
-              <div className="p-6 sm:p-8">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent text-accent-foreground">
-                    {(() => { const Icon = services[openService].icon; return <Icon className="h-6 w-6" />; })()}
+
+              {/* Graphic header (no image) */}
+              <div className="relative h-32 bg-gradient-to-br from-primary via-primary to-accent overflow-hidden">
+                <div
+                  className="absolute inset-0 opacity-20"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(hsl(var(--accent-foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--accent-foreground)) 1px, transparent 1px)",
+                    backgroundSize: "24px 24px",
+                  }}
+                />
+                <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-accent/40 blur-2xl" />
+                <div className="absolute bottom-4 left-6 flex items-center gap-3">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-accent text-accent-foreground shadow-lg">
+                    {(() => { const Icon = services[openService].icon; return <Icon className="h-7 w-7" />; })()}
                   </div>
-                  <h3 className="text-xl font-bold text-foreground">{services[openService].title}</h3>
+                  <h3 className="text-xl font-bold text-primary-foreground">{services[openService].title}</h3>
                 </div>
+              </div>
+
+              <div className="p-6 sm:p-8">
                 <p className="text-muted-foreground mb-4">{services[openService].desc}</p>
                 <ul className="space-y-3 mb-6">
                   {services[openService].details.map((d) => (

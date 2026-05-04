@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Facebook, Instagram } from "lucide-react";
 import logo from "@/assets/logo-henabtp.png";
 
 const Footer = () => (
@@ -17,6 +18,26 @@ const Footer = () => (
           <p className="text-sm text-primary-foreground/60 leading-relaxed">
             Votre partenaire de confiance en Bâtiment et Travaux Publics au Bénin et en Afrique de l'Ouest.
           </p>
+          <div className="flex items-center gap-3 pt-2">
+            <a
+              href="https://www.facebook.com/profile.php?id=61567980180924"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="HENA BTP sur Facebook"
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-primary-foreground/10 text-primary-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+            >
+              <Facebook className="h-4 w-4" />
+            </a>
+            <a
+              href="https://www.instagram.com/henabtp/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="HENA BTP sur Instagram"
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-primary-foreground/10 text-primary-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+            >
+              <Instagram className="h-4 w-4" />
+            </a>
+          </div>
         </div>
 
         {/* Services */}
