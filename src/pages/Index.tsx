@@ -34,6 +34,24 @@ const jsonLd = {
   areaServed: ["Bénin", "Afrique de l'Ouest"],
 };
 
+const videoJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: "HENA BTP – Construction & Travaux Publics au Bénin",
+  description: "Découvrez HENA BTP, Groupe HSE : entreprise de Bâtiment et Travaux Publics à Cotonou, Bénin. Construction de villas, bâtiments, génie civil et suivi HSE.",
+  thumbnailUrl: ["https://henabtp.com/og-image.jpg"],
+  uploadDate: "2024-01-01T00:00:00+00:00",
+  contentUrl: "https://henabtp.com/why-henabtp.mp4",
+  embedUrl: "https://henabtp.com/",
+  publisher: {
+    "@type": "Organization",
+    name: "HENA BTP, Groupe HSE",
+    logo: { "@type": "ImageObject", url: "https://henabtp.com/logo.png" },
+  },
+  inLanguage: "fr",
+  regionsAllowed: "BJ,CI,SN,TG,FR",
+};
+
 const services = [
   {
     icon: Home,
