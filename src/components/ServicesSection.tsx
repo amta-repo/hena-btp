@@ -15,7 +15,8 @@ const ServicesSection = () => (
       <div className="text-center max-w-2xl mx-auto mb-12">
         <span className="text-xs font-semibold tracking-widest uppercase text-accent">Nos Services</span>
         <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-foreground">Des solutions BTP complètes à Cotonou</h2>
-        <p className="mt-3 text-muted-foreground">
+        {/* <p className="mt-3 text-blue-950"> */}
+          <p className="mt-3" style={{ color: '#020617' }}>
           De la construction neuve à la rénovation, HENA BTP couvre tous vos besoins en bâtiment et travaux publics.
         </p>
       </div>

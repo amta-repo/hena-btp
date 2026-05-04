@@ -101,7 +101,8 @@ const TeamSection = ({ variant = "home" }: TeamSectionProps) => {
               Des <span className="text-gradient">professionnels</span> passionnés
             </h2>
           </div>
-          <p className="max-w-md text-muted-foreground">
+          {/* <p className="max-w-md text-muted-foreground"> */}
+          <p className="max-w-md text-blue-950">
             Architectes, ingénieurs et chefs de chantier — une équipe pluridisciplinaire au service de vos ambitions.
           </p>
         </div>
