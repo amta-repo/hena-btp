@@ -229,6 +229,7 @@ const Index = () => {
         <meta property="og:url" content="https://henabtp.com" />
         <meta property="og:locale" content="fr_BJ" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+        <script type="application/ld+json">{JSON.stringify(videoJsonLd)}</script>
       </Helmet>
 
       <Navbar />
