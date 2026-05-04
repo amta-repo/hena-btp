@@ -100,28 +100,77 @@ const AProposPage = () => {
           </div>
         </section>
 
+        {/* HISTOIRE - Adopted layout */}
         <section className="section-padding bg-gradient-to-b from-white to-slate-50">
           <div className="container mx-auto max-w-6xl">
-            <div className="grid lg:grid-cols-2 gap-0 items-stretch border-4 border-orange-500 rounded-2xl overflow-hidden bg-white/80 backdrop-blur shadow-sm">
-
-              <div className="p-8 flex flex-col justify-center">
-                <h2 className="text-3xl font-bold mb-6">Notre Histoire</h2>
-
-                <p>HENA BTP est née d'une ambition simple : transformer les idées en réalités durables.</p>
-
-                {storyExpanded && (
-                  <p className="mt-4 text-muted-foreground">
-                    Créée par des passionnés du bâtiment, l'entreprise s'est construite autour d'un constat : trop de projets souffrent de manque de rigueur, de transparence et de qualité.
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Image with floating badge */}
+              <div className="relative">
+                <div className="overflow-hidden rounded-2xl shadow-xl">
+                  <img
+                    src={storyImg}
+                    alt="HENA BTP - Notre histoire et expertise BTP au Bénin"
+                    loading="lazy"
+                    className="w-full h-[480px] object-cover"
+                  />
+                </div>
+                {/* Floating badge */}
+                <div className="absolute -bottom-6 -left-6 bg-accent text-accent-foreground p-6 rounded-2xl shadow-2xl">
+                  <p className="text-4xl sm:text-5xl font-black leading-none">10+</p>
+                  <p className="mt-2 text-xs font-semibold uppercase tracking-[0.2em]">
+                    Années d'expertise
                   </p>
-                )}
-
-                <button onClick={() => setStoryExpanded(!storyExpanded)} className="mt-6 text-accent self-start">
-                  {storyExpanded ? "Afficher moins" : "Lire la suite"}
-                </button>
+                </div>
+                {/* Decorative accent block */}
+                <div className="absolute -top-4 -right-4 h-24 w-24 rounded-2xl bg-primary/10 -z-10" />
               </div>
 
-              <div className="relative">
-                <img src={storyImg} className="w-full h-full object-cover" />
+              {/* Text */}
+              <div>
+                <p className="text-xs font-semibold tracking-widest uppercase text-accent mb-3">
+                  À propos de HENA BTP
+                </p>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-foreground mb-6">
+                  Gestion de projet <span className="text-gradient">complète</span>
+                </h2>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Depuis sa création, HENA BTP s'est imposée comme un acteur de référence du bâtiment et des travaux publics au Bénin. Notre approche combine rigueur technique, innovation et respect des engagements pour livrer des ouvrages d'exception.
+                </p>
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  Nous accompagnons particuliers, entreprises et collectivités dans la réalisation de leurs projets les plus ambitieux, à Cotonou, au Bénin et en Afrique de l'Ouest.
+                </p>
+
+                <ul className="space-y-3 mb-8">
+                  {[
+                    "Plus de 10 ans d'expérience dans le BTP",
+                    "Plus de 150 chantiers livrés avec succès",
+                    "Une équipe qualifiée et certifiée HSE",
+                    "Engagement environnemental et matériaux durables",
+                  ].map((p) => (
+                    <li key={p} className="flex items-start gap-3">
+                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent text-accent-foreground">
+                        <CheckCircle className="h-3 w-3" />
+                      </span>
+                      <span className="text-sm text-foreground">{p}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="flex flex-wrap items-center gap-6">
+                  <Link
+                    to="/realisations"
+                    className="inline-flex items-center gap-2 bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:scale-105 rounded-md"
+                  >
+                    Voir nos réalisations
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                  <div className="border-l border-border pl-6">
+                    <p className="text-xs uppercase tracking-widest text-muted-foreground">Appelez-nous</p>
+                    <a href="tel:+2290155496155" className="text-base font-bold text-accent hover:underline">
+                      +229 01 55 49 61 55
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
