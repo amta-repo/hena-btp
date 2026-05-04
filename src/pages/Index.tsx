@@ -135,15 +135,67 @@ const heroTexts = [
   "De la conception à la livraison, nous réalisons vos projets",
 ];
 
+function useCountUp(target: number, run: boolean, duration = 1800) {
+  const [n, setN] = useState(0);
+  useEffect(() => {
+    if (!run) return;
+    let start: number | null = null;
+    let raf = 0;
+    const step = (t: number) => {
+      if (start === null) start = t;
+      const p = Math.min((t - start) / duration, 1);
+      setN(Math.round(target * (1 - Math.pow(1 - p, 3))));
+      if (p < 1) raf = requestAnimationFrame(step);
+    };
+    raf = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(raf);
+  }, [run, target, duration]);
+  return n;
+}
+
+const Stat = ({ value, suffix, label, run }: { value: number; suffix: string; label: string; run: boolean }) => {
+  const n = useCountUp(value, run);
+  return (
+    <div className="group text-center">
+      <div className="font-sans text-5xl font-black text-gradient md:text-6xl lg:text-7xl">
+        {n}{suffix}
+      </div>
+      <div className="mt-3 h-px w-12 bg-accent/40 mx-auto transition-all duration-500 group-hover:w-20 group-hover:bg-accent" />
+      <div className="mt-3 text-xs font-semibold uppercase tracking-[0.32em] text-muted-foreground">
+        {label}
+      </div>
+    </div>
+  );
+};
+
+const statsData = [
+  { value: 10, suffix: "+", label: "Années d'expérience" },
+  { value: 150, suffix: "+", label: "Projets réalisés" },
+  { value: 100, suffix: "%", label: "Clients satisfaits" },
+  { value: 100, suffix: "%", label: "Normes HSE" },
+];
+
 const Index = () => {
   const [currentText, setCurrentText] = useState(0);
   const [openService, setOpenService] = useState<number | null>(null);
+  const statsRef = useRef<HTMLDivElement>(null);
+  const [statsRun, setStatsRun] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentText((prev) => (prev + 1) % heroTexts.length);
     }, 4000);
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    if (!statsRef.current) return;
+    const obs = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.isIntersecting && setStatsRun(true)),
+      { threshold: 0.3 }
+    );
+    obs.observe(statsRef.current);
+    return () => obs.disconnect();
   }, []);
 
   return (
