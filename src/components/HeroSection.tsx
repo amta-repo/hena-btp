@@ -1,5 +1,5 @@
 import { MessageCircle, FileText } from "lucide-react";
-import heroVideo from "@/assets/hero-video.mp4";
+import heroVideo from "@/assets/why-henabtp.mp4";
 
 const HeroSection = () => (
   <section className="relative min-h-screen flex items-center overflow-hidden">
@@ -63,7 +63,7 @@ const HeroSection = () => (
     <div className="absolute bottom-0 left-0 right-0 bg-transparent backdrop-blur-md border-t border-border">
       <div className="container mx-auto grid grid-cols-2 sm:grid-cols-4 divide-x divide-border">
         {[
-          { num: "10+", label: "Années d'expérience" },
+          { num: "5+", label: "Années d'expérience" },
           { num: "150+", label: "Projets réalisés" },
           { num: "100%", label: "Clients satisfaits" },
           { num: "HSE", label: "Normes respectées" },

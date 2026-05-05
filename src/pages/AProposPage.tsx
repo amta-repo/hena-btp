@@ -13,8 +13,8 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 
 import whyHeroVideo from "@/assets/why-henabtp.mp4";
 import heroImg from "@/assets/project-office.jpg";
-import storyImg from "@/assets/Notre-Histoire-about (2).jpg";
-import dgImg from "@/assets/dg-henabtp.jpeg";
+import storyImg from "@/assets/about-notre-histoire.jpg";
+import dgImg from "@/assets/team-ariane-zossou-dg.jpeg";
 import nosObjectifsImg from "@/assets/nos-objectifs.jpg";
 
 /* ---------------- DATA ---------------- */
@@ -62,7 +62,7 @@ const whyUsReasons = [
 ];
 
 const stats = [
-  { num: "10+", label: "Années d'expérience" },
+  { num: "5+", label: "Années d'expérience" },
   { num: "150+", label: "Projets réalisés" },
   { num: "100%", label: "Clients satisfaits" },
   { num: "0", label: "Accidents sur chantier" },
@@ -116,7 +116,7 @@ const AProposPage = () => {
                 </div>
                 {/* Floating badge */}
                 <div className="absolute -bottom-6 -left-6 bg-accent text-accent-foreground p-6 rounded-2xl shadow-2xl">
-                  <p className="text-4xl sm:text-5xl font-black leading-none">10+</p>
+                  <p className="text-4xl sm:text-5xl font-black leading-none">5+</p>
                   <p className="mt-2 text-xs font-semibold uppercase tracking-[0.2em]">
                     Années d'expertise
                   </p>
@@ -142,7 +142,7 @@ const AProposPage = () => {
 
                 <ul className="space-y-3 mb-8">
                   {[
-                    "Plus de 10 ans d'expérience dans le BTP",
+                    "Plus de 5 ans d'expérience dans le BTP",
                     "Plus de 150 chantiers livrés avec succès",
                     "Une équipe qualifiée et certifiée HSE",
                     "Engagement environnemental et matériaux durables",
@@ -177,27 +177,53 @@ const AProposPage = () => {
         </section>
 
         {/* DIRECTOR */}
-        <section className="section-padding bg-secondary">
-          <div className="grid lg:grid-cols-5 gap-10 container mx-auto">
+        <section className="section-padding bg-gradient-to-b from-white to-slate-50">
+          <div className="container mx-auto max-w-6xl">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="relative">
+                <div className="overflow-hidden rounded-2xl shadow-xl">
+                  <img
+                    src={dgImg}
+                    alt="Ariane Zossou, Directrice Générale de HENA BTP"
+                    loading="lazy"
+                    className="w-full h-[480px] object-cover"
+                  />
+                </div>
+                <div className="absolute -bottom-6 -left-6 bg-accent text-accent-foreground p-6 rounded-2xl shadow-2xl">
+                  <p className="text-4xl sm:text-5xl font-black leading-none">DG</p>
+                  <p className="mt-2 text-xs font-semibold uppercase tracking-[0.2em]">
+                    HENA BTP
+                  </p>
+                </div>
+                <div className="absolute -top-4 -right-4 h-24 w-24 rounded-2xl bg-primary/10 -z-10" />
+              </div>
 
-            <img src={dgImg} className="lg:col-span-2 rounded-xl shadow-lg" />
-
-            <div className="lg:col-span-3">
-              <h2 className="text-3xl font-bold mb-4">Mot de la Directrice Générale</h2>
-
-              <p>Chaque projet est un rêve qui prend forme.</p>
-
-              {directorExpanded && (
-                <p className="mt-4 text-muted-foreground">
-                  Nous construisons pour aujourd'hui et demain avec exigence.
+              <div>
+                <p className="text-xs font-semibold tracking-widest uppercase text-accent mb-3">
+                  Direction Générale
                 </p>
-              )}
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-foreground mb-6">
+                  Mot de la Directrice <span className="text-gradient">Générale</span>
+                </h2>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Chaque projet est un rêve qui prend forme. Chez HENA BTP, nous portons cette responsabilité avec rigueur, écoute et exigence.
+                </p>
 
-              <button onClick={() => setDirectorExpanded(!directorExpanded)} className="mt-4 text-accent">
-                {directorExpanded ? "Afficher moins" : "Lire la suite"}
-              </button>
+                {directorExpanded && (
+                  <p className="text-muted-foreground leading-relaxed mb-6">
+                    Nous construisons pour aujourd'hui et demain avec une vision durable, des équipes engagées et une attention constante portée à la qualité, à la sécurité et au respect des délais.
+                  </p>
+                )}
+
+                <button
+                  onClick={() => setDirectorExpanded(!directorExpanded)}
+                  className="inline-flex items-center gap-2 bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:scale-105 rounded-md"
+                >
+                  {directorExpanded ? "Afficher moins" : "Lire la suite"}
+                  <ArrowRight className="h-4 w-4" />
+                </button>
+              </div>
             </div>
-
           </div>
         </section>
 

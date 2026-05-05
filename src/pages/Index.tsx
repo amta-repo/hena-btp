@@ -14,12 +14,12 @@ import ctaBgImg from "@/assets/CTA-background.jpg";
 import villaImg from "@/assets/project-villa.jpg";
 import officeImg from "@/assets/project-office.jpg";
 import roadImg from "@/assets/project-road.jpg";
-import constructionImg from "@/assets/Construction clé en main (2).jpg";
-import etudeImg from "@/assets/Étude et suivi de chantiers.jpg";
-import genieImg from "@/assets/génie-civil.jpg";
-import amenagementImg from "@/assets/Aménagement & Assainissement.jpg";
-import hseImg from "@/assets/Suivi HSE sur Chantiers.jpg";
-import renovationImg from "@/assets/Rénovation & Extension.jpg";
+import constructionImg from "@/assets/service-construction-cle-en-main.jpg";
+import etudeImg from "@/assets/service-etude-suivi-chantiers.jpg";
+import genieImg from "@/assets/service-genie-civil.jpg";
+import amenagementImg from "@/assets/service-amenagement-assainissement.jpg";
+import hseImg from "@/assets/service-suivi-hse-chantiers.jpg";
+import renovationImg from "@/assets/service-renovation-extension.jpg";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -187,7 +187,7 @@ const Stat = ({ value, suffix, label, run }: { value: number; suffix: string; la
 };
 
 const statsData = [
-  { value: 10, suffix: "+", label: "Années d'expérience" },
+  { value: 5, suffix: "+", label: "Années d'expérience" },
   { value: 150, suffix: "+", label: "Projets réalisés" },
   { value: 100, suffix: "%", label: "Clients satisfaits" },
   { value: 100, suffix: "%", label: "Normes HSE" },
@@ -197,7 +197,7 @@ const Index = () => {
   const [currentText, setCurrentText] = useState(0);
   const [openService, setOpenService] = useState<number | null>(null);
   const statsRef = useRef<HTMLDivElement>(null);
-  const [statsRun, setStatsRun] = useState(false);
+  const [statsRun, setStatsRun] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => {

@@ -18,7 +18,7 @@ const reasons = [
 ];
 
 const stats = [
-  { num: "10+", label: "Années d'expérience dans le BTP au Bénin" },
+  { num: "5+", label: "Années d'expérience dans le BTP au Bénin" },
   { num: "150+", label: "Projets réalisés avec succès" },
   { num: "100%", label: "Taux de satisfaction client" },
   { num: "0", label: "Accidents sur nos chantiers HSE" },
