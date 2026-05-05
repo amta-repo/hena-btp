@@ -197,7 +197,7 @@ const Index = () => {
   const [currentText, setCurrentText] = useState(0);
   const [openService, setOpenService] = useState<number | null>(null);
   const statsRef = useRef<HTMLDivElement>(null);
-  const [statsRun, setStatsRun] = useState(false);
+  const [statsRun, setStatsRun] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => {
