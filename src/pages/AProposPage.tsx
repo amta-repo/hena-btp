@@ -13,8 +13,8 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 
 import whyHeroVideo from "@/assets/why-henabtp.mp4";
 import heroImg from "@/assets/project-office.jpg";
-import storyImg from "@/assets/Notre-Histoire-about (2).jpg";
-import dgImg from "@/assets/dg-henabtp.jpeg";
+import storyImg from "@/assets/about-notre-histoire.jpg";
+import dgImg from "@/assets/team-ariane-zossou-dg.jpeg";
 import nosObjectifsImg from "@/assets/nos-objectifs.jpg";
 
 /* ---------------- DATA ---------------- */
@@ -62,7 +62,7 @@ const whyUsReasons = [
 ];
 
 const stats = [
-  { num: "10+", label: "Années d'expérience" },
+  { num: "5+", label: "Années d'expérience" },
   { num: "150+", label: "Projets réalisés" },
   { num: "100%", label: "Clients satisfaits" },
   { num: "0", label: "Accidents sur chantier" },
@@ -116,7 +116,7 @@ const AProposPage = () => {
                 </div>
                 {/* Floating badge */}
                 <div className="absolute -bottom-6 -left-6 bg-accent text-accent-foreground p-6 rounded-2xl shadow-2xl">
-                  <p className="text-4xl sm:text-5xl font-black leading-none">10+</p>
+                  <p className="text-4xl sm:text-5xl font-black leading-none">5+</p>
                   <p className="mt-2 text-xs font-semibold uppercase tracking-[0.2em]">
                     Années d'expertise
                   </p>
@@ -142,7 +142,7 @@ const AProposPage = () => {
 
                 <ul className="space-y-3 mb-8">
                   {[
-                    "Plus de 10 ans d'expérience dans le BTP",
+                    "Plus de 5 ans d'expérience dans le BTP",
                     "Plus de 150 chantiers livrés avec succès",
                     "Une équipe qualifiée et certifiée HSE",
                     "Engagement environnemental et matériaux durables",
