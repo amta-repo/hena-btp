@@ -1,4 +1,11 @@
 import { useEffect, useState } from "react";
+import arianePhoto from "@/assets/team-ariane-zossou-dg.jpeg";
+import ezeckielPhoto from "@/assets/team-ezeckiel-dossou-houngbeme-chef-chantier.jpeg";
+import alexandrePhoto from "@/assets/team-alexandre-gnimahoue-directeur-technique.jpeg";
+import nelsonPhoto from "@/assets/team-nelson-ahehehinnou-responsable-technique.jpeg";
+import oziasPhoto from "@/assets/team-ozias-djakpo-directeur-administratif-financier.jpeg";
+import alidaPhoto from "@/assets/team-alida-kponon-secretaire-direction.jpeg";
+import kokodomePhoto from "@/assets/team-kokodome-jehodic-chef-achat.jpeg";
 
 type TeamSectionProps = {
   variant?: "home" | "about";
@@ -8,39 +15,39 @@ const teamMembers = [
   {
     name: "Ariane Zossou",
     role: "Directrice Générale",
-    photo: new URL("../assets/dg-henabtp.jpeg", import.meta.url).href,
+    photo: arianePhoto,
     keepBg: true,
   },
   {
     name: "Ezéckiel Dossou HOUNGBEME",
     role: "Chef Chantier",
-    photo: new URL("../assets/Ezéckiel Dossou HOUNGBEME -Chef Chantier.jpeg", import.meta.url).href,
+    photo: ezeckielPhoto,
   },
   {
     name: "Alexandre GNIMAHOUE",
     role: "Directeur Technique",
-    photo: new URL("../assets/Directeur Technique - Alexandre GNIMAHOUE.jpeg", import.meta.url).href,
+    photo: alexandrePhoto,
   },
   {
     name: "Nelson AHEHEHINNOU",
     role: "Responsable Technique",
-    photo: new URL("../assets/Responsable Technique - Nelson AHEHEHINNOU.jpeg", import.meta.url).href,
+    photo: nelsonPhoto,
   },
   {
     name: "Ozias DJAKPO",
     role: "Directeur Administratif et Financier",
-    photo: new URL("../assets/Ozias DJAKPO-Directeur Administratif et Financier.jpeg", import.meta.url).href,
+    photo: oziasPhoto,
   },
   {
     name: "Alida KPONON",
     role: "Secrétaire de Direction",
-    photo: new URL("../assets/Secrétaire de Direction - Alida KPONON.jpeg", import.meta.url).href,
+    photo: alidaPhoto,
     keepBg: true,
   },
   {
     name: "KOKODOME JEHODIC",
     role: "Chef Achat",
-    photo: new URL("../assets/KOKODOME JEHODIC - Chef Achat.jpeg", import.meta.url).href,
+    photo: kokodomePhoto,
   },
 ];
 
@@ -62,15 +69,8 @@ const TeamSection = ({ variant = "home" }: TeamSectionProps) => {
           alt={`${member.name} - ${member.role} - HENA BTP Cotonou`}
           loading="lazy"
           className={`aspect-[3/4] w-full object-cover transition-transform duration-700 group-hover:scale-105 ${
-            member.keepBg ? "" : "bg-[#c0c0c0]"
+            member.keepBg ? "" : "bg-muted"
           }`}
-          style={
-            member.keepBg
-              ? undefined
-              : {
-                  backgroundColor: "#c0c0c0",
-                }
-          }
         />
         <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/30 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-90" />
         <div className="absolute inset-x-0 bottom-0 translate-y-4 px-5 pb-5 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
