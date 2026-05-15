@@ -65,8 +65,8 @@ if (!$stmt->execute()) {
 $stmt->close();
 $mysqli->close();
 
-$companyEmail = "contact@henabtp.com";
-$emailHeaders = "From: contact@henabtp.com\r\n" .
+$companyEmail = "info@henabtp.com";
+$emailHeaders = "From: info@henabtp.com\r\n" .
                 "Reply-To: " . $email . "\r\n" .
                 "Content-Type: text/plain; charset=UTF-8\r\n";
 

@@ -48,7 +48,7 @@ const TestimonialsSection = () => {
             <div className="bg-card p-6" style={{ boxShadow: "var(--card-shadow)", borderRadius: "0px", minHeight: "340px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
               <div className="flex gap-1 mb-3 justify-center">
                 {[...Array(5)].map((_, j) => (
-                  <Star key={j} className="h-4 w-4 fill-accent text-accent" />
+                  <Star key={j} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed italic mb-4 text-center">"{testimonials[currentIndex].text}"</p>
@@ -70,7 +70,7 @@ const TestimonialsSection = () => {
               >
                 <div className="flex gap-1 mb-3">
                   {[...Array(5)].map((_, j) => (
-                    <Star key={j} className="h-4 w-4 fill-accent text-accent" />
+                    <Star key={j} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                   ))}
                 </div>
                 <p className="text-sm text-muted-foreground leading-relaxed italic mb-4">"{t.text}"</p>
