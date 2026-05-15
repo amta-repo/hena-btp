@@ -82,7 +82,7 @@ const Footer = () => (
               <a href="tel:+2290155496155" className="hover:text-accent transition-colors">+229 01 55 49 61 55</a>
             </li>
             <li>
-              <a href="mailto:contact@henabtp.com" className="hover:text-accent transition-colors">contact@henabtp.com</a>
+              <a href="mailto:info@henabtp.com" className="hover:text-accent transition-colors">info@henabtp.com</a>
             </li>
           </ul>
         </div>
