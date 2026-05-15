@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import whyHeroVideo from "@/assets/why-henabtp.mp4";
+import AnimatedCounter from "@/components/AnimatedCounter";
 
 const reasons = [
   { icon: MapPin, title: "Expertise locale à Cotonou", desc: "Une connaissance approfondie du terrain, des réglementations béninoises et des spécificités du BTP local. Nous savons adapter chaque projet au contexte de Cotonou et du Bénin." },
@@ -18,10 +19,10 @@ const reasons = [
 ];
 
 const stats = [
-  { num: "5+", label: "Années d'expérience dans le BTP au Bénin" },
-  { num: "150+", label: "Projets réalisés avec succès" },
-  { num: "100%", label: "Taux de satisfaction client" },
-  { num: "0", label: "Accidents sur nos chantiers HSE" },
+  { end: 5, suffix: "+", label: "Années d'expérience dans le BTP au Bénin" },
+  { end: 150, suffix: "+", label: "Projets réalisés avec succès" },
+  { end: 100, suffix: "%", label: "Taux de satisfaction client" },
+  { end: 0, suffix: "", label: "Accidents sur nos chantiers HSE" },
 ];
 
 const PourquoiPage = () => (
@@ -67,8 +68,7 @@ const PourquoiPage = () => (
         <div className="container mx-auto grid grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((s) => (
             <div key={s.label} className="text-center p-6 rounded-xl bg-card" style={{ boxShadow: "var(--card-shadow)" }}>
-              <p className="text-3xl sm:text-4xl font-bold text-accent">{s.num}</p>
-              <p className="mt-2 text-sm text-muted-foreground">{s.label}</p>
+              <AnimatedCounter end={s.end} suffix={s.suffix} label={s.label} />
             </div>
           ))}
         </div>

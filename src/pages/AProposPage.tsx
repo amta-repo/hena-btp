@@ -10,6 +10,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TeamSection from "@/components/TeamSection";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import AnimatedCounter from "@/components/AnimatedCounter";
 
 import whyHeroVideo from "@/assets/why-henabtp.mp4";
 import heroImg from "@/assets/project-office.jpg";
@@ -62,10 +63,10 @@ const whyUsReasons = [
 ];
 
 const stats = [
-  { num: "5+", label: "Années d'expérience" },
-  { num: "150+", label: "Projets réalisés" },
-  { num: "100%", label: "Clients satisfaits" },
-  { num: "0", label: "Accidents sur chantier" },
+  { end: 5, suffix: "+", label: "Années d'expérience" },
+  { end: 150, suffix: "+", label: "Projets réalisés" },
+  { end: 100, suffix: "%", label: "Clients satisfaits" },
+  { end: 0, suffix: "", label: "Accidents sur chantier" },
 ];
 
 /* ---------------- PAGE ---------------- */
@@ -270,8 +271,7 @@ const AProposPage = () => {
           <div className="grid grid-cols-2 sm:grid-cols-4 container mx-auto bg-background/95 backdrop-blur-md border-t border-border divide-x divide-border rounded-xl overflow-hidden">
             {stats.map((s) => (
               <div key={s.label} className="p-6 text-center">
-                <p className="text-3xl font-bold text-accent">{s.num}</p>
-                <p className="text-sm">{s.label}</p>
+                <AnimatedCounter end={s.end} suffix={s.suffix} label={s.label} />
               </div>
             ))}
           </div>
