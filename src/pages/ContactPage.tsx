@@ -11,8 +11,15 @@ const ContactPage = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const msg = encodeURIComponent(`Bonjour, je m'appelle ${form.name}. Service: ${form.service}. ${form.message}`);
-    window.open(`https://wa.me/2290155496155?text=${msg}`, "_blank");
+    const subject = `Demande de devis – ${form.service || "Projet BTP"} – ${form.name}`;
+    const body =
+      `Nom: ${form.name}\n` +
+      `Email: ${form.email}\n` +
+      `Téléphone: ${form.phone}\n` +
+      `Service: ${form.service}\n\n` +
+      `Message:\n${form.message}`;
+    window.location.href =
+      `mailto:info@henabtp.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   return (
@@ -49,7 +56,7 @@ const ContactPage = () => {
             {[
               { icon: Phone, title: "Téléphone", value: "+229 01 55 49 61 55", href: "tel:+2290155496155", desc: "Appelez-nous directement" },
               { icon: MessageCircle, title: "WhatsApp", value: "+229 01 55 49 61 55", href: "https://wa.me/2290155496155", desc: "Réponse rapide garantie" },
-              { icon: Mail, title: "Email", value: "contact@henabtp.com", href: "mailto:contact@henabtp.com", desc: "Envoyez-nous un email" },
+              { icon: Mail, title: "Email", value: "info@henabtp.com", href: "mailto:info@henabtp.com", desc: "Envoyez-nous un email" },
               { icon: Clock, title: "Horaires", value: "Lun - Sam : 8h - 18h", href: null, desc: "Disponibles 6j/7" },
             ].map((c) => (
               <div key={c.title} className="rounded-xl bg-card p-6 text-center hover-lift" style={{ boxShadow: "var(--card-shadow)" }}>
@@ -147,10 +154,10 @@ const ContactPage = () => {
                   className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-sm font-semibold text-accent-foreground transition-transform hover:scale-[1.02]"
                 >
                   <Send className="h-4 w-4" />
-                  Envoyer via WhatsApp
+                  Envoyer la demande à info@henabtp.com
                 </button>
                 <p className="text-xs text-muted-foreground text-center">
-                  En soumettant ce formulaire, votre message sera envoyé directement sur notre WhatsApp pour une réponse rapide.
+                  Votre message sera adressé directement à info@henabtp.com pour traitement sous 24h.
                 </p>
               </form>
             </div>

@@ -46,7 +46,7 @@ const teamMembers = [
   },
   {
     name: "KOKODOME JEHODIC",
-    role: "Chef Achat",
+    role: "Chef d'Approvisionnement",
     photo: kokodomePhoto,
   },
 ];

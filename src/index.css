@@ -65,7 +65,7 @@
     font-family: 'Inter', sans-serif;
     position: relative;
     min-height: 100%;
-    background-color: rgb(var(--background));
+    background-color: hsl(var(--background));
   }
 
   body::before {
@@ -120,7 +120,7 @@
 }
 
 .animate-scroll-left {
-  animation: scroll-left 40s linear infinite;
+  animation: scroll-left 18s linear infinite;
 }
 
 .animate-scroll-left:hover {

@@ -197,7 +197,7 @@ const Index = () => {
   const [currentText, setCurrentText] = useState(0);
   const [openService, setOpenService] = useState<number | null>(null);
   const statsRef = useRef<HTMLDivElement>(null);
-  const [statsRun, setStatsRun] = useState(true);
+  const [statsRun, setStatsRun] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -294,24 +294,24 @@ const Index = () => {
               </div>
 
               {/* Trust Badges */}
-              <div className="grid gap-4 grid-cols-1 sm:grid-cols-3 pt-8 max-w-2xl">
+              <div className="grid gap-2 sm:gap-4 grid-cols-3 pt-8 max-w-2xl">
                 {/* Badge 1 */}
-                <div className="flex flex-col items-center text-center p-4 rounded-[3px] border border-white/20 bg-white/10 backdrop-blur-sm">
-                  <Zap className="h-6 w-6 text-accent mb-2" />
-                  <p className="text-xs font-semibold text-white">Réactivité Garantie</p>
-                  <p className="text-[10px] text-white/70 mt-1">Réponse rapide à vos demandes</p>
+                <div className="flex flex-col items-center text-center p-2 sm:p-4 rounded-[3px] border border-white/20 bg-white/10 backdrop-blur-sm">
+                  <Zap className="h-3 w-3 sm:h-6 sm:w-6 text-accent mb-1 sm:mb-2" />
+                  <p className="text-[9px] sm:text-xs font-semibold text-white leading-tight">Réactivité Garantie</p>
+                  <p className="hidden sm:block text-[10px] text-white/70 mt-1">Réponse rapide à vos demandes</p>
                 </div>
                 {/* Badge 2 */}
-                <div className="flex flex-col items-center text-center p-4 rounded-[3px] border border-white/20 bg-white/10 backdrop-blur-sm">
-                  <Handshake className="h-6 w-6 text-accent mb-2" />
-                  <p className="text-xs font-semibold text-white">Partenariat de Confiance</p>
-                  <p className="text-[10px] text-white/70 mt-1">Relations durables garanties</p>
+                <div className="flex flex-col items-center text-center p-2 sm:p-4 rounded-[3px] border border-white/20 bg-white/10 backdrop-blur-sm">
+                  <Handshake className="h-3 w-3 sm:h-6 sm:w-6 text-accent mb-1 sm:mb-2" />
+                  <p className="text-[9px] sm:text-xs font-semibold text-white leading-tight">Partenariat de Confiance</p>
+                  <p className="hidden sm:block text-[10px] text-white/70 mt-1">Relations durables garanties</p>
                 </div>
                 {/* Badge 3 */}
-                <div className="flex flex-col items-center text-center p-4 rounded-[3px] border border-white/20 bg-white/10 backdrop-blur-sm">
-                  <TrendingUp className="h-6 w-6 text-accent mb-2" />
-                  <p className="text-xs font-semibold text-white">Croissance Prouvée</p>
-                  <p className="text-[10px] text-white/70 mt-1">Succès en progression constante</p>
+                <div className="flex flex-col items-center text-center p-2 sm:p-4 rounded-[3px] border border-white/20 bg-white/10 backdrop-blur-sm">
+                  <TrendingUp className="h-3 w-3 sm:h-6 sm:w-6 text-accent mb-1 sm:mb-2" />
+                  <p className="text-[9px] sm:text-xs font-semibold text-white leading-tight">Croissance Prouvée</p>
+                  <p className="hidden sm:block text-[10px] text-white/70 mt-1">Succès en progression constante</p>
                 </div>
               </div>
             </div>
