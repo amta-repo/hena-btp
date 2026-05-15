@@ -52,7 +52,7 @@ const AnimatedCounter = ({ end, suffix = "", prefix = "", duration = 2000, label
         backgroundImage: bgColor ? "repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,0.05) 10px, rgba(0,0,0,0.05) 20px)" : "none"
       }}
     >
-      <p className="text-3xl sm:text-5xl font-extrabold" style={{ color: bgColor === "orange" ? "hsl(24 100% 50%)" : "rgb(107, 114, 128)" }}>
+      <p className="text-3xl sm:text-5xl font-extrabold" style={{ color: bgColor === "gray" ? "rgb(107, 114, 128)" : "hsl(24 100% 50%)" }}>
         {isText ? text : `${prefix}${count}${suffix}`}
       </p>
       {label && <p className="text-xs sm:text-sm font-semibold text-muted-foreground mt-2">{label}</p>}
