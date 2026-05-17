@@ -173,7 +173,7 @@ const ServicesPage = () => {
       </section>
 
       {/* Services detail */}
-      <section className="bg-white section-padding">
+      <section className="section-padding" style={{ backgroundColor: "hsl(0 0% 100% / 0.7)" }}>
         <div className="container mx-auto space-y-20">
           {services.map((s, i) => (
             <div key={s.title} id={serviceIds[i]} className={`grid gap-10 lg:grid-cols-2 items-center scroll-mt-24`}>
