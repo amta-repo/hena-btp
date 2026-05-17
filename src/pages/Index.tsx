@@ -555,7 +555,7 @@ const Index = () => {
         </section>
 
         {/* Partners */}
-        <section className="section-padding bg-secondary">
+        <section className="section-padding bg-partners">
           <div className="container mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Nos Partenaires & Clients</h2>
