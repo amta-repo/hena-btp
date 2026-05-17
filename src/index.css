@@ -83,18 +83,23 @@
 }
 
 @layer utilities {
-  /* Make white/grey section backgrounds 75% transparent so the site background shows through */
-  .bg-background,
-  .bg-white,
+  /* Cards and form/popover surfaces stay fully opaque so content is readable */
   .bg-card,
-  .bg-secondary,
-  .bg-muted,
+  .bg-white,
   .bg-popover {
-    background-color: hsl(var(--background) / 0.25) !important;
+    background-color: hsl(var(--card)) !important;
+  }
+  /* Section-level neutrals: keep mostly opaque (only ~5% transparent) */
+  .bg-background {
+    background-color: hsl(var(--background) / 0.95) !important;
   }
   .bg-secondary,
   .bg-muted {
-    background-color: hsl(var(--secondary) / 0.25) !important;
+    background-color: hsl(var(--secondary) / 0.95) !important;
+  }
+  /* Partners / Clients section on the homepage: 30% transparent (70% opacity) */
+  .bg-partners {
+    background-color: hsl(var(--background) / 0.7) !important;
   }
 }
 
