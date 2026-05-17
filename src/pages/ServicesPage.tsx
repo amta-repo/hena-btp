@@ -232,7 +232,7 @@ const ServicesPage = () => {
       </section>
 
       {/* CTA */}
-      <section className="bg-accent section-padding">
+      <section className="section-padding" style={{ backgroundColor: "hsl(var(--accent) / 0.7)" }}>
         <div className="container mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl font-bold text-accent-foreground">Prêt à démarrer votre projet ?</h2>
           <p className="mt-3 text-accent-foreground/80 max-w-lg mx-auto">
