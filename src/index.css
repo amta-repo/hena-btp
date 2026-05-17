@@ -61,11 +61,11 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply text-foreground font-sans antialiased;
     font-family: 'Inter', sans-serif;
     position: relative;
     min-height: 100%;
-    background-color: hsl(var(--background));
+    background-color: transparent;
   }
 
   body::before {
@@ -77,9 +77,24 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    filter: blur(5px);
     z-index: -1;
     pointer-events: none;
+  }
+}
+
+@layer utilities {
+  /* Make white/grey section backgrounds 75% transparent so the site background shows through */
+  .bg-background,
+  .bg-white,
+  .bg-card,
+  .bg-secondary,
+  .bg-muted,
+  .bg-popover {
+    background-color: hsl(var(--background) / 0.25) !important;
+  }
+  .bg-secondary,
+  .bg-muted {
+    background-color: hsl(var(--secondary) / 0.25) !important;
   }
 }
 
