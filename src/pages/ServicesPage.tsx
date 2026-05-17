@@ -141,7 +141,7 @@ const ServicesPage = () => {
       </section>
 
       {/* Nos Engagements */}
-      <section className="bg-secondary py-12">
+      <section className="py-12" style={{ backgroundColor: "hsl(var(--secondary) / 0.3)" }}>
         <div className="container mx-auto">
           <h2 className="text-2xl font-bold text-foreground text-center mb-8">Nos Engagements</h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
