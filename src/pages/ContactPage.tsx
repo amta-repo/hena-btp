@@ -78,7 +78,7 @@ const ContactPage = () => {
         </section>
 
         {/* Form + Map */}
-        <section className="section-padding">
+        <section className="section-padding" style={{ backgroundColor: "hsl(var(--background) / 0.3)" }}>
           <div className="container mx-auto grid gap-10 lg:grid-cols-2">
             {/* Form */}
             <div>

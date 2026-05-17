@@ -141,7 +141,7 @@ const ServicesPage = () => {
       </section>
 
       {/* Nos Engagements */}
-      <section className="bg-secondary py-12">
+      <section className="py-12" style={{ backgroundColor: "hsl(var(--secondary) / 0.3)" }}>
         <div className="container mx-auto">
           <h2 className="text-2xl font-bold text-foreground text-center mb-8">Nos Engagements</h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -173,7 +173,7 @@ const ServicesPage = () => {
       </section>
 
       {/* Services detail */}
-      <section className="bg-white section-padding">
+      <section className="section-padding" style={{ backgroundColor: "hsl(0 0% 100% / 0.7)" }}>
         <div className="container mx-auto space-y-20">
           {services.map((s, i) => (
             <div key={s.title} id={serviceIds[i]} className={`grid gap-10 lg:grid-cols-2 items-center scroll-mt-24`}>
@@ -232,7 +232,7 @@ const ServicesPage = () => {
       </section>
 
       {/* CTA */}
-      <section className="bg-accent section-padding">
+      <section className="section-padding" style={{ backgroundColor: "hsl(var(--accent) / 0.7)" }}>
         <div className="container mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl font-bold text-accent-foreground">Prêt à démarrer votre projet ?</h2>
           <p className="mt-3 text-accent-foreground/80 max-w-lg mx-auto">
