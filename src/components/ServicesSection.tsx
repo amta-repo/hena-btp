@@ -10,20 +10,19 @@ const services = [
 ];
 
 const ServicesSection = () => (
-  <section id="services" className="section-padding bg-transparent">
+  <section id="services" aria-labelledby="services-heading" className="section-padding bg-transparent">
     <div className="container mx-auto">
-      <div className="text-center max-w-2xl mx-auto mb-12">
-        <span className="text-xs font-semibold tracking-widest uppercase text-accent">Nos Services</span>
-        <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-foreground">Des solutions BTP complètes à Cotonou</h2>
-        {/* <p className="mt-3 text-blue-950"> */}
-          <p className="mt-3" style={{ color: '#020617' }}>
-          De la construction neuve à la rénovation, HENA BTP couvre tous vos besoins en bâtiment et travaux publics.
+      <header className="text-center max-w-2xl mx-auto mb-12">
+        <span className="text-xs font-semibold tracking-widest uppercase text-accent">Nos Services BTP</span>
+        <h2 id="services-heading" className="mt-2 text-3xl sm:text-4xl font-bold text-foreground">Des solutions BTP complètes à Cotonou, Bénin</h2>
+        <p className="mt-3" style={{ color: '#020617' }}>
+          De la construction neuve à la rénovation, HENA BTP couvre tous vos besoins en bâtiment et travaux publics au Bénin.
         </p>
-      </div>
+      </header>
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {services.map((s, i) => (
-          <div
+          <article
             key={s.title}
             className="group rounded-none bg-card p-6 sm:p-8 hover-lift relative w-full"
             style={{ animationDelay: `${i * 100}ms`, boxShadow: "var(--card-shadow)", minHeight: "520px" }}
@@ -33,18 +32,17 @@ const ServicesSection = () => (
             </div>
             <h3 className="text-lg font-semibold text-foreground">{s.title}</h3>
             <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-            
-            {/* Plus Button */}
+
             <div className="absolute bottom-6 right-6">
               <button
                 className="flex items-center justify-center w-10 h-10 rounded-none border border-slate-300 bg-slate-200 text-[#0d2142] text-xl font-bold transition-colors duration-300 hover:bg-orange-500 hover:text-white"
                 type="button"
-                aria-label="Plus"
+                aria-label={`Découvrir le service ${s.title} à Cotonou`}
               >
                 +
               </button>
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </div>
