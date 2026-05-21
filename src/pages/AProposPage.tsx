@@ -135,11 +135,12 @@ const AProposPage = () => {
                   Gestion de projet <span className="text-gradient">complète</span>
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Depuis sa création, HENA BTP s'est imposée comme un acteur de référence du bâtiment et des travaux publics au Bénin. Notre approche combine rigueur technique, innovation et respect des engagements pour livrer des ouvrages d'exception.
+                  Depuis sa création à <strong>Cotonou, au Bénin</strong>, HENA BTP s'est imposée comme un acteur de référence du bâtiment et des travaux publics au Bénin. Notre approche combine ingénierie civile certifiée, conformité aux <strong>normes HSE</strong>, respect du <strong>code de l'urbanisme béninois</strong> et garantie décennale sur chaque ouvrage livré.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  Nous accompagnons particuliers, entreprises et collectivités dans la réalisation de leurs projets les plus ambitieux, à Cotonou, au Bénin et en Afrique de l'Ouest.
+                  Membre du <strong>Groupe HSE</strong>, nous accompagnons particuliers, promoteurs immobiliers, entreprises et institutions publiques dans la réalisation de leurs projets BTP à <strong>Cotonou, Abomey-Calavi, Porto-Novo</strong> et dans toute l'Afrique de l'Ouest.
                 </p>
+
 
                 <ul className="space-y-3 mb-8">
                   {[
@@ -162,9 +163,10 @@ const AProposPage = () => {
                     to="/realisations"
                     className="inline-flex items-center gap-2 bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:scale-105 rounded-md"
                   >
-                    Voir nos réalisations
+                    Découvrez nos projets de construction au Bénin
                     <ArrowRight className="h-4 w-4" />
                   </Link>
+
                   <div className="border-l border-border pl-6">
                     <p className="text-xs uppercase tracking-widest text-muted-foreground">Appelez-nous</p>
                     <a href="tel:+2290155496155" className="text-base font-bold text-accent hover:underline">
@@ -298,13 +300,14 @@ const AProposPage = () => {
         {/* CTA */}
         <section className="py-24 bg-orange-500 text-center">
           <h2 className="text-3xl font-bold text-white">
-            Prêt à lancer votre projet ?
+            Prêt à lancer votre projet BTP au Bénin ?
           </h2>
 
           <Link to="/contact" className="mt-6 inline-block bg-white text-orange-600 px-6 py-3 font-semibold">
-            Contact
+            Demander un devis BTP gratuit
           </Link>
         </section>
+
 
       </main>
 
