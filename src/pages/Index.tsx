@@ -131,10 +131,11 @@ const services = [
 ];
 
 const featuredProjects = [
-  { img: villaImg, title: "Villa Moderne – Cotonou", cat: "Villas", alt: "Villa moderne HENA BTP Cotonou" },
-  { img: officeImg, title: "Immeuble de Bureaux", cat: "Bâtiments", alt: "Bâtiment administratif HENA BTP" },
-  { img: roadImg, title: "Route Nationale – Bénin", cat: "Travaux Publics", alt: "Travaux publics HENA BTP" },
+  { img: villaImg, title: "Villa Moderne – Cotonou", cat: "Villas", alt: "Construction d'une villa moderne R+1 à Cotonou par HENA BTP, Groupe HSE" },
+  { img: officeImg, title: "Immeuble de Bureaux – Cotonou", cat: "Bâtiments", alt: "Construction d'un immeuble de bureaux R+3 à Cotonou par HENA BTP" },
+  { img: roadImg, title: "Route Nationale – Bénin", cat: "Travaux Publics", alt: "Travaux publics et génie civil au Bénin réalisés par HENA BTP – route nationale" },
 ];
+
 
 const whyUsReasons = [
   { icon: MapPin, title: "Expertise locale", desc: "Connaissance du terrain et des réglementations béninoises." },
@@ -393,9 +394,10 @@ const Index = () => {
             </div>
             <div className="text-center mt-10">
               <Link to="/services" className="inline-flex items-center gap-2 rounded-none bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105">
-                Voir tous nos services <ArrowRight className="h-4 w-4" />
+                Voir tous nos services BTP au Bénin <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
+
           </div>
         </section>
 
@@ -454,14 +456,14 @@ const Index = () => {
         )}
 
         {/* Featured projects */}
-        <section className="section-padding bg-slate-100/50">
+        <section id="realisations" aria-labelledby="realisations-heading" className="section-padding bg-slate-100/50">
           <div className="container mx-auto">
-            <div className="text-center max-w-2xl mx-auto mb-10">
+            <header className="text-center max-w-2xl mx-auto mb-10">
               <span className="text-xs font-semibold tracking-widest uppercase text-accent">Nos Réalisations</span>
-              <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-foreground">Des projets qui parlent d'eux-mêmes</h2>
-            </div>
-            {/* <div className="grid gap-6 grid-cols-2 lg:grid-cols-3"> */}
+              <h2 id="realisations-heading" className="mt-2 text-3xl sm:text-4xl font-bold text-foreground">Chantiers livrés à Cotonou et au Bénin</h2>
+            </header>
             <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+
               {featuredProjects.map((p, i) => (
                 <div key={i} className="group overflow-hidden rounded-xl hover-lift" style={{ boxShadow: "var(--card-shadow)" }}>
                   <div className="aspect-[4/3] overflow-hidden">
@@ -476,9 +478,10 @@ const Index = () => {
             </div>
             <div className="text-center mt-10">
               <Link to="/realisations" className="inline-flex items-center gap-2 rounded-none bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105">
-                Voir toutes nos réalisations <ArrowRight className="h-4 w-4" />
+                Découvrez nos projets de construction au Bénin <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
+
           </div>
         </section>
 
@@ -525,9 +528,10 @@ const Index = () => {
             </div>
             <div className="text-center mt-10">
               <Link to="/a-propos" className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline">
-                En savoir plus sur nous <ArrowRight className="h-4 w-4" />
+                Découvrez l'expertise BTP de HENA, Groupe HSE <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
+
           </div>
         </section>
 
