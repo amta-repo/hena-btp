@@ -111,9 +111,9 @@ const Footer = () => (
               <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-accent" aria-hidden="true" />
               <span>
                 <span className="block font-semibold text-primary-foreground">HENA BTP, Groupe HSE</span>
-                <span itemProp="streetAddress">Quartier Cadjèhoun</span>,{" "}
-                <span itemProp="addressLocality">Cotonou</span>,{" "}
-                <span itemProp="addressRegion">Littoral</span>,{" "}
+                <span itemProp="streetAddress">Derrière l'Ecole Primaire,Togoudo </span>,{" "}
+                <span itemProp="addressLocality">Abomey-Calavi</span>,{" "}
+                <span itemProp="addressRegion">Atlantique</span>,{" "}
                 <span itemProp="addressCountry">Bénin</span>
               </span>
             </li>
