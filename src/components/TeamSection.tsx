@@ -20,7 +20,7 @@ const teamMembers = [
   },
   {
     name: "Ezéckiel Dossou HOUNGBEME",
-    role: "Chef Chantier",
+    role: "Controleur Principale",
     photo: ezeckielPhoto,
   },
   {
