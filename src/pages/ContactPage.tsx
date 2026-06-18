@@ -166,7 +166,7 @@ const ContactPage = () => {
             <div className="space-y-6">
               <div>
                 <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">Notre emplacement</h2>
-                <p className="text-muted-foreground mb-6">Rendez-nous visite à nos bureaux de Cotonou.</p>
+                <p className="text-muted-foreground mb-6">Rendez-nous visite à nos bureaux de Godomey, Abomey-Calavi.</p>
               </div>
 
               <div className="rounded-xl bg-card p-5" style={{ boxShadow: "var(--card-shadow)" }}>
