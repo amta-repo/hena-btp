@@ -28,9 +28,15 @@ const jsonLd = {
   description: "Entreprise de Bâtiment et Travaux Publics à Cotonou, Bénin. Construction, génie civil et suivi HSE au Bénin et en Afrique de l'Ouest.",
   url: "https://henabtp.com",
   telephone: "+2290155496155",
-  email: "henafinancebtp@gmail.com",
-  address: { "@type": "PostalAddress", addressLocality: "Cotonou", addressCountry: "BJ" },
-  geo: { "@type": "GeoCoordinates", latitude: 6.4073475, longitude: 2.3279387 },
+  email: "info@henabtp.com",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Von en face de la Pharmacie Houénoussou Gare, dans la von de la Paroisse Notre-Dame de Charité de Godomey",
+    addressLocality: "Abomey-Calavi",
+    addressRegion: "Atlantique",
+    addressCountry: "BJ"
+  },
+  geo: { "@type": "GeoCoordinates", latitude: 6.3817, longitude: 2.3556 },
   areaServed: ["Bénin", "Afrique de l'Ouest"],
 };
 

@@ -105,13 +105,13 @@ const Footer = () => (
           itemScope
           itemType="https://schema.org/PostalAddress"
         >
-          <h4 className="text-sm font-semibold mb-4">Contact – HENA BTP Cotonou</h4>
+          <h4 className="text-sm font-semibold mb-4">Contact – HENA BTP Godomey</h4>
           <ul className="space-y-3 text-sm text-primary-foreground/80">
             <li className="flex items-start gap-2">
               <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-accent" aria-hidden="true" />
               <span>
                 <span className="block font-semibold text-primary-foreground">HENA BTP, Groupe HSE</span>
-                <span itemProp="streetAddress">Derrière l'Ecole Primaire,Togoudo </span>,{" "}
+                <span itemProp="streetAddress">Von en face de la Pharmacie Houénoussou Gare, dans la von de la Paroisse Notre-Dame de Charité de Godomey</span>,{" "}
                 <span itemProp="addressLocality">Abomey-Calavi</span>,{" "}
                 <span itemProp="addressRegion">Atlantique</span>,{" "}
                 <span itemProp="addressCountry">Bénin</span>

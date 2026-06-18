@@ -166,7 +166,7 @@ const ContactPage = () => {
             <div className="space-y-6">
               <div>
                 <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">Notre emplacement</h2>
-                <p className="text-muted-foreground mb-6">Rendez-nous visite à nos bureaux de Cotonou.</p>
+                <p className="text-muted-foreground mb-6">Rendez-nous visite à nos bureaux de Godomey, Abomey-Calavi.</p>
               </div>
 
               <div className="rounded-xl bg-card p-5" style={{ boxShadow: "var(--card-shadow)" }}>
@@ -176,7 +176,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h3 className="text-sm font-semibold text-foreground">HENA BTP, Groupe HSE</h3>
-                    <p className="text-sm text-muted-foreground mt-1">Cotonou, Bénin</p>
+                    <p className="text-sm text-muted-foreground mt-1">Von, Godomey, Abomey-Calavi, Bénin</p>
                     <p className="text-sm text-muted-foreground">Tél : <a href="tel:+2290155496155" className="text-accent hover:underline">+229 01 55 49 61 55</a></p>
                   </div>
                 </div>
@@ -184,8 +184,8 @@ const ContactPage = () => {
 
               <div className="overflow-hidden rounded-xl" style={{ boxShadow: "var(--card-shadow)" }}>
                 <iframe
-                  title="Localisation HENA BTP Cotonou Bénin"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.0!2d2.3279387!3d6.4073475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMjQnMjYuNSJOIDLCsDE5JzQwLjYiRQ!5e0!3m2!1sfr!2sbj!4v1700000000000"
+                  title="Localisation HENA BTP Godomey Abomey-Calavi Bénin"
+                  src="https://maps.google.com/maps?q=Pharmacie+Hou%C3%A9noussou+Gare%2C+Godomey%2C+B%C3%A9nin&t=&z=15&ie=UTF8&iwloc=&output=embed"
                   width="100%"
                   height="350"
                   style={{ border: 0 }}
