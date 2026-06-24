@@ -6,7 +6,6 @@ import nelsonPhoto from "@/assets/team-nelson-ahehehinnou-responsable-technique.
 import oziasPhoto from "@/assets/team-ozias-djakpo-directeur-administratif-financier.jpeg";
 import alidaPhoto from "@/assets/team-alida-kponon-secretaire-direction.jpeg";
 import kokodomePhoto from "@/assets/team-kokodome-jehodic-chef-achat.jpeg";
-import ruthPhotoAsset from "@/assets/team-agassoussi-ruth-secretaire-direction.jpeg.asset.json";
 
 type TeamSectionProps = {
   variant?: "home" | "about";
@@ -31,7 +30,7 @@ const teamMembers = [
   },
   {
     name: "Nelson AHEHEHINNOU",
-    role: "Responsable Humaine et Technique",
+    role: "Responsable Technique",
     photo: nelsonPhoto,
   },
   {
@@ -41,19 +40,14 @@ const teamMembers = [
   },
   {
     name: "Alida KPONON",
-    role: "Chargée de la Communication et du Marketing",
+    role: "Secrétaire de Direction",
     photo: alidaPhoto,
     keepBg: true,
   },
   {
     name: "KOKODOME JEHODIC",
-    role: "Chef Achat et Partenariats",
+    role: "Chef d'Approvisionnement",
     photo: kokodomePhoto,
-  },
-  {
-    name: "AGASSOUSSI Ruth",
-    role: "Secrétaire de Direction",
-    photo: ruthPhotoAsset.url,
   },
 ];
 
