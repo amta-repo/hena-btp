@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
-import arianePhoto from "@/assets/team-ariane-zossou-dg.jpeg";
+import arianePhotoAsset from "@/assets/team-ariane-zossou-dg.jpeg.asset.json";
 import ezeckielPhoto from "@/assets/team-ezeckiel-dossou-houngbeme-chef-chantier.jpeg";
 import alexandrePhoto from "@/assets/team-alexandre-gnimahoue-directeur-technique.jpeg";
-import nelsonPhoto from "@/assets/team-nelson-ahehehinnou-responsable-technique.jpeg";
-import oziasPhoto from "@/assets/team-ozias-djakpo-directeur-administratif-financier.jpeg";
+import nelsonPhotoAsset from "@/assets/team-nelson-ahehehinnou-rht.jpeg.asset.json";
+import oziasPhotoAsset from "@/assets/team-ozias-djakpo-daf.jpeg.asset.json";
 import alidaPhoto from "@/assets/team-alida-kponon-secretaire-direction.jpeg";
-import kokodomePhoto from "@/assets/team-kokodome-jehodic-chef-achat.jpeg";
+import kokodomePhotoAsset from "@/assets/team-kokodome-jehodic-achat.jpeg.asset.json";
 import ruthPhotoAsset from "@/assets/team-agassoussi-ruth-secretaire-direction.jpeg.asset.json";
+import vanexaPhotoAsset from "@/assets/team-vanexa-dansi-comptable.jpeg.asset.json";
 
 type TeamSectionProps = {
   variant?: "home" | "about";
