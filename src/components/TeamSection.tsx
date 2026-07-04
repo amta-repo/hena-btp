@@ -17,7 +17,7 @@ const teamMembers = [
   {
     name: "Ariane Zossou",
     role: "Directrice Générale",
-    photo: arianePhoto,
+    photo: arianePhotoAsset.url,
     keepBg: true,
   },
   {
@@ -33,12 +33,14 @@ const teamMembers = [
   {
     name: "Nelson AHEHEHINNOU",
     role: "Responsable Humaine et Technique",
-    photo: nelsonPhoto,
+    photo: nelsonPhotoAsset.url,
+    keepBg: true,
   },
   {
     name: "Ozias DJAKPO",
     role: "Directeur Administratif et Financier",
-    photo: oziasPhoto,
+    photo: oziasPhotoAsset.url,
+    keepBg: true,
   },
   {
     name: "Alida KPONON",
@@ -49,12 +51,20 @@ const teamMembers = [
   {
     name: "KOKODOME JEHODIC",
     role: "Chef Achat et Partenariats",
-    photo: kokodomePhoto,
+    photo: kokodomePhotoAsset.url,
+    keepBg: true,
   },
   {
     name: "AGASSOUSSI Ruth",
     role: "Secrétaire de Direction",
     photo: ruthPhotoAsset.url,
+    keepBg: true,
+  },
+  {
+    name: "Vanexa DANSI",
+    role: "Comptable",
+    photo: vanexaPhotoAsset.url,
+    keepBg: true,
   },
 ];
 
