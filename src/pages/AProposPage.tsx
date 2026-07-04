@@ -15,7 +15,8 @@ import AnimatedCounter from "@/components/AnimatedCounter";
 import whyHeroVideo from "@/assets/why-henabtp.mp4";
 import heroImg from "@/assets/project-office.jpg";
 import storyImg from "@/assets/about-notre-histoire.jpg";
-import dgImg from "@/assets/team-ariane-zossou-dg.jpeg";
+import dgImgAsset from "@/assets/team-ariane-zossou-dg.jpeg.asset.json";
+const dgImg = dgImgAsset.url;
 import nosObjectifsImg from "@/assets/nos-objectifs.jpg";
 
 /* ---------------- DATA ---------------- */
