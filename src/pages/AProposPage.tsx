@@ -206,7 +206,7 @@ const AProposPage = () => {
                   Direction Générale
                 </p>
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-foreground mb-6">
-                  Mot de la Directrice <span className="text-gradient">Générale</span>
+                  Mot du Directeur <span className="text-gradient">Général</span>
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Chaque projet est un rêve qui prend forme. Chez HENA BTP, nous portons cette responsabilité avec rigueur, écoute et exigence.
