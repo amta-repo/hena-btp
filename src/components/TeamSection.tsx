@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import marcelPhoto from "@/assets/team-marcel-honvo-directeur-general.jpeg";
 import arianePhotoAsset from "@/assets/team-ariane-zossou-dg.jpeg.asset.json";
 import ezeckielPhoto from "@/assets/team-ezeckiel-dossou-houngbeme-chef-chantier.jpeg";
 import alexandrePhoto from "@/assets/team-alexandre-gnimahoue-directeur-technique.jpeg";
