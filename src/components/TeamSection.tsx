@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import marcelPhoto from "@/assets/team-marcel-honvo-directeur-general.jpeg";
 import arianePhotoAsset from "@/assets/team-ariane-zossou-dg.jpeg.asset.json";
 import ezeckielPhoto from "@/assets/team-ezeckiel-dossou-houngbeme-chef-chantier.jpeg";
 import alexandrePhoto from "@/assets/team-alexandre-gnimahoue-directeur-technique.jpeg";
@@ -15,8 +16,14 @@ type TeamSectionProps = {
 
 const teamMembers = [
   {
+    name: "Marcel HONVO",
+    role: "Directeur Général",
+    photo: marcelPhoto,
+    keepBg: true,
+  },
+  {
     name: "Ariane Zossou",
-    role: "Directrice Générale",
+    role: "Assistante de Direction",
     photo: arianePhotoAsset.url,
     keepBg: true,
   },

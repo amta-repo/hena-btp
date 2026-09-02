@@ -15,8 +15,7 @@ import AnimatedCounter from "@/components/AnimatedCounter";
 import whyHeroVideo from "@/assets/why-henabtp.mp4";
 import heroImg from "@/assets/project-office.jpg";
 import storyImg from "@/assets/about-notre-histoire.jpg";
-import dgImgAsset from "@/assets/team-ariane-zossou-dg.jpeg.asset.json";
-const dgImg = dgImgAsset.url;
+import dgImg from "@/assets/team-marcel-honvo-directeur-general.jpeg";
 import nosObjectifsImg from "@/assets/nos-objectifs.jpg";
 
 /* ---------------- DATA ---------------- */
@@ -188,7 +187,7 @@ const AProposPage = () => {
                 <div className="overflow-hidden rounded-2xl shadow-xl">
                   <img
                     src={dgImg}
-                    alt="Ariane Zossou, Directrice Générale de HENA BTP"
+                    alt="Marcel HONVO, Directeur Général de HENA BTP"
                     loading="lazy"
                     className="w-full h-[480px] object-cover"
                   />
@@ -207,7 +206,7 @@ const AProposPage = () => {
                   Direction Générale
                 </p>
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-foreground mb-6">
-                  Mot de la Directrice <span className="text-gradient">Générale</span>
+                  Mot du Directeur <span className="text-gradient">Général</span>
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Chaque projet est un rêve qui prend forme. Chez HENA BTP, nous portons cette responsabilité avec rigueur, écoute et exigence.
