@@ -16,8 +16,14 @@ type TeamSectionProps = {
 
 const teamMembers = [
   {
+    name: "Marcel HONVO",
+    role: "Directeur Général",
+    photo: marcelPhoto,
+    keepBg: true,
+  },
+  {
     name: "Ariane Zossou",
-    role: "Directrice Générale",
+    role: "Assistante de Direction",
     photo: arianePhotoAsset.url,
     keepBg: true,
   },
