@@ -187,7 +187,7 @@ const AProposPage = () => {
                 <div className="overflow-hidden rounded-2xl shadow-xl">
                   <img
                     src={dgImg}
-                    alt="Ariane Zossou, Directrice Générale de HENA BTP"
+                    alt="Marcel HONVO, Directeur Général de HENA BTP"
                     loading="lazy"
                     className="w-full h-[480px] object-cover"
                   />
